@@ -474,9 +474,9 @@ a:hover {
 /*未完成的样式 开*/
 .Computer-2-left2.nav-tabs{border-bottom:0px solid #d002e6; }
 .Computer-2-left2 .nav-link.active{border-radius: 0px;
-	border:2px solid #0061ae; }
-.nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
-	border:2px solid #0061ae;
+	border:2px solid #0061ae; }/*触发时样式*/
+.Computer-2-left>.nav-tabs .nav-link:hover,.Computer-2-left>.nav-tabs .nav-link:focus {
+	border:2px solid #0061ae;/*光标获取时样式*/
 }
 /*未完成的样式 关*/
 /*2*/
