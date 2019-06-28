@@ -127,7 +127,7 @@ ul{list-style:none;}/*去除小黑点*/
 .center-1-lidiv4{background:url(../images/tt.png) no-repeat left}
 .center-1-liul a{font:13px 宋体;color:#cdcacb;text-align:center
 				display:inline-block;
-				text-align:center;
+				text-align:center
 				}
 .center-1-liul a>div{margin-top:10px;
 					margin-bottom:5px;}
@@ -602,3 +602,23 @@ a:hover {
 	line-height:16px;
 	color: #333333}
 /*Computer3-right 关*/
+/*个人中心personage*/
+.pt1{display: flex;
+			height:30px;
+			line-height: 30px;}
+.Pt1-ulspan{width: 30px;
+			text-align:center;
+			display: inline-block;	
+		}
+.pt1 a{color: #666666}
+a.pt1-aa{color:#0061ae}
+.pt2{height:457px;border:1px solid red;
+	display: flex;
+	justify-content: space-between}
+.pt2-left{border:1px solid red;
+		  width:220px;height:401px;
+			background: #ffffff;}
+.pt2-right{width:960px;height:350;
+		 border:1px solid red;
+		 margin-bottom: 35px;
+		background: #ffffff;}
