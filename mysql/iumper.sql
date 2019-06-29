@@ -1,5 +1,6 @@
 
 SET NAMES UTF8;
+DROP  DATABASE  IF  EXISTS  iumper; 
 #DROP DATABASE IF EXISTS iumper;  
 CREATE DATABASE iumper CHARSET=UTF8;
 USE iumper;
@@ -12,7 +13,7 @@ CREATE TABLE iumper_user(uid INT PRIMARY KEY AUTO_INCREMENT,
                          city VARCHAR(24),
                          county VARCHAR(24),
                          address VARCHAR(50),
-                         qq   INT,
+                         qq  VARCHAR(50),
                          avatar VARCHAR(50),
                          phone VARCHAR(50),
                          email VARCHAR(50)

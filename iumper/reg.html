@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>中柏商城-中柏平板电脑、中柏笔记本电脑、中柏电脑官方网站</title>
+    <link rel="stylesheet" type="text/css" href="Public/css/style.css">
+</head>
+<body>
+<!--top-->
+ 	<div class="main"> 
+		<div class="top-login">
+				<div class="logo">
+					<a href="#">
+						<img src="Public/images/logo.png">
+					</a>				
+				</div>
+				<div class="tell">
+			   服务热线：
+							<i>4008333331</i> 
+				</div>
+        </div>
+<!--top-->
+    <div class="login h-100">
+        <div class="loginz h-100" >
+                <div>
+                    <input type="text" class="login-text w1" id="uname" name="user_uname" placeholder="手机号/邮箱"
+                    >
+                </div>
+                <div>
+                    <input type="password" class="login-text w2" id="upwd" name="password" placeholder="输入密码">
+                </div>
+                <div>
+                    <input type="password" class="login-text w2" id="upwds" name="passwords" placeholder="再次输入密码">
+                </div>
+                <div>
+                    <input type="text" class="login-text reg-verift" id="verift1" maxlength="4" placeholder="验证码">
+                    <img class="reg-imglocated" src="Public/images/verify.png" alt=""><a class="reg-alteRverift" href="#">看不清楚换一张</a>
+                </div>
+                <div>
+                    <input type="text" class="login-text reg-verift" id="verift2"  maxlength="4" placeholder="校验码">
+                    <button class="reg-toverift" onclick="alterverift()">获取校验码</button>
+                </div>
+                <div>
+                    <button class="submit" onclick="reg()">立即注册</button>
+                </div>
+            <div class="text-center height">已有账号<a href="#">立即登录</a></div>
+        </div>
+    </div>
+<!--bottom-->
+        <div class="login-bottom">
+        <div class="left">
+           &copy 2015 深圳中柏科技有限公司 版权所有 技术支持：
+            <a href="http://www.ni8.com">网联科技</a>				
+        </div>
+        <div class="right">
+               <a href>粤ICP备 83271806号</a>
+        </div>
+        </div>
+<!--bottom-->        	
+    </div>
+    <script>
+            var PhoneEmail=''
+        function alterverift(){
+            var str=uname.value
+            var e=new RegExp ("^\\w+\@\\w+\.\\w{2,4}$","ig")        
+            var p=new RegExp ("^1[3-9]\\d{9}$","ig")
+            var e1=str.search(e)
+            var p1=str.search(p)
+           if(e1!==-1){    
+              alert('对！！！！未实现');
+               PhoneEmail="email"
+               /*满足会发送一个信息 后期验证
+               */
+            }else if(p1!==-1){
+              alert('对！！！！未实现');
+               PhoneEmail="phone"
+               /*满足会发送一个信息 后期验证*/
+              }
+            else{
+              alert('请输入正确格式的手机号/邮箱')
+              }
+           }
+        function reg(){
+            var xhr=new XMLHttpRequest();
+            xhr.onreadystatechange=function(){				
+             if(xhr.readyState===4 && xhr.status===200){
+                 var result=xhr.response;
+                if(result==='1'){alert("注册成功")
+                }else{alert(result)}
+                }   
+               }
+        xhr.open("post","/user/v1/reg/",true)
+        xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded")
+        var formdata="uname="+uname.value+"&upwd="+upwd.value+"&upwds="+upwds.value+"&verift1="+verift1.value+"&verift2="+verift2.value+"&PhoneEmail="+PhoneEmail;
+        xhr.send(formdata);
+        }
+    </script> 
+</body>
+</html>

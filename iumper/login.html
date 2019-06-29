@@ -29,7 +29,7 @@
  <!--login-->
 	  <div class="login">
 				<div class="loginz clearfix">
-					<form action="/home/member/dologin.html" method="post" name="frm" onsubmit="return logincheck()" >				
+					<form action="/home/member/dologin.html" >				
 						<div>
 						<input type="text" class="login-text w1" id="user_uname" name="user_uname" placeholder="手机号/邮箱/用户名"
 						>
@@ -37,10 +37,8 @@
 						<div>
 						<input type="password" class="login-text w2" id="password" name="password" placeholder="输入密码">
 						</div>
-						<div style="padding:0;line-height:30px">
-							
-								<a href="/home/member/register.html">注册新账号</a>
-							
+						<div class="login-reg">						
+								<a href="/home/member/register.html">注册新账号</a>				
 							<span class="right">
 								<a href="/home/member/forget.html" >忘记密码？</a>
 							</span>

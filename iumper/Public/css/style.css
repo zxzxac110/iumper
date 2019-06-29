@@ -26,9 +26,9 @@ ul{list-style:none;}/*去除小黑点*/
 		font:40px "微软雅黑";
 		padding:10px 8px;
 		margin:0 0 15px 5px;}
-
+.h-100{height:100% !important}
+.text-center{text-align:center !important}
 .top{height:130px;color:#666;}            /*主页头部*/
-
 .top .top1{height:40px;width:100%;margin:auto;
 		  line-height:40px;
 		  background:#f3f3f3;
@@ -339,14 +339,15 @@ ul{list-style:none;}/*去除小黑点*/
 .w1{background: url("../images/lin.png") no-repeat 300px;}
 .w2{background: url("../images/lin2.png") no-repeat 300px;}
 .login-text{
-    width: 334px;
-    height: 42px;
+    width: 332px;
+    height: 40px;
     border: 1px solid #d4d4d4;
     text-indent: 8px;
     float: left;
     color: #999;
     float: left;
-    line-height: 42px;}
+	line-height: 42px;}
+.login-reg{padding:0;line-height:30px}
 /*登录按钮*/
 .loginz div .submit{height:52px;
 				 text-align:center;
@@ -356,6 +357,7 @@ ul{list-style:none;}/*去除小黑点*/
 				 font-family:微软雅黑;
 				 font-size:20px;
 				 background:rgb(0,97,174);
+				 border: 0;
 }
 /*字*/
 .loginz div a {
@@ -622,3 +624,19 @@ a.pt1-aa{color:#0061ae}
 		 border:1px solid red;
 		 margin-bottom: 35px;
 		background: #ffffff;}
+/*reg*/
+.loginz>.height{line-height: 30px}
+.reg-verift{width:80px;
+			text-indent:8px}
+.reg-toverift{width:90px;height:42px;
+			 border: 0px;
+			 background:#ddd;
+			 margin-left:10px;
+             line-height:42px; 
+			}
+.loginz div>a.reg-alteRverift{color:#666;
+							 margin-left:6px;
+							 line-height:65px;}	
+.reg-imglocated	{margin-left:10px; }						 	
+
+
