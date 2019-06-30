@@ -20,11 +20,11 @@ router.post('/v1/reg',function(req,res){
    else if($PhoneEmail==''){res.send("校验码错误");return;}//
    //b比较一次验证码，aleat(验证码错误)。 比较校验alert("校验码错误")
 
-   pool.query("SELECT*FROM iumper_user WHERE uname=?",[$uname],function(err,result){
+   pool.query('SELECT*FROM iumper_user WHERE uname=?',[$uname],function(err,result){
        if(err) throw err;
        if(result.length>0){res.send('已注册的账号名');return;}
 
-       if ($PhoneEmail==="phone"){
+       if ($PhoneEmail==="phone"){//2选1操作
         pool.query('INSERT INTO iumper_user VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)',[null,$uname,$upwd,$uname,1,"","","","","","",$uname,""],function(err,result){
              if(err) throw err;
              if(result.affectedRows>0){res.send("1")}
@@ -34,8 +34,25 @@ router.post('/v1/reg',function(req,res){
                 if(err) throw err;  
                 if(result.affectedRows>0){res.send("1")}
         })}
-   })
+   })//已注册账号名
 })
-//
+//登录
+router.post('/v1/login',function(req,res){
+   var obj=req.body;
+   if(!obj.uname){res.send("请输入手机号/邮箱/用户名");
+   return;
+};
+   if(!obj.upwd){res.send("请输入密码");
+   return;
+};
+pool.query('SELECT*FROM iumper_user WHERE uname=? and password=?',[obj.uname,obj.upwd],function(err,result){
+    if(err) throw err;
+    if(result.length>0){res.send('1')}else{res.send('用户名或密码错误！')}
+})
+});
+
+
+
+
 
 module.exports=router//导出路由器

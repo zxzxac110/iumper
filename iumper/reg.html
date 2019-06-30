@@ -87,7 +87,8 @@
             xhr.onreadystatechange=function(){				
              if(xhr.readyState===4 && xhr.status===200){
                  var result=xhr.response;
-                if(result==='1'){alert("注册成功")
+                if(result==='1'){alert("注册成功跳转页面");
+                window.location.href="http://127.0.0.1:8080/login.html";
                 }else{alert(result)}
                 }   
                }

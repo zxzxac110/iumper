@@ -28,25 +28,23 @@
     </div>
  <!--login-->
 	  <div class="login">
-				<div class="loginz clearfix">
-					<form action="/home/member/dologin.html" >				
+				<div class="loginz clearfix">			
 						<div>
-						<input type="text" class="login-text w1" id="user_uname" name="user_uname" placeholder="手机号/邮箱/用户名"
+						<input type="text" class="login-text w1" id="uname" name="user_uname" placeholder="手机号/邮箱/用户名"
 						>
 						</div>
 						<div>
-						<input type="password" class="login-text w2" id="password" name="password" placeholder="输入密码">
+						<input type="password" class="login-text w2" id="upwd" name="password" placeholder="输入密码">
 						</div>
 						<div class="login-reg">						
-								<a href="/home/member/register.html">注册新账号</a>				
+								<a href="http://127.0.0.1:8080/reg.html">注册新账号</a>				
 							<span class="right">
-								<a href="/home/member/forget.html" >忘记密码？</a>
+								<a href="#" >忘记密码？</a>
 							</span>
 						</div>
 						<div>
-						<input class="submit" type="submit" value="立即登录" >
+						<button class="submit" onclick="login()">立即登录</button>
 						</div>
-				</form>
 			</div>
 		</div>
 <!--bottom-->
@@ -59,8 +57,24 @@
 					<a href>粤ICP备 83271806号</a>
 			 </div>
 		</div>	
-
-<h1>具体路径/home/index.html11111111111111111111111111111111</h1>
+  <script>
+	  function login(){
+		var xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=function(){
+			if(xhr.readyState===4 && xhr.status===200){
+				var result=xhr.response;
+				if(result==='1'){alert("登录成功跳转页面");
+				window.location.href="http://127.0.0.1:8080/index.html";
+				console.log(0);
+			   }else{alert(result)}
+			}
+		 }
+		xhr.open("post","/user/v1/login",true)
+		xhr.setRequestHeader("content-Type","application/x-www-form-urlencoded")
+		var formdata="uname="+uname.value+"&upwd="+upwd.value;
+		xhr.send(formdata)
+	  }
+  </script>
 	</body>
 </html>
 
