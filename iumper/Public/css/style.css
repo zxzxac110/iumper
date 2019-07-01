@@ -437,7 +437,7 @@ ul{list-style:none;}/*去除小黑点*/
 	    line-height: 30px;
 		}
 .serve-1 span{color:#0061ae}
-.serve-2{height:650px;width:1160px;
+.serve-2{width:1160px;
 		padding:15px 20px 45px;
         background:#fff;}
 .serve-2-t1{height:40px;
@@ -455,9 +455,12 @@ ul{list-style:none;}/*去除小黑点*/
 							color:#ff9200;
 }
 /***/
-.serve-2-t2{  margin-bottom:20px}
-.serve-2-t3{height:40px;
-            padding-top:20px}
+.serve-2-t2{margin-bottom:20px}
+.serve-2-t3{height:260px;
+			padding-top:20px}
+/*serve-commitment*/
+.serve-commitment{color:#b4b4b4;
+				line-height: 25px;}
 
 /*Computer*/
 a:hover {
