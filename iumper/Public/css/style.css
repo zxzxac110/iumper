@@ -128,9 +128,8 @@ ul{list-style:none;}/*去除小黑点*/
 .center-1-lidiv2{background:url(../images/tt2.png) no-repeat bottom}
 .center-1-lidiv3{background:url(../images/tt2.png) no-repeat top}
 .center-1-lidiv4{background:url(../images/tt.png) no-repeat left}
-.center-1-liul a{font:13px 宋体;color:#cdcacb;text-align:center
-				display:inline-block;
-				text-align:center
+.center-1-liul a{font:13px 宋体;color:#cdcacb;
+				text-align:center;
 				}
 .center-1-liul a>div{margin-top:10px;
 					margin-bottom:5px;}
@@ -427,8 +426,7 @@ ul{list-style:none;}/*去除小黑点*/
 .tpc-4 ul li p{ width:190px;height:20px;
 				line-height: 20px;}
 /*    */
-.tpc-4>ul>li:hover{box-shadow: 0px 15px 30px ;
-				rgba(0,0,0,0.1);
+.tpc-4>ul>li:hover{box-shadow: 0px 15px 30px 0 rgba(0,0,0,0.1);					
                   transform:translate(0,-2px)}
 
 /*                                                  */
@@ -712,23 +710,43 @@ a.pt1-aa{color:#0061ae}
 				background:#eee;
 				padding-left:8px;
 }		
-.pt1-personal-t1{padding-left:65px;padding-top:30px;}	
-.pt1-personal-tx{display:flex;}	
+.pt1-personal-t1{padding-left:65px;padding-top:30px;
+					display: flex}	
 .pt1-personal-txnr{margin-left:14px;}
 .pt1-personal-txnr p{font:12px "微软雅黑";
 						line-height:28px;
 					padding-bottom:10px;}	
-.pt1-persona-table{border:1px solid red}
+					/*表格内容样式*/
 .pt1-persona-table-td1{width:190px;height:35px;	
-						line-height: 35px;				
+						line-height: 35px;	
+						text-align: right;			
 						}
 .pt1-persona-table-td1	span{margin-right:5px;
 						color: #FF0000;
-						font-size: 18px;}						
-
-.pt1-persona-table	td{ text-align: right;
-						border:1px solid #00f;
-						}					
+						font-size: 18px;
+						}
+.pt1-persona-table-td2{text-align: left;
+						height:35px;	
+						line-height: 35px;}								
+.pt1-persona-table-inputtext{width: 350px;
+							border: 1px solid #ccc;
+							line-height: 20px;
+							padding: 6px 0px;
+							text-indent: 5px;
+							font:12px "宋体";
+							color:#666;
+							outline: 0px;}
+.pt1-persona-table select{width:120px;
+   						 height: 30px;						
+						color: #777;
+    					border: 1px solid #CCC;}							
+.pt1-persona-table-an{text-align: center}
+.pt1-persona-table-an button{width:120px;height:40px;
+							 background:#0061ae;
+							 font:18px "微软雅黑";
+							 color:#fff;
+							 border:0px;
+							}				
 /*reg*/
 .loginz>.height{line-height: 30px}
 .reg-verift{width:80px;

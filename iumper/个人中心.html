@@ -132,65 +132,73 @@
                 </div>
                 <div>
                     <div class="pt1-personal-t1">
-                        <div class="pt2-RMember-portrait pt1-personal-tx" >
+                        <div class="pt2-RMember-portrait">
                             <img class="pt2-RMember-portraitIMG" src="Public/images/tx.jpg" alt="">
-                            <div class="pt1-personal-txnr">
+                        </div>
+                        <div class="pt1-personal-txnr">
                              <p>请选择新的照片文件。</p>  
                              <p>支持JPGPNGGIF格式的图片，文件需小于0.5M</p>  
                                 <input type="file" name="hobby[]">
-                            </div>
-                        </div>
+                        </div>                      
                     </div>
                     <div>
                         <table class="pt1-persona-table">
                             <tr>
                                 <td class="pt1-persona-table-td1"><span>*</span>昵称：</td>
-                                <td class="pt1-persona-table-td2"><input type="text"></td>
+                                <td class="pt1-persona-table-td2">
+                                    <input type="text" class="pt1-persona-table-inputtext">
+                                </td>
                             </tr>
                             <tr>
                                 <td class="pt1-persona-table-td1">性别：</td>
-                                <td>
-                                    <input type="radio">女
-                                    <input type="radio">男
-                                    <input type="radio">保密
+                                <td class="pt1-persona-table-td2">
+                                    <input type="radio" name="sex" value="0">女
+                                    <input type="radio" checked=checked name="sex" value="1">男
+                                    <input type="radio" name="sex" value="2">保密     
                                </td>
                             </tr>
                             <tr>
                                 <td class="pt1-persona-table-td1"><span>*</span>地区：</td>
-                                <td>
-                                    <select name="" id="">
-                                        <option value=""></option>
-                                        <option value=""></option>
-                                        <option value=""></option>
+                                <td class="pt1-persona-table-td2">
+                                    <select name="shengf">
+                                        <option value>请选择省份</option>
+                                        <option value="1">湖南</option>
+                                        <option value="2">湖北</option>
                                     </select>
-                                    <select name="" id="">
-                                            <option value=""></option>
-                                            <option value=""></option>
-                                            <option value=""></option>
+                                    <select name="chengs">
+                                        <option value>请选择城市</option>
+                                        <option value="11">长沙</option>
+                                        <option value="21">益阳</option>
                                     </select>
-                                    <select name="" id="">
-                                            <option value=""></option>
-                                            <option value=""></option>
-                                            <option value=""></option>
+                                    <select name="quxian">
+                                        <option value>请选择区县</option>
+                                        <option value="111">雨花区</option>
+                                        <option value="211">赫山区</option>
                                     </select>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="pt1-persona-table-td1"><span>*</span>详细地址：</td>
-                                <td><input type="text"></td>
+                                <td class="pt1-persona-table-td2">
+                                    <input type="text" class="pt1-persona-table-inputtext">
+                                </td>
                             </tr>
                             <tr>
                                 <td class="pt1-persona-table-td1">QQ：</td>
-                                <td><input type="text"></td>
+                                <td class="pt1-persona-table-td2">
+                                    <input type="text" class="pt1-persona-table-inputtext">
+                                </td>
                             </tr>
                             <tr>
-                                <td colspan="2" style="text-align:center">
+                                <td colspan="2" class="pt1-persona-table-an">
                                     <button>立即保存</button>
                                 </td>
                             </tr>
                         </table>
                     </div>
                 </div>
+            <!-- 账号安全 -->
+            <div></div>
             </div> <!--right-->
 
         </div>
