@@ -199,7 +199,7 @@
                         </div>
                     </div>
                 </div>    
-            <!-- 账号安全 -->
+            <!-- 账号安全  验证手机和邮箱图标需要跟换-->
                 <div class="pt1-personal">
                     <div class="pt1-personal1">安全设置</div>
                 </div>
@@ -212,7 +212,7 @@
                         <a href="#" class="pt1-safety-t4">修改</a>
                     </div>
                     <div class="pt1-safety-t1">
-                        <div class="pt1-safety-t1-img1">
+                        <div class="pt1-safety-t1-img1 pt1-safety-t1-img2">
                         </div>
                         <h3 class="pt1-safety-t2">验证手机</h3>   
                         <p class="pt1-safety-t3">您的手机还未验证</p>
@@ -226,17 +226,276 @@
                         <a href="#" class="pt1-safety-t4">修改</a>   
                     </div>
                 </div>
+            <!-- 收货地址-->
+                <div class="pt1-shipping-address">
+                    <div>
+                        <button class="pt1-shippingaddress-new">新增收货地址</button>
+                        <div class="pt1-shippingaddress-site">
+                            <ul>
+                                <li>
+                                    <div>
+                                        <h1>刘志祥 吉林<span>默认地址</span></h1>
+                                        <a href="#"><img src="Public/images/close.png" alt=""></a>    
+                                    </div>
+                                    <div>收货人：<span>刘志祥</span></div>
+                                    <div>所在地区：<span>吉林省辽源市西安区</span></div>
+                                    <div>地址：<span>大水坑一村</span></div>
+                                    <div>手机：<span>135****9898</span></div>
+                                    <div>固定电话：<span>45655595</span></div>
+                                    <div>
+                                        <p>电子邮箱：<span>38*****94@qq.com</span></p>
+                                        <span><a href="#">设为默认</a>
+                                              <!-- 点击设为默认.此处消失. 前面出现黄色默认地址 -->
+                                            <a href="#">编辑</a> </span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                            <table class="pt1-persona-table">
+                                    <tr>
+                                        <td class="pt1-persona-table-td1"><span>*</span>姓名：</td>
+                                        <td class="pt1-persona-table-td2">
+                                            <input type="text" class="pt1-persona-table-inputtext">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pt1-persona-table-td1"><span>*</span>所在地区：</td>
+                                        <td class="pt1-persona-table-td2">
+                                            <select name="shengf">
+                                                <option value>请选择省份</option>
+                                                <option value="1">湖南</option>
+                                                <option value="2">湖北</option>
+                                            </select>
+                                            <select name="chengs">
+                                                <option value>请选择城市</option>
+                                                <option value="11">长沙</option>
+                                                <option value="21">益阳</option>
+                                            </select>
+                                            <select name="quxian">
+                                                <option value>请选择区县</option>
+                                                <option value="111">雨花区</option>
+                                                <option value="211">赫山区</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pt1-persona-table-td1"><span>*</span>地址：</td>
+                                        <td class="pt1-persona-table-td2">
+                                            <input type="text" class="pt1-persona-table-inputtext"
+                                            style="width:400px;height:80px;">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pt1-persona-table-td1"><span>*</span>手机：</td>
+                                        <td class="pt1-persona-table-td2">
+                                            <input type="text" class="pt1-persona-table-inputtext">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pt1-persona-table-td1">固定电话：</td>
+                                        <td class="pt1-persona-table-td2">
+                                            <input type="text" class="pt1-persona-table-inputtext">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pt1-persona-table-td1">邮箱：</td>
+                                        <td class="pt1-persona-table-td2">
+                                            <input type="text" class="pt1-persona-table-inputtext">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" class="pt1-persona-table-an">
+                                            <button>保存</button>
+                                        </td>
+                                    </tr>
+                                </table>
+                    </div>
+                </div>
             <!-- 我的订单 -->
-                <div>
+                <div>                   
                     <div class="pt-myorder"> 
-                        <h3>我的订单</h3>
-                        <p>订单状态<input type="text"></p>
-                        <p>订单号<input type="text"></p>  
-                        <button>查询</button>
-                    </div>                 
-            	</div>
+                        <div>
+                            <h3 class="pt-myorder-title">我的订单</h3>
+                        </div>
+                        <div class="pt-myorder-2">
+                            <p><span class="pt-myorder-p2">订单状态</span>
+                                <select class="pt-myorder-select" name="ddzt" id="">
+                                    <option selected="selected">所有订单</option>  
+                                    <option value="0">待付款</option>  
+                                    <option value="1">待发货</option>  
+                                    <option value="2">待收货</option>  
+                                    <option value="3">已完成</option>  
+                                    <option value="4">已取消</option>  
+                                </select>
+                            </p>
+                            <p><span class="pt-myorder-p2">订单号</span><input  class="pt-myorder-text2" type="text"></p>  
+                            <button class="pt-myorder-cx">查询</button>
+                        </div>
+                    </div>  
+                    <hr>
+                    <div class="orderlist">
+                            <div class="orderlist">
+                                    <table class="orderlist-table">
+                                        <tr>
+                                            <th class="w-420">商品名称</th>
+                                            <th class="w-130">小计（元）</th>
+                                            <th class="w-130">订单总额</th>
+                                            <th class="w-130">交易状态</th>
+                                            <th class="w-130">交易操作</th>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>2</td>
+                                            <td>3</td>
+                                            <td>4</td>
+                                            <td>5</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>2</td>
+                                            <td>3</td>
+                                            <td>4</td>
+                                            <td>5</td>
+                                        </tr>
+                                    </table>
+                            </div>
+                    </div>             
+                </div>
+            <!-- 我的退换货 -->
+                <div class="pt1-salesreturn-bg">
+                    <div class="pt1-personal1">我的退换货</div>
+                    <div class="pt1-salesreturn"> 
+                        <div></div>
+                        <div class="pt-myorder-2">
+                            <p><span class="pt-myorder-p2">订单状态</span>
+                                <select class="pt-myorder-select" name="ddzt" id="">
+                                    <option selected="selected">所有订单</option>  
+                                    <option value="0">待确认</option>  
+                                    <option value="1">处理中</option>  
+                                    <option value="2">已完成</option>  
+                                </select>
+                            </p>
+                            <p><span class="pt-myorder-p2">订单号</span><input  class="pt-myorder-text2" type="text"></p>  
+                            <button class="pt-myorder-cx">查询</button>
+                        </div>
+                    </div>
+                    <table class="pt1-salesreturn-tablebg">					
+                        <tr>
+                            <th >商品</th>
+                            <th >数量</th>
+                            <th >订单金额</th>
+                            <th >审核状态</th>
+                            <th >卖家确认</th>
+                            <th >交易操作</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                    </table>
+                </div>
+            <!-- 我的评价evaluate  -->
+                <div class="pt1-evaluate">
+                    <div class="pt1-personal1">我的评价</div>
+                    <table class="pt1-evaluate-table">
+                        <tr>
+                            <th class="w-355">商品名称</th>
+                            <th class="w-80">评论等级</th>
+                            <th class="w-255">心得</th>
+                            <th class="w-265">晒图</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                    </table>
+                </div>
+            <!-- 收藏的商品 -->
+                <div>
+                    <div class="pt1-personal1">收藏的商品</div>
+                    <div class="collect">
+                        <ul>
+                            <li >
+                                <a href="#">
+                                    <img src="Public/images/1554879131.jpg" alt=""/><h3 class="font333">Jumper/中柏 EZpad 7 128G平板电脑二合一</h3>
+                                    <p class="font999">销量：464 <span class="right">评价：0</span></p>
+                                    <p class="font-f90">1209.00元</p>
+                                </a>
+                             </li>
+                             <li >
+                                    <a href="#">
+                                        <img src="Public/images/1554879131.jpg" alt=""/><h3 class="font333">Jumper/中柏 EZpad 7 128G平板电脑二合一</h3>
+                                        <p class="font999">销量：464 <span class="right">评价：0</span></p>
+                                        <p class="font-f90">1209.00元</p>
+                                    </a>
+                            </li>
+                            <li >
+                                    <a href="#">
+                                        <img src="Public/images/1554879131.jpg" alt=""/><h3 class="font333">Jumper/中柏 EZpad 7 128G平板电脑二合一</h3>
+                                        <p class="font999">销量：464 <span class="right">评价：0</span></p>
+                                        <p class="font-f90">1209.00元</p>
+                                    </a>
+                            </li>
+                            <li >
+                                    <a href="#">
+                                        <img src="Public/images/1554879131.jpg" alt=""/><h3 class="font333">Jumper/中柏 EZpad 7 128G平板电脑二合一</h3>
+                                        <p class="font999">销量：464 <span class="right">评价：0</span></p>
+                                        <p class="font-f90">1209.00元</p>
+                                    </a>
+                            </li>
+                            <li >
+                                    <a href="#">
+                                        <img src="Public/images/1554879131.jpg" alt=""/><h3 class="font333">Jumper/中柏 EZpad 7 128G平板电脑二合一</h3>
+                                        <p class="font999">销量：464 <span class="right">评价：0</span></p>
+                                        <p class="font-f90">1209.00元</p>
+                                    </a>
+                            </li>
+                            <li >
+                                    <a href="#">
+                                        <img src="Public/images/1554879131.jpg" alt=""/><h3 class="font333">Jumper/中柏 EZpad 7 128G平板电脑二合一</h3>
+                                        <p class="font999">销量：464 <span class="right">评价：0</span></p>
+                                        <p class="font-f90">1209.00元</p>
+                                    </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            <!-- 浏览历史 -->
+                <div class="pt1-browsinghistory">
+                    <div class="pt1-personal1">浏览历史</div>
+                    <div>
+                        <h1>今天<i>2019-01-01</i> 
+                        <a href="#">删除</a>
+                        </h1>
+                        <ul class="pt1-browsinghistory-ul">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div>昨天删除</div>
+                    <div>前天2019-01-01删除</div>
+                    <div>
+                       <h1>更早之前
+                        <a href="#">删除</a>
+                       </h1>
+                    <p>
+                        已到最后，
+                        只保存最近 1 个月的浏览记录</p> 
+                    </div>              
+                </div>
             </div> <!--right-->
-
         </div>
     </div>
 </body>
