@@ -625,9 +625,9 @@ a.pt1-aa{color:#0061ae}
 		  width:220px;
 			background: #ffffff;}
 .pt2-left>h1{background:#0061ae;
-			 height:42px;
-			 line-height: 42px;
+			 height:42px;			 
 			 font:18px '微软雅黑';
+			 line-height: 42px;
 			 text-indent:40px;		 
 			}
 .pt2-left>h1>a{color:#fff;
@@ -730,13 +730,14 @@ background: #ffffff;}
 .pt1-persona-table-td2{text-align: left;
 						height:35px;	
 						line-height: 35px;}	
-.pt1-persona-table-td2	select{outline: 0}												
+.pt1-persona-table-td2	select{outline: 0}		
+/*/*//*/*//*/*/										
 .pt1-persona-table-inputtext{width: 350px;
 							border: 1px solid #ccc;
 							line-height: 20px;
 							padding: 6px 0px;
 							text-indent: 5px;
-							font:12px "宋体";
+							font:12px "宋体";/*wenti*/
 							color:#666;
 							outline: 0px;}
 .pt1-persona-table select{width:120px;
@@ -858,7 +859,7 @@ background: #ffffff;}
 				color:#fff;
 				cursor: pointer;
 				border: 0;outline: 0;
-				font:15px "宋体";
+				font:15px "宋体";/*wenti*/
 				margin-top:8px;}
 /*我的退换货*/
 .pt1-salesreturn-bg{background:#f9f9f9;
@@ -897,9 +898,10 @@ background: #ffffff;}
 .collect ul>li{width:230px;margin-left:13px;}
 .collect ul:after{content:"";display:block;clear:both;} 
 /*浏览历史*/
-.pt1-browsinghistory>div:not(:first-child){padding:15px 0;
-										  margin: 10px;
-										  border:1px solid red}
+.pt1-browsinghistory{margin-bottom:35px;}
+.pt1-browsinghistory>div:not(:first-child){padding:15px 0;       
+										  margin-bottom:10px;
+										  }
 .pt1-browsinghistory h1{height: 40px;
 						margin-bottom:10px;
 						line-height:40px;
@@ -915,14 +917,24 @@ background: #ffffff;}
 						padding-left:16px;
 						}
 .pt1-browsinghistory p{text-align: center}
-.pt1-browsinghistory-ul{display:flex;
-						flex-wrap:wrap}
-.pt1-browsinghistory-ul>li{width:234px;height:235px;
+.pt1-browsinghistory-ul{width:980px;margin-left:-10px; }/*浏览商品图片排版*/
+.pt1-browsinghistory-ul>li{width:230px;height:235px;
 							padding:15px 0;
-							margin-bottom:20px;}						
-.pt1-browsinghistory-ul>li:hover{border:1px solid #0061ae}					
-					
-										  
+							margin-bottom:20px;
+							float: left;
+							margin-left:10px;
+							border:1px solid transparent;
+						}						
+.pt1-browsinghistory-ul>li>div>a>img,.pt1-browsinghistory-ul>li>div{width:200px;height:200px;
+									}								
+.pt1-browsinghistory-ul>li>p{height: 35px;
+							line-height:35px;
+							text-align: center;
+							color: #333;
+							font-size:18px ;
+							font-family: "微软雅黑";}				
+.pt1-browsinghistory-ul:after{content:"";display:block;clear:both;}									
+.pt1-browsinghistory-ul>li:hover{border:1px solid #0061ae}													  
 /*reg*/
 .loginz>.height{line-height: 30px}
 .reg-verift{width:80px;
