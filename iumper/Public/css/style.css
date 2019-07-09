@@ -730,14 +730,13 @@ background: #ffffff;}
 .pt1-persona-table-td2{text-align: left;
 						height:35px;	
 						line-height: 35px;}	
-.pt1-persona-table-td2	select{outline: 0}		
-/*/*//*/*//*/*/										
+.pt1-persona-table-td2	select{outline: 0}											
 .pt1-persona-table-inputtext{width: 350px;
 							border: 1px solid #ccc;
+							font:12px "宋体";
 							line-height: 20px;
 							padding: 6px 0px;
 							text-indent: 5px;
-							font:12px "宋体";/*wenti*/
 							color:#666;
 							outline: 0px;}
 .pt1-persona-table select{width:120px;
@@ -854,12 +853,12 @@ background: #ffffff;}
 .pt-myorder-select{width:120px;
 				  height: 30px;}		 
 .pt-myorder-cx{background:#0061ae;
-				width:55px;height:30px;
-				line-height: 30px;
+				width:55px;height:30px;				
 				color:#fff;
 				cursor: pointer;
 				border: 0;outline: 0;
-				font:15px "宋体";/*wenti*/
+				font:15px "宋体";
+				line-height: 30px;
 				margin-top:8px;}
 /*我的退换货*/
 .pt1-salesreturn-bg{background:#f9f9f9;
@@ -924,17 +923,22 @@ background: #ffffff;}
 							float: left;
 							margin-left:10px;
 							border:1px solid transparent;
+							position: relative;
 						}						
 .pt1-browsinghistory-ul>li>div>a>img,.pt1-browsinghistory-ul>li>div{width:200px;height:200px;
 									}								
 .pt1-browsinghistory-ul>li>p{height: 35px;
-							line-height:35px;
 							text-align: center;
 							color: #333;
-							font-size:18px ;
-							font-family: "微软雅黑";}				
+							font:18px "微软雅黑";
+							line-height:35px;}
+.pt1-browsinghistory-ul>li>a span{display: block;
+								width:35px;height:35px;
+								background: url(../images/p-del.png);
+								position: absolute;
+								top:0;right:0;}								
 .pt1-browsinghistory-ul:after{content:"";display:block;clear:both;}									
-.pt1-browsinghistory-ul>li:hover{border:1px solid #0061ae}													  
+.pt1-browsinghistory-ul>li:hover{border:1px solid #0061ae}											  
 /*reg*/
 .loginz>.height{line-height: 30px}
 .reg-verift{width:80px;
