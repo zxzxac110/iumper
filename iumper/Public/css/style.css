@@ -16,6 +16,11 @@ table,th,td{font:12px '宋体';
 a{text-decoration:none;}/*去除下划线*/
 ul{list-style:none;}/*去除小黑点*/
 i{font-style:normal;}
+.text-left{text-align:left !important}
+.text-right{text-align:right !important}
+.text-center{text-align:center !important}
+.flex{display:flex !important}
+/*index*/
 .main{width:1200px;margin:0 auto;}        /*容器  居中*/
 .font333{font:14px "微软雅黑";
 	color:#333; }
@@ -925,8 +930,9 @@ background: #ffffff;}
 							border:1px solid transparent;
 							position: relative;
 						}						
-.pt1-browsinghistory-ul>li>div>a>img,.pt1-browsinghistory-ul>li>div{width:200px;height:200px;
-									}								
+.pt1-browsinghistory-ul>li>div>a>img,
+.pt1-browsinghistory-ul>li>div{width:200px;height:200px;
+}								
 .pt1-browsinghistory-ul>li>p{height: 35px;
 							text-align: center;
 							color: #333;
@@ -953,5 +959,68 @@ background: #ffffff;}
 							 margin-left:6px;
 							 line-height:65px;}	
 .reg-imglocated	{margin-left:10px;}						 	
+/*shoppingcart.*/
+.shopping-flow{margin-bottom:20px;
+				text-align:right;
+				margin-bottom:20px;}
+		/*shopping流程*/
+.shopping-flow ul{display: flex;
+				justify-content:flex-end}
+.shopping-flow ul>li{width:120px;height:50px;}			
+.shopping-flow ul li h1{color: #fff;
+						text-align: center;
+						font:12px "宋体";
+						line-height: 30px;
+						background: url(../images/xd02.png) no-repeat center center;}	
+.shopping-flow ul li p{margin-top:6px;
+						text-align: center;}	
+						/*流程已完成黄色圈*/							
+.shopping-flowgoing h1{ background: url(../images/xd01.png) no-repeat center center !important}
+.shopping-flowgoing	p{color: #ff9200 !important}
+						/*黄色箭头*/							
+.shopping-arrows{background: url(../images/xd04.png) no-repeat left center !important}
+						/*灰色箭头*/
+.shopping-noarrows{background: url(../images/xd05.png) no-repeat left center }
+.shoppingcart-div{margin-bottom:20px}
+.shoppingcart-table{border-collapse:collapse}
+.shoppingcart-table th{background:#1488e4;
+						height:42px;
+						color: #fff;
+						font-size: 14px;}
+					/*表格所有td*/	
+.shoppingcart-table td{height:133px;
+					   background:#fff;
+					   text-align: center;
+					   font-family:"微软雅黑"}	
+			/*各种宽度*/					
+.w-53{width:53px}
+.w-373{width:373px}
+.w-153{width:153px}
+.w-156{width:156px}
+.shoppingcart-tfoot>td{background:#f5f5f5;
+						height:50px;
+					    }
+.shoppingcart-table tbody{border:1px solid #ededec}
+	/*点击事件*/
+.shoppingcart-tfootdeldct{font-size: 14px;
+							color: #444;
+							cursor: pointer;}
+.shoppingcart-table tbody td + td{border-left:1px dashed #ededec}
+.shoppingcart-table tbody td{font-size: 14px;}					
+.shoppingcart-table tbody td a{color:#666}
+.shoppingcart-table tbody td img{width:92px;height:92px;}					
+							/*结算按钮*/						
+.shoppingcart-tfoot-button{background: #fc1818;
+							color:#fff;
+							width:134px;height:50px;
+							border:0;outline: 0;
+							margin-left: 60px;
+							font-size: 18px;
+							padding: 0;
+    						font-weight:500;}
+.shoppingcart-tfoot-total{display: inline-block;
+							font-size: 16px;
+							color: #333}
+.shoppingcart-tfoot-total>span{color:#f00}
 
 
