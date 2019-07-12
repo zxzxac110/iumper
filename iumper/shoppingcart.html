@@ -73,11 +73,11 @@
                         </td>
                         <td>
                             <div>
-                                <img src="Public/images/jj1.png" alt="">
+                                <img src="Public/images/jj1.png" >
                             </div>
                             <input type="text" value="1">
                             <div>
-                                <img src="Public/images/jj0S.png" alt="">
+                                <img src="Public/images/jj0S.png" class="imgadd">
                             </div>
                         </td>
                         <td>￥1250.00</td>
@@ -110,11 +110,11 @@
                             </td>
                             <td>
                                 <div>
-                                    <img src="Public/images/jj1.png" alt="">
+                                    <img src="Public/images/jj1.png" >
                                 </div>
-                                <input type="text" value="1">
+                                <input type="text" value="2">
                                 <div>
-                                    <img src="Public/images/jj0S.png" alt="">
+                                    <img src="Public/images/jj0S.png" class="imgadd">
                                 </div>
                             </td>
                             <td>￥1250.00</td>
@@ -143,7 +143,36 @@
         </div>
     </div>
     <script>
-        
+        (function(){
+//输入数值为\d事件
+       var AdSutinput=document.querySelectorAll(".shoppingcart-table>tbody>tr>td:nth-child(5)>input")
+       for(var i of AdSutinput){
+           i.onblur=function(){
+               var i=this
+               console.log(typeof i.value)
+               if(i.value.search(/^\d+$/i)==-1){
+                   i.value="1"
+               }
+           }         
+       } 
+//购买数量加减事件       
+       var AddSubtract=document.querySelectorAll(".shoppingcart-table>tbody>tr>td:nth-child(5)>div>img") 
+        for(var i of AddSubtract){
+        i.onclick=function(){
+            var i=this;
+//执行数量加减操作
+            if(i.className=="imgadd"){              
+              var add=i.parentElement.previousElementSibling ;
+                    add.value++
+            }else{
+              var add=i.parentElement.nextElementSibling;
+              if(add.value>1){
+                    add.value--}
+            }
+        }
+       }
+
+    })()
     </script>
 </body>
 </html>
