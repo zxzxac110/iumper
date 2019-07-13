@@ -13,7 +13,8 @@ div, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, p, img, form, input {
 table,th,td{font:12px '宋体';
     		font-style: normal;
     		font-weight: normal;}
-a{text-decoration:none;}/*去除下划线*/
+a{text-decoration:none;
+	cursor: pointer;}/*去除下划线*/
 ul{list-style:none;}/*去除小黑点*/
 i{font-style:normal;}
 .text-left{text-align:left !important}
