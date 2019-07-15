@@ -274,12 +274,14 @@ i{font-style:normal;}
  				}
 /*bottom*/
 /*bottom-1*/
- .bottom{margin-top:60px;
+ .bottom{width:100%;
+	     margin-top:60px;
 		 padding:5px 0 10px;
-		 box-sizing: content-box;}
+		 box-sizing: content-box;
+		 background:#f3f3f3}
  .bottom-1 ul{display:flex;
 			  justify-content:center;}
- .bottom-1 li>img{width:300px;height:110px;
+ .bottom-1 li>img{width:300px;height:120px;
  }
 /*bottom-2*/
  .bottom-2{width:1200px;height:175px;
@@ -298,7 +300,9 @@ i{font-style:normal;}
  .bottom-2-1 ul li a{font:12px 宋体;color:#999;}
  .bottom-2-2{width:330px;height:175px;
 			float:left;
-			text-align:right;}
+			text-align:right;
+			position: relative;
+		}	
  .bottom-2-2 h1{font:23px 微软雅黑;
 				color:#ff9200;
 				margin-bottom:6px;}
@@ -308,12 +312,16 @@ i{font-style:normal;}
 				background:url(../images/kf.jpg) no-repeat;
 				margin-top:15px;}
 /*dl功能未实现*/
- .bottom-2-2 dl{width:135px;height:23px;
+ .bottom-2-2 dl{width:135px;height:28px;
 				margin-top:15px;
 				color:#999;
 				background:url(../images/link.png) no-repeat;
 				float:right;
 				cursor: pointer;}
+.bottom-2-2>img{position: absolute;
+					right:-60px;}
+.bottom-2-2>div{position: absolute;
+			right:0px;}				
 /*bottom-3*/
  .bottom-3{width:1200px;height:45px;
 		 margin:auto;}

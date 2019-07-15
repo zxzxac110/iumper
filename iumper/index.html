@@ -324,9 +324,11 @@
 					</ul>
 				</div>
 				<div class="bottom-2-2">
+				<img src="/Public/images/map.png" alt="">
+				<div>
 				<h1>4008333331</h1>
 				<p>客服服务（工作日9:00-18:00）</p>
-				<p><a href=""></a></p>
+				<p><a href="#"></a></p>
 				<dl>
 					<dt>
 					</dt>
@@ -340,6 +342,7 @@
 					</dd>
 -->
 				</dl>
+			    </div>
 				</div>
 			</div>
 			<div class="bottom-3">
@@ -359,10 +362,12 @@
 	  nab.onmouseover=function(){
 		  var nab=this;
 		  var q
+		  //类数组对象。不能用数组家的函数
 		  for(i=0;i<nabs.length;i++){
 			  if(nabs[i]==nab){
 				  q=i
 				  i=nabs.length;
+				  console.log(i)
 			  }
 		  }
 		  for(var nav of navs){
@@ -371,7 +376,6 @@
 		  if(q==0){navs[q].style.width="430px"
 		  }else{
 		 navs[q].style.width="215px"
-		 console.log(5)
 		 }
 	  }
   }
