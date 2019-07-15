@@ -56,17 +56,53 @@
 	<!-- banner  未完成 -->
 		<div class="banner">
 			<div>
-				<ul>
-					<li>
+				<div class="banner-divflex">
+					<ul class="banner-nav">
+						<li id="navs1">
 						<a href="#">平板电脑</a>
-					</li>
-					<li>
-					<a href="">笔记本电脑</a>
-					</li>
-					<li>
-					<a href="">电脑配件</a>
-					</li>
-				</ul>
+						</li>
+						<li id="navs2">
+						<a href="#">笔记本电脑</a>
+						</li>
+						<li id="navs3">
+						<a href="#">电脑配件</a>
+						</li>
+					</ul>
+					<div id="nabs1" class="banner-divflex">
+						<ul class="banner-nab">
+							<li><a href="#">Jumper/中柏 EZpad 6s pro（增强版）</a></li>
+							<li><a href="#">Jumper/中柏 EZpad 7 32G平板电脑二合一</a></li>
+							<li><a href="#">Jumper/中柏 EZpad 7 128G平板电脑二合一</a></li>
+							<li><a href="#">Jumper/中柏EZpad Go 64G平板电脑二合一</a></li>
+							<li><a href="#">Jumper/中柏 EZpad 6 pro</a></li>
+							<li><a href="#">Jumper/中柏EZpad mini5</a></li>
+						</ul>
+						<ul class="banner-nab">
+							<li><a href="#">Jumper/中柏EZpad Go 128G平板电脑二合一</a></li>
+							<li><a href="#">Jumper/中柏 EZpad 6s Pro  </a></li>
+							<li><a href="#">Jumper/中柏 EZpad M3 </a></li>
+							<li><a href="#">Jumper/中柏 EZpad 7S </a></li>
+							<li><a href="#">Jumper/中柏 EZpad 7 64G</a></li>
+							<li><a href="#">jumper/中柏 EZpad M5平板</a></li>
+						</ul>
+					</div>
+					<div id="nabs2" class="banner-divflex">
+						<ul class="banner-nab">	      
+							<li><a href="#">Jumper/中柏 EZBOOK 2 4G</a></li>
+							<li><a href="#">Jumper/中柏 EZbook 3 plus</a></li>
+							<li><a href="#">Jumper/中柏 EZbook 2 128G笔记本电脑</a></li>
+							<li><a href="#">Jumper/中柏ezbook S4笔记本电脑</a></li>		
+						</ul>
+					</div>
+					<div id="nabs3" class="banner-divflex">
+						<ul class="banner-nab">
+							<li><a href="#">中柏EZpad 6 Pro/EZpad 6s Pro原装转轴硬键盘</a></li>
+							<li><a href="#"> Jumper/中柏EZpad Go平板电脑原装正品磁吸式键盘 </a></li>
+							<li><a href="#">Jumper/中柏 EZpad 7S原装磁吸键盘/保护套</a></li>
+							<li><a href="#">Jumper/中柏 EZpad 7 原装键盘</a></li>   
+						</ul>
+					</div>
+				</div>
 			</div>
 		</div>
     <!-- center  -->
@@ -314,61 +350,31 @@
 			</div>
 		</div>
  </body>
- <script>
-	var navs=document.querySelector(".banner>div>ul")
-	console.log(navs)
- </script>
+  <script>
+/*标题导航栏*/
+  var nabs=document.querySelectorAll(".banner-nav>li")
+  var navs=document.querySelectorAll(".banner-divflex>.banner-divflex")
+  /*移入*/
+  for(var nab of nabs){
+	  nab.onmouseover=function(){
+		  var nab=this;
+		  var q
+		  for(i=0;i<nabs.length;i++){
+			  if(nabs[i]==nab){
+				  q=i
+				  i=nabs.length;
+			  }
+		  }
+		  for(var nav of navs){
+			  nav.style.width="0px";
+		  }
+		  if(q==0){navs[q].style.width="430px"
+		  }else{
+		 navs[q].style.width="215px"
+		 console.log(5)
+		 }
+	  }
+  }
+/**/
+  </script>
 </html>
-<!--  -->
-<!-- center  
-Jumper/中柏EZpad Go 64G平板电脑二合一
-销量：84评价：1501749.00元 
-Jumper/中柏 EZpad 6s pro（增强版）
-销量：67评价：1501850.00元 
-Jumper/中柏ezbook S4笔记本电脑
-销量：66评价：1501499.00元 
-Jumper/中柏EZpad mini5
-销量：236评价：150699.00元 
-jumper/中柏 EZpad M5平板电脑安卓
-销量：126评价：150889.00元 
-Jumper/中柏 EZpad 7 原装键盘
-销量：145评价：150149.00元 
-Jumper/中柏 EZpad 7 64G
-销量：211评价：150989.00元 
-Jumper/中柏 EZpad 7S原装磁吸键盘/保护套
-销量：127评价：150199.00元 
-Jumper/中柏 EZpad 7S
-销量：57评价：1501399.00元 
-中柏EZpad 6 Pro/EZpad 6s Pro原装转轴硬键盘
-销量：501评价：150179.00元 
-Jumper/中柏 EZpad 7 128G平板电脑二合一
-销量：464评价：1501209.00元 
-Jumper/中柏 EZpad 7 32G平板电脑二合一
-销量：76评价：150899.00元 
-Jumper/中柏 EZbook 2 128G笔记本电脑
-销量：166评价：1501539.00元 
-Jumper/中柏EZpad Go平板电脑原装正品磁吸式键盘
-销量：119评价：150249.00元 
-Jumper/中柏EZpad Go 128G平板电脑二合一
-销量：97评价：1501949.00元 
-Jumper/中柏EZpad Go 64G平板电脑二合一
-销量：84评价：1501749.00元 
-Jumper/中柏 EZpad 6s pro（增强版）
-销量：67评价：1501850.00元 
-Jumper/中柏ezbook S4笔记本电脑
-销量：66评价：1501499.00元 
-Jumper/中柏EZpad mini5
-销量：236评价：150699.00元 
-jumper/中柏 EZpad M5平板电脑安卓
-销量：126评价：150889.00元 
-Jumper/中柏 EZpad 7 原装键盘
-销量：145评价：150149.00元 
-Jumper/中柏 EZpad 7 64G
-销量：211评价：150989.00元 
-Jumper/中柏 EZpad 7S原装磁吸键盘/保护套
-销量：127评价：150199.00元 
-Jumper/中柏 EZpad 7S
-销量：57评价：1501399.00元 
-中柏EZpad 6 Pro/EZpad 6s Pro原装转轴硬键盘
-销量：501评价：150179.00元
-！-->

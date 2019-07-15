@@ -161,21 +161,49 @@
                                 <tr>
                                     <td class="pt1-persona-table-td1"><span>*</span>地区：</td>
                                     <td class="pt1-persona-table-td2">
-                                        <select name="shengf">
-                                            <option value>请选择省份</option>
-                                            <option value="1">湖南</option>
-                                            <option value="2">湖北</option>
-                                        </select>
-                                        <select name="chengs">
-                                            <option value>请选择城市</option>
-                                            <option value="11">长沙</option>
-                                            <option value="21">益阳</option>
-                                        </select>
-                                        <select name="quxian">
-                                            <option value>请选择区县</option>
-                                            <option value="111">雨花区</option>
-                                            <option value="211">赫山区</option>
-                                        </select>
+                                            <select name="shengf">
+                                                <option value>请选择省份</option>
+                                                <option value="2">北京</option>
+                                                <option value="3">安徽</option>
+                                                <option value="4">福建</option>
+                                                <option value="5">甘肃</option>
+                                                <option value="6">广东</option>
+                                                <option value="7">广西</option>
+                                                <option value="8">贵州</option>
+                                                <option value="9">海南</option>
+                                                <option value="10">河北</option>
+                                                <option value="11">河南</option>
+                                                <option value="12">黑龙江</option>
+                                                <option value="13">湖北</option>
+                                                <option value="14">湖南</option>
+                                                <option value="15">吉林</option>
+                                                <option value="16">江苏</option>
+                                                <option value="17">江西</option>
+                                                <option value="18">辽宁</option>
+                                                <option value="19">内蒙古</option>
+                                                <option value="20">宁夏</option>
+                                                <option value="21">青海</option>
+                                                <option value="22">山东</option>
+                                                <option value="23">山西</option>
+                                                <option value="24">陕西</option>
+                                                <option value="25">上海</option>
+                                                <option value="26">四川</option>
+                                                <option value="27">天津</option>
+                                                <option value="28">西藏</option>
+                                                <option value="29">新疆</option>
+                                                <option value="30">云南</option>
+                                                <option value="31">浙江</option>
+                                                <option value="32">重庆</option>
+                                                <option value="33">香港</option>
+                                                <option value="34">澳门</option>
+                                                <option value="35">台湾</option>
+                                            </select>
+                                            <select name="chengs">
+                                                    <option value>请选择城市</option>
+                                            </select>
+                                            <select name="quxian">
+                                                    <option value>请选择区县</option>
+                                            </select>
                                     </td>
                                 </tr>
                                 <tr>
@@ -296,20 +324,15 @@
                                                 <option value="30">云南</option>
                                                 <option value="31">浙江</option>
                                                 <option value="32">重庆</option>
-                                                <option value="33">重庆</option>
-                                                <option value="34">香港</option>
-                                                <option value="35">澳门</option>
-                                                <option value="36">台湾</option>
-                                             </select>
+                                                <option value="33">香港</option>
+                                                <option value="34">澳门</option>
+                                                <option value="35">台湾</option>
+                                            </select>
                                             <select name="chengs">
-                                                <option value>请选择城市</option>
-                                                <option value="11">长沙</option>
-                                                <option value="21">益阳</option>
+                                                    <option value>请选择城市</option>
                                             </select>
                                             <select name="quxian">
-                                                <option value>请选择区县</option>
-                                                <option value="111">雨花区</option>
-                                                <option value="211">赫山区</option>
+                                                    <option value>请选择区县</option>
                                             </select>
                                         </td>
                                     </tr>
@@ -625,6 +648,74 @@
             </div> <!--right-->
         </div>
     </div>
-    
+    <script>
+/*城市下拉列表*/
+        var csarr=[
+      [{"name":'东城区',"value":101},
+       {"name":'西城区',"value":102},
+       {"name":'海淀区',"value":103},
+       {"name":'朝阳区',"value":104}],
+      [{"name":'河东区',"value":201},
+       {"name":'河西区',"value":202},
+       {"name":'南开区',"value":303}],
+      [{"name":'石家庄市',"value":301},
+       {"name":'廊坊市',"value":302},
+       {"name":'保定市',"value":303},
+       {"name":'唐山市',"value":304},
+       {"name":'秦皇岛市',"value":304}]
+	  ]
+        var qxarr=[
+      [{"name":'东城区',"value":101},
+       {"name":'西城区',"value":102},
+       {"name":'海淀区',"value":103},
+       {"name":'朝阳区',"value":104}],
+      [{"name":'河东区',"value":201},
+       {"name":'河西区',"value":202},
+       {"name":'南开区',"value":303}],
+      [{"name":'石家庄市',"value":301},
+       {"name":'廊坊市',"value":302},
+       {"name":'保定市',"value":303},
+       {"name":'唐山市',"value":304},
+       {"name":'秦皇岛市',"value":304}]
+	]
+    /*省份。城市，区县*/
+        var shengf=document.getElementsByName("shengf")[0];
+        var chengs=document.getElementsByName("chengs")[0];
+        var quxian=document.getElementsByName("quxian")[0];
+ /*省份改变事件.出现城市*/       
+        shengf.onchange=function(){
+            var i=this.selectedIndex;
+            chengs.innerHTML="<option value>请选择城市</option>"; 
+            quxian.innerHTML="<option value>请选择区县</option>";
+            if(i>0){
+                /*得到所对应的的城市名，区县*/
+               var csobj=csarr[i-1];
+               var frag=document.createDocumentFragment();
+               for(var c of csobj){
+               var option=document.createElement("option");
+                   option.innerHTML=c.name;
+                   option.value=c.value;
+                   frag.appendChild(option)
+                }
+                chengs.appendChild(frag);
+            }
+        }
+/*城市名改变事件。出现区县*/ 
+        chengs.onchange=function(){
+            var i=this.selectedIndex;
+            quxian.innerHTML="<option value>请选择区县</option>";
+            if(i>0){
+               var qxobj=qxarr[i-1];
+               var frag=document.createDocumentFragment();
+               for (var q of qxobj){
+               var option=document.createElement("option");
+                   option.innerHTML=q.name;
+                   option.value=q.value;
+                   frag.appendChild(option)
+                }
+                quxian.appendChild(frag);   
+               }
+            }       
+    </script>
 </body>
 </html>

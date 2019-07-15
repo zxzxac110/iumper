@@ -101,25 +101,46 @@ i{font-style:normal;}
 		width:55px;height:33px;
 		float:left;		
 		}
-/*标题*/
+/*标题导航栏*/
 .banner{width:1200px;height:450px;
 		margin:0 auto;
 		background:url(../images/1559701588.jpg)}
-/*下面功能为实现*/
-.banner>div{width:240px;height:450px;
-			
+.banner>div{height:450px;
+			display:inline-block;
 			background:url(../images/bg01.png)}
-.banner>div>ul>li{
-				 font:16px 微软雅黑;
+.banner-divflex{display: flex}			
+.banner-nav>li{font:16px 微软雅黑;
 				 padding:15px 0;}
-.banner>div>ul>li>a{width:210px;height:45px;
+.banner-nav>li>a:hover{background:#ff9200}
+.banner-nav>li>a{width:210px;height:45px;
 					display:inline-block;
 					color:#fff;
 					padding:0 15px;
-					line-height:45px;}
-.banner>div>ul>li>a{background:url(../images/jj.png) no-repeat 204px 9px;
+					line-height:45px;
+					background:url(../images/jj.png) no-repeat 204px 9px;
 						}
-/*上面功能为实现*/
+/*标题导航项*/
+.banner-nab{background:#fff;
+			height:430px;
+			padding-top:20px;
+
+}
+.banner-nab>li{margin:10px 0;
+				width:170px;
+				padding-left:45px;
+			   }
+.banner-nab>li a{
+				display:inline-block;
+				width:170px;
+				height:55px;
+				font:13px "微软雅黑";
+				color:#666;
+				line-height: 20px;}
+.banner-nab >li a:hover{color:#ffa000}
+.banner-divflex>.banner-divflex{overflow:hidden;
+								width:0px;}		
+	/*215.230*/
+			
 /*.center-1*/
 .center-1{width:1200px;height:165px;
 		 margin:15px auto 0;}
