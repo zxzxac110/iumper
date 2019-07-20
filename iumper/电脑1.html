@@ -10,59 +10,12 @@
     <link rel="stylesheet" type="text/css" href="Public/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="Public/css/style.css">
     <script src="Public/js/jquery.min.js"></script>
-    <script src="Public/js/popper.min.js"></script>
     <script src="Public/js/bootstrap.min.js"></script>
 </head>
 <body>
-<!--引用了boot-->
-<!-- top  -->
-    <div class="top">
-        <div class="top1">
-            <div class="main">
-                <div class="top1-too1">
-                    <span>您好，欢迎来到中柏电脑官方商城！</span>
-                </div>
-                <div class="top1-too2">
-                    <ul>
-                        <li><a href="#">个人中心</a></li>
-                        <li><a href="#">我的订单</a></li>
-                        <li class="cart-image">
-                            <a href="#" >购物车</a>
-                        </li>
-                        <li class="topuser-image">
-                            <a href="#" >登录</a><span>|</span><a href="#">注册</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="main">
-            <div class="top2">
-                <a href="#">
-                    <div class="logo1"></div>
-                </a>
-                <div>
-                    <ul>
-                        <li><a href="#">平板电脑</a></li>
-                        <li><a href="#">笔记本电脑</a></li>
-                        <li><a href="#">键盘及配件</a></li>
-                        <li><a href="#">配送及服务</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <form method="post" action="/home/search.html">
-                        <input type="text" class="top-text" placeholder="请输入关键词" name="Search" value="请输入关键词">
-                        <input type="submit" class="Search" value>
-                    </form>
-                </div>
-            </div><!-- top2 -->
-        </div><!-- mian  -->
-    </div>
-<!--body-->
-
     <div class="main">
       <div class="Computer-1">
-        <ul class=>
+        <ul >
             <li>您所在的位置：</li>
             <li><a class="font666" href="#">首页</a><span>&nbsp;>&nbsp;</span></li>
             <li><a class="font666" href="#">平板</a><span>&nbsp;>&nbsp;</span></li>
@@ -70,23 +23,33 @@
         </ul>
       </div>
       <div class="Computer-2">
-<!--效果未实现1 开口-->
+<!--商品详情图-->
         <div class="Computer-2-left ">
-            <div class="Computer-2-left1 tab-content ">
-                <img class="tab-pane active" src="Public/images/1554879131.jpg" alt=""/>
-                <img class="tab-pane" id="img1" src="Public/images/1554879144.jpg" alt=""/>
-                <img class="tab-pane" id="img2" src="Public/images/1554879171.jpg" alt=""/>
-                <img class="tab-pane" id="img3" src="Public/images/1554879190.jpg" alt=""/>
-                <img class="tab-pane" id="img4" src="Public/images/1554879235.jpg" alt=""/>
+            <div  id="div-mImg">
+                <img  src="Public/images/1554879131.jpg" alt=""/>
             </div>
-            <div class="Computer-2-left2 nav nav-tabs">
-                <img class="nav-link" data-toggle="tab" data-target="#img1" src="Public/images/1554879144.jpg" alt=""/>
-                <img class="nav-link" data-toggle="tab" data-target="#img2" src="Public/images/1554879171.jpg" alt=""/>
-                <img class="nav-link" data-toggle="tab" data-target="#img3" src="Public/images/1554879190.jpg" alt=""/>
-                <img class="nav-link" data-toggle="tab" data-target="#img4" src="Public/images/1554879235.jpg" alt=""/>
+            <ul id="ulsImg">
+                <li>
+                <img src="Public/images/1554879144.jpg" data-md="Public/images/1554879144.jpg" data-lg="Public/images/1554879144.jpg" alt=""/>
+                </li>
+                <li>
+                <img src="Public/images/1554879171.jpg" data-md="Public/images/1554879171.jpg" data-lg="Public/images/1554879171.jpg" alt=""/>
+                </li>
+                <li>
+                <img src="Public/images/1554879190.jpg" data-md="Public/images/1554879190.jpg" data-lg="Public/images/1554879190.jpg" alt=""/>
+                </li>
+                <li>
+                <img src="Public/images/1554879235.jpg" data-md="Public/images/1554879235.jpg" data-lg="Public/images/1554879235.jpg" alt=""/>
+                </li>
+            </ul>
+            <!-- 放大镜 -->
+            <div class="div-zoom d-none" id="div-zoom"></div>
+            <!-- 保护膜 -->
+            <div class="protectiveFilm" id="protectiveFilm"></div>
+            <!-- 大图视窗 -->
+            <div class="lgImg d-none" id="lgImg">
             </div>
         </div>
-<!-- 效果未实现1 闭口-->
         <div class="Computer-2-right">
             <h2 class="Computer-title">Jumper/中柏 EZpad 7 128G平板电脑二合一 win10平板电脑二合一</h2>
             <div class="fontE50">￥1209.00</div>
@@ -105,7 +68,8 @@
                 <img src="Public/images/jj1.png" alt=""/>
                 <input type="text" value="1" />
                 <img src="Public/images/jj0s.png" alt=""/>
-                <span class="font999">库 存：778</span></div>
+                <span class="font999">库 存：778</span>
+            </div>
             <div class="Computer-click"><a href="#" class="btn bg-primary" >立刻购买</a> <a href="#" class="btn bg-warning" >加入购物车</a> </div>
             <div class="Computer-collect">
                 <a href="#">
@@ -183,15 +147,14 @@
  <!-- Computer3-right-->
           <div class="Computer3-right">
               <div class="Computer3-right-1">
-                  <ul class="nav nav-tabs">
-                      <li class="nav-item"><a class="nav-link active " data-toggle="tab"  href="#commodity">商品详情</a></li>
-                      <li class="nav-item"><a class="nav-link" data-toggle="tab"  href="#parameter">参数规格</a></li>
-                      <li class="nav-item"><a class="nav-link" data-toggle="tab"  href="#comment">商品评论</a></li>
+                  <ul id="nav" class="nav nav-tabs">
+                      <li class="nav-item"><a data-toggle="down1" class="nav-link active ">商品详情</a></li>
+                      <li class="nav-item"><a data-toggle="down2" class="nav-link">参数规格</a></li>
+                      <li class="nav-item"><a data-toggle="down3" class="nav-link">商品评论</a></li>
                   </ul>
               </div>
               <div class="Computer3-right-2">
-                  <div class="tab-content">
-                  <div id="commodity" class="tab-pane active">
+                  <div   id="down1">
                       <img  src="Public/images/Ezpad7128_25553.jpg" alt=""/>
                       <img  src="Public/images/Ezpad7128_40242.jpg" alt=""/>
                       <img  src="Public/images/Ezpad7128_81065.jpg" alt=""/>
@@ -209,123 +172,107 @@
                       <img  src="Public/images/Ezpad7128_67436.jpg" alt=""/>
                       <img  src="Public/images/Ezpad7128_83671.jpg" alt=""/>
                   </div>
-                  <div id="parameter" class="tab-pane">
+                  <div class="d-none" id="down2">
                       <img src="Public/images/Ezpad7128_44398.jpg" alt=""/>
                   </div>
-                  <div id="comment" class="tab-pane ">
+                  <div class="d-none" id="down3">
                       <div class="bg-h"></div>
                       <ul class="nav nav-tabs">
-                          <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#all-comment">全部(0)</a></li>
-                          <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#g-comment">好评(0)</a></li>
-                          <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#m-comment">中评(0</a></li>
-                          <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#b-comment">差评(0</a></li>
-                          <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#picture">图片(0)</a></li>
+                          <li class="nav-item"><a class="nav-link active" data-toggle="all-comment" >全部(0)</a></li>
+                          <li class="nav-item"><a class="nav-link" data-toggle="g-comment" >好评(0)</a></li>
+                          <li class="nav-item"><a class="nav-link" data-toggle="m-comment" >中评(0</a></li>
+                          <li class="nav-item"><a class="nav-link" data-toggle="b-comment" >差评(0</a></li>
+                          <li class="nav-item"><a class="nav-link" data-toggle="picture"  >图片(0)</a></li>
                       </ul>
-                      <div class="tab-content">
-                          <div id="all-comment" class="min-h bg-white mt-2 tab-pane active">全部评论</div>
-                          <div id="g-comment" class="min-h bg-white mt-2 tab-pane">好评</div>
-                          <div id="m-comment" class="min-h bg-white mt-2 tab-pane">中评</div>
-                          <div id="b-comment" class="min-h bg-white mt-2 tab-pane">差评</div>
-                          <div id="picture" class="min-h bg-white mt-2 tab-pane">图片</div>
+                      <div>
+                          <div id="all-comment" class="min-h bg-white mt-2">全部评论</div>
+                          <div id="g-comment" class="min-h bg-white mt-2 d-none">好评</div>
+                          <div id="m-comment" class="min-h bg-white mt-2 d-none">中评</div>
+                          <div id="b-comment" class="min-h bg-white mt-2 d-none">差评</div>
+                          <div id="picture" class="min-h bg-white mt-2 d-none">图片</div>
                      </div>
-                  </div>
                   </div>
               </div>
  <!-- Computer3-right-->
           </div>
       </div>
     </div>
-    <!--fixed 未完成-->
-    <div class="fixed">
-        <div class="fixed-1">
-                <img src="Public/images/k1.png" alt=""/>
-        </div>
-        <div class="fixed-2">
-                <img src="Public/images/k2.png" alt=""/>
-        </div>
-        <div class="fixed-3">
-            <a href="#">
-                <img src="Public/images/k3.png" alt=""/>
-            </a>
-        </div>
-        <div class="fixed-4">
-            <a href="#">
-                <img src="Public/images/k4s.png" alt=""/>
-            </a>
-        </div>
-    </div>
-    <!-- bottom  -->
-    <div class="bottom">
-        <div class="bottom-1">
-            <ul>
-                <li>
-                    <img src="Public/images/b1.png" alt="">
-                </li>
-                <li>
-                    <img src="Public/images/b2.png" alt="">
-                </li>
-                <li>
-                    <img src="Public/images/b3.png" alt="">
-                </li>
-                <li>
-                    <img src="Public/images/b4.png" alt="">
-                </li>
-            </ul>
-        </div>
-        <div class="bottom-2">
-            <div class="bottom-2-1">
-                <ul>
-                    <li>
-                        <h1>关于我们</h1>
-                        <p><a href="">公司简介</a></p>
-                        <p><a href="">联系我们</a></p>
-                        <p><a href="">新闻中心</a></p>
-                    </li>
-                    <li>
-                        <h1>会员中心</h1>
-                        <p><a href="">会员注册</a></p>
-                    </li>
-                    <li>
-                        <h1>新手指南</h1>
-                        <p><a href="">购买流程</a></p>
-                        <p><a href="">常见问题</a></p>
-                    </li>
-                    <li>
-                        <h1>配送方式</h1>
-                        <p><a href="">配送收费标准</a></p>
-                    </li>
-                    <li>
-                        <h1>售后服务</h1>
-                        <p><a href="">服务承诺</a></p>
-                        <p><a href="">退换货政策</a></p>
-                    </li>
-                </ul>
-            </div>
-            <div class="bottom-2-2">
-                <h1>4008333331</h1>
-                <p>客服服务（工作日9:00-18:00）</p>
-                <p><a href=""></a></p>
-                <dl>
-                    <dt>
-                    </dt>
-                    <!-- dl功能未实现	<dd>
-                                         <div>
-                                            <a href="#">中柏官网</a>
-                                            <a href="#">百度</a>
-                                            <a href="#">网联</a>
-                                            <a href="#">备案网站</a>
-                                         </div>
-                                        </dd>
-                    -->
-                </dl>
-            </div>
-        </div>
-        <div class="bottom-3">
-            <p>粤ICP备16086205号-1
-					<span>	技术支持： <a href="http://www.ni8.com/">网联科技</a>
-					</span>
-            </p>
-        </div>
-    </div>
+    <script src="Public/js/jquery-3.2.1.js"></script>
+    <script src="Public/js/datails.js"></script>
+    <script>
+/*商品详情图片*/
+        var $sImg=$("#ulsImg");
+        $mImg=$("#div-mImg>img");
+        $divZoom=$("#div-zoom");
+        $("#lgImg").css("background",`url(${$mImg.attr("src")})`)
+ /*小图移入移出*/
+    $sImg.on("mouseenter","img",function(){
+        $mImg.attr("src",$(this).attr("data-md"));
+        $("#lgImg").css("background",`url(${$(this).attr("data-lg")})`)
+    })
+    /*中图移入移出*/
+    $("#protectiveFilm").mouseenter(function(){
+        $divZoom.removeClass("d-none");
+        $("#lgImg").removeClass("d-none");
+    }).mouseleave(function(){
+        $divZoom.addClass("d-none");
+        $("#lgImg").addClass("d-none");
+    });
+    /*420 210*/
+    $("#protectiveFilm").mousemove(function(e){
+        var divZoomWidth=105;
+        var x=e.offsetX;
+        var y=e.offsetY;
+        var left=x-divZoomWidth;
+        var top=y-divZoomWidth;
+        if(left<0){left=0}else if(left>divZoomWidth*2){left=divZoomWidth*2}
+        if(top<0){top=0}else if(top>divZoomWidth*2){top=divZoomWidth*2}
+        /*  $divZoom.css({"left":`${left}px`,"top":`${top}px`}) */
+        $divZoom.css({left,top})
+        $("#lgImg").css("background-position",`${-left*38/21}px ${-top*38/21}px`)
+    }) 
+/*数量加减*/
+/*(function(){*/
+    var $quantity=$(".Computer-2-right>.Computer-quantity")
+    var $input=$quantity.children("input");
+    $quantity.on("click","img",function(){
+        var $img=$(this);
+        var i=$input.val();
+        console.log($img.attr("src")=="Public/images/jj1.png")
+        if($img.attr("src")=="Public/images/jj1.png"){
+            if($input.val()>1){
+            $input.val(--i)
+        }
+        }else{
+            if($input.val()<99){
+            $quantity.children("input").val(++i)
+        }
+        }
+    })
+    $input.change(function(){
+        if($input.val().search(/^\d{1,2}$/ig)==-1){$input.val(1)}
+    })
+/*})()*/
+/*商品详情参数*/
+    var $nav=$("#nav")
+    $nav.on("click","a",function(){         //点击事件
+        var $n=$(this)
+        //添加/删除 导航样式active,信息样式d-none
+        $("#nav a").removeClass("active")
+        $n.addClass("active")         
+        $(".Computer3-right-2>div").addClass("d-none");
+        $(`#${$n.attr("data-toggle")}`).removeClass("d-none")
+    })
+/*评论导航*/
+    var $down3=$("#down3");
+    $down3.on("click","li>a",function(){
+        var $d=$(this);
+        //添加/删除 导航样式active,信息样式d-none 
+        $("#down3 ul>li>a").removeClass("active");
+        $d.addClass("active");
+        $("#down3>div>div").addClass("d-none");
+        $(`#${$d.attr("data-toggle")}`).removeClass("d-none")
+    })
+    </script>
 </body>
 </html>

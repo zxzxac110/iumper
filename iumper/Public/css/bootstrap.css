@@ -2492,7 +2492,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 }
 
 .btn:not(:disabled):not(.disabled):active, .btn:not(:disabled):not(.disabled).active {
-  background-image: none;
+  background-image: none; 
 }
 
 a.btn.disabled,
@@ -8972,7 +8972,7 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
-/************intel ×Ô¶¨ÒåµÄÑùÊ½************/
+/************intel ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½************/
 .my-main {
   background: #0062a9;
   color: #fff;

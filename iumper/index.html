@@ -58,17 +58,17 @@
 			<div>
 				<div class="banner-divflex">
 					<ul class="banner-nav">
-						<li id="navs1">
+						<li >
 						<a href="#">平板电脑</a>
 						</li>
-						<li id="navs2">
+						<li >
 						<a href="#">笔记本电脑</a>
 						</li>
-						<li id="navs3">
+						<li >
 						<a href="#">电脑配件</a>
 						</li>
 					</ul>
-					<div id="nabs1" class="banner-divflex">
+					<div  class="banner-divflex">
 						<ul class="banner-nab">
 							<li><a href="#">Jumper/中柏 EZpad 6s pro（增强版）</a></li>
 							<li><a href="#">Jumper/中柏 EZpad 7 32G平板电脑二合一</a></li>
@@ -86,7 +86,7 @@
 							<li><a href="#">jumper/中柏 EZpad M5平板</a></li>
 						</ul>
 					</div>
-					<div id="nabs2" class="banner-divflex">
+					<div  class="banner-divflex">
 						<ul class="banner-nab">	      
 							<li><a href="#">Jumper/中柏 EZBOOK 2 4G</a></li>
 							<li><a href="#">Jumper/中柏 EZbook 3 plus</a></li>
@@ -94,7 +94,7 @@
 							<li><a href="#">Jumper/中柏ezbook S4笔记本电脑</a></li>		
 						</ul>
 					</div>
-					<div id="nabs3" class="banner-divflex">
+					<div class="banner-divflex">
 						<ul class="banner-nab">
 							<li><a href="#">中柏EZpad 6 Pro/EZpad 6s Pro原装转轴硬键盘</a></li>
 							<li><a href="#"> Jumper/中柏EZpad Go平板电脑原装正品磁吸式键盘 </a></li>
@@ -324,7 +324,7 @@
 					</ul>
 				</div>
 				<div class="bottom-2-2">
-				<img src="/Public/images/map.png" alt="">
+				<img src="Public/images/map.png" alt="">
 				<div>
 				<h1>4008333331</h1>
 				<p>客服服务（工作日9:00-18:00）</p>
@@ -357,9 +357,9 @@
 /*标题导航栏*/
   var nabs=document.querySelectorAll(".banner-nav>li")
   var navs=document.querySelectorAll(".banner-divflex>.banner-divflex")
-  /*移入*/
+  /*标题移入 移出*/
   for(var nab of nabs){
-	  nab.onmouseover=function(){
+	  nab.onmouseenter=function(){
 		  var nab=this;
 		  var q
 		  //类数组对象。不能用数组家的函数
@@ -367,18 +367,36 @@
 			  if(nabs[i]==nab){
 				  q=i
 				  i=nabs.length;
-				  console.log(i)
 			  }
 		  }
 		  for(var nav of navs){
 			  nav.style.width="0px";
 		  }
-		  if(q==0){navs[q].style.width="430px"
-		  }else{
-		 navs[q].style.width="215px"
-		 }
+		if(q==0){navs[q].style.width="430px"
+		   }else{
+		   navs[q].style.width="215px"
+		  }
+	  }
+	  
+	  nab.onmouseleave=function(){	
+		   for(var nav of navs){
+			  nav.style.width="0px";
+		  }
 	  }
   }
-/**/
+/*内容移入移出*/
+for(var nav of navs){
+	nav.onmouseenter=function(){
+		var nav=this
+		if(nav==navs[0]){
+			nav.style.width="430px"
+		}else{
+			nav.style.width="215px"
+		}
+		}
+	nav.onmouseleave=function(){	
+		this.style.width=""
+	}
+}
   </script>
 </html>
