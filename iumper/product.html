@@ -52,8 +52,11 @@
     <div class="main">
        <div class="tpc">
         <div class="tpc-1">
-            <img src="Public/images/1477987335.jpg" alt=""/>
-            <!-- <img src="Public/images/1502865077.jpg" alt=""/> -->
+            <ul>
+                <li><img id="tpcImg1" src="Public/images/1477987335.jpg" alt=""/></li>
+                <li><img id="tpcImg2" src="Public/images/1502865077.jpg" alt=""/></li>
+            </ul>           
+       <!--  -->
         </div>
         <div class="tpc-2">
             <ul>
@@ -260,6 +263,24 @@
             </p>
         </div>
     </div>
-
+<script src="Public/js/jquery-3.2.1.js"></script>
+<script>
+/*轮播图*/
+    var $ulImg=$(".tpc-1>ul")
+var times=setInterval(slideshow,5500) //显示5s 过渡0.5秒
+function slideshow(){ 
+    $ulImg.css("opacity","0")        //透明
+        setTimeout(function(){
+        $("#tpcImg1").toggle()      //显示隐藏
+        $ulImg.css("opacity","1")
+    },500)
+}
+ $ulImg.mouseenter(function(){
+            clearInterval(times);   //关闭
+});
+ $ulImg.mouseleave(function(){
+    times=setInterval(slideshow,1500);//开启
+ })
+    </script>
 </body>
 </html>

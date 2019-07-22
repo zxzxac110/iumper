@@ -567,7 +567,11 @@ text-align:right}
 /*///////////////////////////////////////////////////*/
 /*平板电脑页面*/
 .tpc ul{display: flex;}
-.tpc-1{height:350px;}
+.tpc-1{width:1200px;
+		  height:350px;
+		  overflow:hidden;}
+.tpc-1 ul{opacity:1;
+		  transition: all 0.5s linear}	  
 .tpc-2{margin-top:20px;
 	   padding:12px 0;
 	}

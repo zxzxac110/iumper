@@ -221,7 +221,7 @@
              AdSutinput.onblur=function(){
                  var AdSutinput=this
                  /*正则判断不能为非数字*/
-                 if(AdSutinput.value.search(/^\d+$/i)==-1){
+                 if(AdSutinput.value.search(/^\d{1,2}$/i)==-1){
                     AdSutinput.value="1"}
                 /*当前对应小计subtotal=当前对应单价price*当前数量*/ 
                    var price=AdSutinput.parentNode.previousElementSibling.firstElementChild
@@ -248,7 +248,7 @@
                 var add=adstd.children[1];
                 if(code===0&&add.value>1){
                     add.value--;
-                }else if(code===1&&add.value<100){
+                }else if(code===1&&add.value<99){
                     add.value++;
                 };
                     /*当前小计具体数字*/
