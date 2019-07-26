@@ -223,6 +223,7 @@ i{font-style:normal;}
 	width:1200px;
 	height:393px;
 	margin:45px auto 0;
+	overflow: hidden;
 }
 .center-2>div:first-child{height:34.44px}
 .center-2>div>h1{
@@ -258,7 +259,7 @@ color:#333;float:left;
 }				
 /*轮播图*/
 .center-slideshow{
-	width:1200px;
+	width:4800px;
 	height:303px;
 	padding:20px 0 25px;
 	margin-top:10px;
