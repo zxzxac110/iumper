@@ -2,7 +2,6 @@
 const express=require('express');
 var router=express(); //创建
 const pool=require('../pool.js') //引用
-
 //注册  //b比较一次验证码，aleat(验证码错误)。 比较校验alert("校验码错误")
 router.post('/v1/reg',function(req,res){ 
    var obj=req.body;  //得到输入数据console.log(1112)
@@ -50,9 +49,4 @@ pool.query('SELECT*FROM iumper_user WHERE uname=? and password=?',[obj.uname,obj
     if(result.length>0){res.send('1')}else{res.send('用户名或密码错误！')}
 })
 });
-
-
-
-
-
 module.exports=router//导出路由器

@@ -161,7 +161,7 @@
 						<!--轮播左键-->
 					<div class="center-2-left" id="center-2-left"></div>
 						<!--轮播右键-->
-					<div class="center-2-right" id="center-2-rift"></div>
+					<div class="center-2-right" id="center-2-right"></div>
 				</div>	 
 				<ul class="center-slideshow"> 
 					<li class="center-slideshow-1">
@@ -559,7 +559,18 @@
 	 //transition: all 1s linear
 	 function add(to){	
 		 if(to==undefined){to=i+1}
-		 if(i==0){ $slideshow.css("transition","all 1s linear")}
+		 if(i==0){ 
+			 if(to>0){//小于0时额外操作
+				 $slideshow.css("transition","all 1s linear")
+			 }else{
+				$slideshow.css("transition","")
+				$slideshow.css("margin-left",-licount*liwidth)//最左边
+				setTimeout(function(){
+					add(licount-1);     
+				},200)//给浏览器渲染预留时间
+				return;
+			 }
+			}
 		 i=to	 
 		 $slideshow.css("margin-left",-i*liwidth) 
 		 if(i==licount){//i=0，等待过渡时间过去后.去除过渡属性.并将图片换到第一张
@@ -570,24 +581,59 @@
 				 },duration)
 	       }
 	   }
-	 //3面运行一次定时器 +1
-	/* var times=setInterval(add(1),3000)
+//左右按钮 .开关控制，能否点击
+	   var cann=true;  
+	   $left.click(function(){mo(-1)})
+	   $right.click(function(){mo(1)})  
+	   function mo(n){
+			if(cann){
+				add(i+n);
+				cann=false;   //再次点击就，不会有运行了
+				setTimeout(function(){
+					cann=true;	
+				},duration+200)
+			}
+	   }
+//默认轮播
+var timer=setInterval(function(){
+	add()
+},4000)
+function shiftIn(){
+	//console.log("移入")
+	clearInterval(timer)
+}
+function shiftOut(){
+	//console.log("移出")
+	 timer=setInterval(function(){add()
+	},4000)
+}
+$slideshow.mouseenter(shiftIn).mouseleave(shiftOut)
+$right.mouseenter(shiftIn).mouseleave(shiftOut)
+$left.mouseenter(shiftIn).mouseleave(shiftOut)
+/*
+function bb(){
+		var xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=function(){
+			if(xhr.readyState===4 && xhr.status===200){
+				var result=xhr.response;
+				console.log("html输出")
+				console.log("后台得到数据",result)
+			}
+		 }
+		xhr.open("get","/index/v1/i",true)
+		xhr.send(null)
+	  }
+	  */
 
-
-	 $left.click(function(){
-		 add(-1)
-	 });//左边-1
-	 $right.click(function(){
-		 add(1)
-	 });//右边+1
-
-
-	 $slideshow.mouseenter(function(){
-		 //打断定时器
-		clearInterval(timer)
-	 })
-	 .mouseleave(function(){
-		 add(i)//运行现在i的定时器
-	 })*/
+$(function(){
+$.ajax({
+	url:"http://localhost:8080/index/v1/i",
+	type:"get",
+	dataType:"json",
+	success:function(result){
+		console.log(55)
+	}
+})
+})
   </script>
 </html>
