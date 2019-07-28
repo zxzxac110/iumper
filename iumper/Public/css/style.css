@@ -364,6 +364,9 @@ text-align:right}
 	color:#ff9200;
 	line-height:20px;
 }
+.center-5-2 ul li:hover h1{
+	color:#ff9200;
+}
 /*fixed 未完成*/
  .fixed{
 	position:fixed;
@@ -373,12 +376,16 @@ text-align:right}
 	padding-bottom:20px;
 }
 .fixed a{display:block;}
-.fixed a:hover,.fixed div:hover{background:#ffab3b}
-.fixed div,.fixed a{
+.fixed div:hover{background:#ffab3b}
+.fixed div{
 	width:51px;height:51px;
 	margin-bottom:7px;
 	cursor:pointer;
 	border-radius:50%;
+	
+}
+.fixed #fixed4{
+	height:0px;
 }
 /*bottom*/
 /*bottom-1*/

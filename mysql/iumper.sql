@@ -76,12 +76,13 @@ CREATE TABLE iumper_order_detail(did INT PRIMARY KEY AUTO_INCREMENT,
 				 count INT
                                   
 );
-#首页商品
+#8首页商品
 CREATE TABLE iumper_home_page(hid INT PRIMARY KEY AUTO_INCREMENT,
-                              product_id INT,
-			      FOREIGN KEY (product_id) REFERENCES iumper_product(pid),
-			      sales_volume INT,
-                              evaluate_number INT,
+                              herf VARCHAR(100),
+			      img VARCHAR(100),
+			      title VARCHAR(100),
+			      Svolume INT,
+                              Enumber INT,
 			      price DECIMAL(8,2)
 );
 #商品图片
@@ -111,7 +112,7 @@ INSERT INTO iumper_product VALUES (1, 100, 'Jumper/中柏 EZpad 7 128G平板电�
 (2, 100, 'Jumper/中柏 EZpad 7 32G平板电脑二合一 win10平板电脑二合一', 899.00, '极光银色', '32G', 566),
 (3, 100, 'Jumper/中柏EZpad Go 128G平板电脑二合一 中柏平板电脑二合一windows系统商务办公轻薄便携', 1949.00, '前黑后极光银', '128G', 888),
 (4, 100, 'Jumper/中柏EZpad Go 64G平板电脑二合一 win10平板电脑二合一windows系统轻薄便携学生', 1749.00, '前黑后极光银', '64G', 986),
-(5, 100, 'Jumper/中柏 EZpad 6s pro（增强版', 1850.00, '极光银色', '128G', 200),
+(5, 100, 'Jumper/中柏 EZpad 6s pro（增强版）', 1850.00, '极光银色', '128G', 200),
 (6, 100, 'Jumper/中柏EZpad mini5 win10平板电脑8英寸', 699.00, NULL, NULL, 996),
 (7, 100, 'jumper/中柏 EZpad M5平板电脑安卓', 889.00, NULL, NULL, 887),
 (8, 100, 'Jumper/中柏 EZpad 7 64G', 989.00, '前黑后铁灰色', '64G', 999),
@@ -228,5 +229,29 @@ INSERT INTO iumper_imgs VALUES('null','1','Public/images/1554879131.jpg','',''),
 ('null','20','Public/images/1510819308.jpg','',''),
 ('null','20','Public/images/1510819313.jpg','',''),
 ('null','20','Public/images/1510819317.jpg','','');
+#8首页商品栏
+INSERT INTO iumper_home_page VALUES('null','product_details.html?lid=1','Public/images/1554879131.jpg','Jumper/中柏 EZpad 7 128G平板电脑二合一 win10平板电脑二合一','464','150','1209'),
+('null','product_details.html?lid=2','Public/images/1554879235.jpg','Jumper/中柏 EZpad 7 32G平板电脑二合一 win10平板电脑二合一','76','150','899'),
+('null','product_details.html?lid=13','Public/images/1552551300.jpg','Jumper/中柏 EZbook 2 128G笔记本电脑 超薄笔记本电脑轻薄便携学生','166','150','1309'),
+('null','product_details.html?lid=17','Public/images/1552528517.jpg','Jumper/中柏EZpad Go平板电脑原装正品磁吸式键盘 中柏原装正品磁吸式键盘','119','150','249'),
+('null','product_details.html?lid=3','Public/images/1552528166.jpg','Jumper/中柏EZpad Go 128G平板电脑二合一 中柏平板电脑二合一windows系统商务办公轻薄便携','97','150','1949'),
+('null','product_details.html?lid=4','Public/images/1552528166.jpg','umper/中柏EZpad Go 64G平板电脑二合一 win10平板电脑二合一windows系统轻薄便携学生','84','150','1749'),
+('null','product_details.html?lid=5','Public/images/1544607433.jpg','Jumper/中柏 EZpad 6s pro（增强版）','67','150','1850'),
+('null','product_details.html?lid=14','Public/images/1539308952.jpg','Jumper/中柏ezbook S4笔记本电脑','66','150','1449'),
+('null','product_details.html?lid=6','Public/images/1538299867.jpg','Jumper/中柏EZpad mini5 win10平板电脑8英寸','236','150','699'),
+('null','product_details.html?lid=7','Public/images/1558665064.jpg','jumper/中柏 EZpad M5平板电脑安卓','126','150','889'),
+('null','product_details.html?lid=18','Public/images/1517221042.jpg','Jumper/中柏 EZpad 7 原装键盘','145','150','149'),
+('null','product_details.html?lid=8','Public/images/1531301732.jpg','Jumper/中柏 EZpad 7 64G','211','150','989'),
+('null','product_details.html?lid=19','Public/images/1516600945.jpg','Jumper/中柏 EZpad 7S原装磁吸键盘/保护套','127','150','199'),
+('null','product_details.html?lid=9','Public/images/1516696071.jpg','Jumper/中柏 EZpad 7S','57','150','1399'),
+('null','product_details.html?lid=20','Public/images/1510819297.jpg','中柏EZpad 6 Pro/EZpad 6s Pro原装转轴硬键盘','501','150','179');
+
+
+
+
+
+
+
+
 
 
