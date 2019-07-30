@@ -8,6 +8,7 @@ const fs=require('fs');
 const http=require('http')
 const userRouter=require('./routes/userRouter.js');//引用路由
 const indexRouter=require('./routes/indexRouter.js')
+const productDetailsRouter=require('./routes/product_detailsRouter.js')
 var app=express();
 app.listen(8080);
 //跨域
@@ -20,3 +21,4 @@ app.use(bodyParser.urlencoded({
 }))	 
 app.use('/user',userRouter);//前缀挂载
 app.use('/index',indexRouter);//前缀挂载
+app.use('/details',productDetailsRouter);//前缀挂载

@@ -2,7 +2,7 @@
 const express=require('express');
 var router=express(); //创建
 const pool=require('../pool.js') //引用
-router.get('/v1/i',function(req,res){
+router.get('/v1',function(req,res){
    var sql=`SELECT * FROM iumper_home_page `;
    pool.query(sql,[],(err,result)=>{
       if(err){

@@ -370,22 +370,52 @@ text-align:right}
 /*fixed 未完成*/
  .fixed{
 	position:fixed;
-	box-sizing: content-box;
+	box-sizing: content-box;/*默认外+内+边+设定*/
     right:0px;bottom:30%;
 	margin-right:20px;
 	padding-bottom:20px;
 }
-.fixed a{display:block;}
+.fixed div a{display:block;} 
 .fixed div:hover{background:#ffab3b}
 .fixed div{
 	width:51px;height:51px;
 	margin-bottom:7px;
 	cursor:pointer;
 	border-radius:50%;
-	
+	overflow: hidden;
 }
-.fixed #fixed4{
+#fixed1 img:last-child{
+	position:absolute;
+	width:140px;height:140px;
+	top:-44px;
+	right:55px;
+	display:none
+}
+#fixed1:hover>div>img{
+	display:block
+}
+#fixed2>div{
+	position:absolute;
+	width:160px;height:41px;
+	border-radius:21px;
+	font-size: 18px;		
+	line-height: 41px;
+	text-align: center;
+	top:63px;
+	right:52px;
+	margin:0px;
+	color:#fff;
+	background:#ffab3b;
+	display:none
+}
+#fixed2:hover>div{
+	display:block
+}
+#fixed4{
+	background:url(../images/k4s.png) no-repeat ;
+	border-radius:0;
 	height:0px;
+	transition: all 0.3s linear;
 }
 /*bottom*/
 /*bottom-1*/

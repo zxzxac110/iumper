@@ -13,6 +13,7 @@
     <script src="Public/js/bootstrap.min.js"></script>
 </head>
 <body>
+<header id="header"></header>
     <div class="main">
       <div class="Computer-1">
         <ul >
@@ -197,9 +198,33 @@
           </div>
       </div>
     </div>
+    <footer id=footer></footer>
     <script src="Public/js/jquery-3.2.1.js"></script>
-    <script src="Public/js/datails.js"></script>
+    <script src="Public/myjs/header.js"></script>
+    <script src="Public/myjs/footer.js"></script>
     <script>
+/////////////////////////////////////////
+    $(function(){
+    var lid=location.search.split("=")[1]
+    if(lid){
+    $.ajax({
+        url:"http://localhost:8080/details/v1",
+        type:"get",
+         data:{lid},
+        dataType:"json",
+        success:function(result){
+                var {product,imgs}=result;
+var {title,price,colour,edition,stock}=product[0]
+                console.log(imgs[0].picture_sm)
+                console.log(title)
+                console.log(price)
+                console.log(colour)
+                console.log(edition)
+                console.log(stock)
+        }
+    })
+    }
+    })
 /*商品详情图片*/
         var $sImg=$("#ulsImg");
         $mImg=$("#div-mImg>img");
