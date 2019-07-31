@@ -7,22 +7,31 @@ router.get('/v1',function(req,res){
   var lid=req.query.lid
   var output={
     product:{},
+    leftshop:{},
     imgs:[]
   }
   if(lid!==undefined){
-      var sql=`select * from iumper_product where pid=?`; 
-      pool.query(sql,[lid],(err,result)=>{
-      if(err) console.log(err);   
-      output.product=result   
-      })
-      var sql=`select * from iumper_imgs where product_id=?`; 
-      pool.query(sql,[lid],(err,result)=>{
-      if(err) console.log(err);   
-      output.imgs=result   
-      res.send(output);
-      }) 
-    }else{
+/*数据 */
+  var sql=`SELECT * FROM iumper_product WHERE pid=?`; 
+  pool.query(sql,[lid],(err,result)=>{
+  if(err) console.log(err); 
+  output.product=result  
+  })
+ /*图片 标题 价格 链接 20 1  11 6 16 */
+  var sql=`SELECT * FROM iumper_leftshop`
+  pool.query(sql,[lid],(err,result)=>{
+    if(err) console.log(err);   
+    output.leftshop=result  
+    })  
+/*图片 */
+    var sql=`SELECT * FROM iumper_imgs WHERE product_id=?`; 
+    pool.query(sql,[lid],(err,result)=>{
+    if(err) console.log(err);   
+    output.imgs=result   
     res.send(output);
-  }       
+    }) 
+  }else{
+  res.send(output);
+}       
 });
 module.exports=router//导出路由器

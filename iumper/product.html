@@ -20,26 +20,26 @@
         <div class="tpc-2">
             <ul>
                 <li>分类：</li>
-                <li class="tpc-2pg"><a href="">平板电脑</a></li>
-                <li class="tpc-2pg"><a href="">笔记本电脑</a></li>
-                <li class="tpc-2pg"><a href="">电脑配件</a></li>
+                <li ><a href="product.html?lid=100">平板电脑</a></li>
+                <li ><a href="product.html?lid=200">笔记本电脑</a></li>
+                <li ><a href="product.html?lid=300">电脑配件</a></li>
             </ul>
         </div>
         <div class="tpc-3">
             <ul>
                 <li>排序：</li>
                 <li>
-                    <a href="">销量<span></span></a>
+                    <a href="#">销量<span></span></a>
                 </li>
                 <li>
-                    <a href="">价格<span></span></a></li>
+                    <a href="#">价格<span></span></a></li>
                 <li>
-                    <a href="">上架时间<span></span></a></li>
+                    <a href="#">上架时间<span></span></a></li>
                 <li>
-                    <a href="">好评<span></span></a></li>
+                    <a href="#">好评<span></span></a></li>
             </ul>
         </div>
-        <div class="tpc-4">
+        <div class="tpc-4" id="tpc4-product">
             <ul>
                 <li >
                     <a href="#">
@@ -58,9 +58,9 @@
                 <li>
                     <a href="#">
                         <img src="Public/images/1552528166.jpg" alt=""/><h3 class="font333">Jumper/中柏EZpad Go 128G平板电脑二合一</h3>
-                <p class="font999">销量：97 <span class="right">评价：0</span></p>
-                <p class="font-f90">1949.00元</p>
-                </a>
+                        <p class="font999">销量：97 <span class="right">评价：0</span></p>
+                        <p class="font-f90">1949.00元</p>
+                    </a>
                 </li>
                 <li>
                     <a href="#">
@@ -69,7 +69,6 @@
                         <p class="font-f90">1749.00元</p>
                     </a>
                 </li>
-
                 <li>
                     <a href="#">
                         <img src="Public/images/1544607433.jpg" alt=""/><h3 class="font333">                Jumper/中柏 EZpad 6s pro（增强版）</h3>
@@ -130,46 +129,47 @@
         </div>
        </div>
     </div>
-    <!--fixed 未完成-->
-    <div class="fixed">
-        <div class="fixed-1">
-            <img src="Public/images/k1.png" alt=""/>
-        </div>
-        <div class="fixed-2">
-            <img src="Public/images/k2.png" alt=""/>
-        </div>
-        <div class="fixed-3">
-            <a href="#">
-                <img src="Public/images/k3.png" alt=""/>
-            </a>
-        </div>
-        <div class="fixed-4">
-            <a href="#">
-                <img src="Public/images/k4s.png" alt=""/>
-            </a>
-        </div>
-    </div>
     <footer id=footer></footer>
     <script src="Public/js/jquery-3.2.1.js"></script>
     <script src="Public/myjs/header.js"></script>
     <script src="Public/myjs/footer.js"></script>
 <script>
+$(function(){
+    var lid=location.search.split("=")[1]
+    if(!(lid==100||lid==200||lid==300)){lid=100}
+        if(lid){
+            $.ajax({
+                url:"http://127.0.0.1:8080/product/v1",
+                type:"get",
+                data:{lid},
+                dataType:"json",
+                success:function(result){
+                   console.log(result)
+
+
+/*对应品牌选中样式class="tpc-2pg"*/
+            var $tpc2pg=$(".tpc-2>ul>li>a")
+            $($tpc2pg[lid/100-1]).addClass("tpc-2pg")
 /*轮播图*/
-    var $ulImg=$(".tpc-1>ul")
-var times=setInterval(slideshow,5500) //显示5s 过渡0.5秒
-function slideshow(){ 
-    $ulImg.css("opacity","0")        //透明
-        setTimeout(function(){
-        $("#tpcImg1").toggle()      //显示隐藏
-        $ulImg.css("opacity","1")
-    },500)
-}
- $ulImg.mouseenter(function(){
-            clearInterval(times);   //关闭
-});
- $ulImg.mouseleave(function(){
-    times=setInterval(slideshow,1500);//开启
- })
+            var $ulImg=$(".tpc-1>ul")
+        var times=setInterval(slideshow,5500) //显示5s 过渡0.5秒
+        function slideshow(){ 
+            $ulImg.css("opacity","0")        //透明
+                setTimeout(function(){
+                $("#tpcImg1").toggle()      //显示隐藏
+                $ulImg.css("opacity","1")
+            },500)
+        }
+        $ulImg.mouseenter(function(){
+                    clearInterval(times);   //关闭
+        });
+        $ulImg.mouseleave(function(){
+            times=setInterval(slideshow,1500);//开启
+        })
+                }
+            })
+        }
+})
     </script>
 </body>
 </html>

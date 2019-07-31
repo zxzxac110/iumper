@@ -9,8 +9,6 @@
     <title>中柏商城-中柏平板电脑、中柏笔记本电脑、中柏电脑官方网站</title>
     <link rel="stylesheet" type="text/css" href="Public/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="Public/css/style.css">
-    <script src="Public/js/jquery.min.js"></script>
-    <script src="Public/js/bootstrap.min.js"></script>
 </head>
 <body>
 <header id="header"></header>
@@ -24,24 +22,13 @@
         </ul>
       </div>
       <div class="Computer-2">
-<!--商品详情图-->
+<!--商品详情图--------------------->
         <div class="Computer-2-left ">
+            <!-- 引入中图 -->
             <div  id="div-mImg">
-                <img  src="Public/images/1554879131.jpg" alt=""/>
             </div>
+            <!-- 引入小图 -->
             <ul id="ulsImg">
-                <li>
-                <img src="Public/images/1554879144.jpg" data-md="Public/images/1554879144.jpg" data-lg="Public/images/1554879144.jpg" alt=""/>
-                </li>
-                <li>
-                <img src="Public/images/1554879171.jpg" data-md="Public/images/1554879171.jpg" data-lg="Public/images/1554879171.jpg" alt=""/>
-                </li>
-                <li>
-                <img src="Public/images/1554879190.jpg" data-md="Public/images/1554879190.jpg" data-lg="Public/images/1554879190.jpg" alt=""/>
-                </li>
-                <li>
-                <img src="Public/images/1554879235.jpg" data-md="Public/images/1554879235.jpg" data-lg="Public/images/1554879235.jpg" alt=""/>
-                </li>
             </ul>
             <!-- 放大镜 -->
             <div class="div-zoom d-none" id="div-zoom"></div>
@@ -51,26 +38,8 @@
             <div class="lgImg d-none" id="lgImg">
             </div>
         </div>
-        <div class="Computer-2-right">
-            <h2 class="Computer-title">Jumper/中柏 EZpad 7 128G平板电脑二合一 win10平板电脑二合一</h2>
-            <div class="fontE50">￥1209.00</div>
-            <div class="Computer-color">颜色：
-                <ul>
-                    <li>极光银色</li>
-                </ul>
-            </div>
-            <div class="Computer-color">版本：
-                <ul>
-                    <li class="px20">128G</li>
-                </ul>
-            </div>
-            <div class="Computer-quantity">
-                <span>数量:</span>
-                <img src="Public/images/jj1.png" alt=""/>
-                <input type="text" value="1" />
-                <img src="Public/images/jj0s.png" alt=""/>
-                <span class="font999">库 存：778</span>
-            </div>
+        <div class="Computer-2-right" id="Computer-2-right">
+            <!-- 引入产品数据 -->
             <div class="Computer-click"><a href="#" class="btn bg-primary" >立刻购买</a> <a href="#" class="btn bg-warning" >加入购物车</a> </div>
             <div class="Computer-collect">
                 <a href="#">
@@ -89,59 +58,20 @@
                       <h5 class="bgzi">产品导航</h5>
                   <ul>
                       <li>
-                          <a href="#"><span> ></span>平板电脑</a>
+                          <a href="product.html?lid=100"><span> ></span>平板电脑</a>
                       </li>
                       <li>
-                          <a href="#"><span> ></span>笔记本电脑</a>
+                          <a href="product.html?lid=200"><span> ></span>笔记本电脑</a>
                       </li>
                       <li>
-                          <a href="#"><span> ></span>电脑配件</a>
+                          <a href="product.html?lid=300"><span> ></span>电脑配件</a>
                       </li>
                   </ul>
               </div>
-              <div class="Computer3-left-t2"><!-- Computer3-左侧商品列表-->
+              <div class="Computer3-left-t2" id="Computer3-left-t2"><!-- Computer3-左侧商品列表-->
                  <h5 class="bgzi">TOP本周热销排行版</h5>
                   <ul>
-                      <li>
-                          <div class="Computer3-left-t2no">
-                              <p>NO.1</p>
-                          </div>
-                          <a href="#"><img src="Public/images/1510819297.jpg" alt=""/></a>
-                          <p class="font666">中柏EZpad 6 Pro/EZpad 6s Pro原装转轴硬键盘</p>
-                          <p class="Computer3-left-t2jg">￥498.00元</p>
-                      </li>
-                      <li>
-                          <div class="Computer3-left-t2no">
-                              <p>NO.2</p>
-                          </div>
-                          <a href="#"><img src="Public/images/1554879131.jpg" alt=""/></a>
-                          <p class="font666">Jumper/中柏 EZpad 7 128G平板电脑二合一</p>
-                          <p class="Computer3-left-t2jg">￥1399.00元</p>
-                      </li>
-                      <li>
-                          <div class="Computer3-left-t2no">
-                              <p>NO.3</p>
-                          </div>
-                          <a href="#"><img src="Public/images/1559543059.jpg" alt=""/></a>
-                          <p class="font666">Jumper/中柏 EZpad 6s Pro</p>
-                          <p class="Computer3-left-t2jg">￥3399.00元</p>
-                      </li>
-                      <li>
-                          <div class="Computer3-left-t2no">
-                              <p>NO.4</p>
-                          </div>
-                          <a href="#"><img src="Public/images/1538299867.jpg" alt=""/></a>
-                          <p class="font666">Jumper/中柏EZpad mini5</p>
-                          <p class="Computer3-left-t2jg">￥1599.00元</p>
-                      </li>
-                      <li>
-                          <div class="Computer3-left-t2no">
-                              <p>NO.4</p>
-                          </div>
-                          <a href="#"><img src="Public/images/1479958460.jpg" alt=""/></a>
-                          <p class="font666">Jumper/中柏 EZBOOK 2 4G</p>
-                          <p class="Computer3-left-t2jg">￥2399.00元</p>
-                      </li>
+                    <!-- 推荐商品 -->
                   </ul>
               </div>
           </div>
@@ -200,104 +130,10 @@
     </div>
     <footer id=footer></footer>
     <script src="Public/js/jquery-3.2.1.js"></script>
+    <script src="Public/js/jquery.min.js"></script>
+    <script src="Public/js/bootstrap.min.js"></script>
     <script src="Public/myjs/header.js"></script>
     <script src="Public/myjs/footer.js"></script>
-    <script>
-/////////////////////////////////////////
-    $(function(){
-    var lid=location.search.split("=")[1]
-    if(lid){
-    $.ajax({
-        url:"http://localhost:8080/details/v1",
-        type:"get",
-         data:{lid},
-        dataType:"json",
-        success:function(result){
-                var {product,imgs}=result;
-var {title,price,colour,edition,stock}=product[0]
-                console.log(imgs[0].picture_sm)
-                console.log(title)
-                console.log(price)
-                console.log(colour)
-                console.log(edition)
-                console.log(stock)
-        }
-    })
-    }
-    })
-/*商品详情图片*/
-        var $sImg=$("#ulsImg");
-        $mImg=$("#div-mImg>img");
-        $divZoom=$("#div-zoom");
-        $("#lgImg").css("background",`url(${$mImg.attr("src")})`)
- /*小图移入移出*/
-    $sImg.on("mouseenter","img",function(){
-        $mImg.attr("src",$(this).attr("data-md"));
-        $("#lgImg").css("background",`url(${$(this).attr("data-lg")})`)
-    })
-    /*中图移入移出*/
-    $("#protectiveFilm").mouseenter(function(){
-        $divZoom.removeClass("d-none");
-        $("#lgImg").removeClass("d-none");
-    }).mouseleave(function(){
-        $divZoom.addClass("d-none");
-        $("#lgImg").addClass("d-none");
-    });
-    /*420 210*/
-    $("#protectiveFilm").mousemove(function(e){
-        var divZoomWidth=105;
-        var x=e.offsetX;
-        var y=e.offsetY;
-        var left=x-divZoomWidth;
-        var top=y-divZoomWidth;
-        if(left<0){left=0}else if(left>divZoomWidth*2){left=divZoomWidth*2}
-        if(top<0){top=0}else if(top>divZoomWidth*2){top=divZoomWidth*2}
-        /*  $divZoom.css({"left":`${left}px`,"top":`${top}px`}) */
-        $divZoom.css({left,top})
-        $("#lgImg").css("background-position",`${-left*38/21}px ${-top*38/21}px`)
-    }) 
-/*数量加减*/
-/*(function(){*/
-    var $quantity=$(".Computer-2-right>.Computer-quantity")
-    var $input=$quantity.children("input");
-    $quantity.on("click","img",function(){
-        var $img=$(this);
-        var i=$input.val();
-        console.log($img.attr("src")=="Public/images/jj1.png")
-        if($img.attr("src")=="Public/images/jj1.png"){
-            if($input.val()>1){
-            $input.val(--i)
-        }
-        }else{
-            if($input.val()<99){
-            $quantity.children("input").val(++i)
-        }
-        }
-    })
-    $input.change(function(){
-        if($input.val().search(/^\d{1,2}$/ig)==-1){$input.val(1)}
-    })
-/*})()*/
-/*商品详情参数*/
-    var $nav=$("#nav")
-    $nav.on("click","a",function(){         //点击事件
-        var $n=$(this)
-        //添加/删除 导航样式active,信息样式d-none
-        $("#nav a").removeClass("active")
-        $n.addClass("active")         
-        $(".Computer3-right-2>div").addClass("d-none");
-        $(`#${$n.attr("data-toggle")}`).removeClass("d-none")
-    })
-/*评论导航*/
-    var $down3=$("#down3");
-    $down3.on("click","li>a",function(){
-        var $d=$(this);
-        //添加/删除 导航样式active,信息样式d-none 
-        $("#down3 ul>li>a").removeClass("active");
-        $d.addClass("active");
-        $("#down3>div>div").addClass("d-none");
-        $(`#${$d.attr("data-toggle")}`).removeClass("d-none")
-    })
-    </script>
+    <script src="Public/myjs/product_details.js"></script>
 </body>
 </html>

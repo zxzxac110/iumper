@@ -1,6 +1,6 @@
 $(function(){
     $.ajax({
-        url:"http://localhost:8080/index/v1",
+        url:"http://127.0.0.1:8080/index/v1",
         type:"get",
         dataType:"json",
         success:function(result){
@@ -12,7 +12,7 @@ $(function(){
                                 <a href=${elem.herf}>					
                                     <img src=${elem.img} alt="" >
                                     <h1>${elem.title}</h1>
-                                    <p>销量：${elem.Svolume}<span>评价：${elem.Eumber}</span></p>
+                                    <p>销量：${elem.Svolume}<span>评价：${elem.Enumber}</span></p>
                                     <div>${(elem.price).toFixed(2)}元 </div>
                                 </a>
                         </li>`
@@ -21,9 +21,9 @@ $(function(){
             for(var elem of arrimg){
                 html+=`<li class="center-slideshow-1">
                             <a href=${elem.herf}>					
-                                <img src=${elem.img} alt="" >
+                                <img src=${elem.img} alt="">
                                 <h1>${elem.title}</h1>
-                                <p>销量：${elem.Svolume}<span>评价：${elem.Eumber}</span></p>
+                                <p>销量：${elem.Svolume}<span>评价：${elem.Enumber}</span></p>
                                 <div>${(elem.price).toFixed(2)}元 </div>
                             </a>
                     </li>`
