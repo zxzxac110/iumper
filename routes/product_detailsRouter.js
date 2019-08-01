@@ -12,19 +12,19 @@ router.get('/v1',function(req,res){
   }
   if(lid!==undefined){
 /*数据 */
-  var sql=`SELECT * FROM iumper_product WHERE pid=?`; 
+  var sql=`SELECT title,price,colour,edition,stock FROM iumper_product WHERE pid=?`; 
   pool.query(sql,[lid],(err,result)=>{
   if(err) console.log(err); 
   output.product=result  
   })
- /*图片 标题 价格 链接 20 1  11 6 16 */
-  var sql=`SELECT * FROM iumper_leftshop`
+ /*图片 标题 价格 链接 20 1  11 6  */
+  var sql=`SELECT herf,img,title,price FROM iumper_leftshop`
   pool.query(sql,[lid],(err,result)=>{
     if(err) console.log(err);   
     output.leftshop=result  
     })  
 /*图片 */
-    var sql=`SELECT * FROM iumper_imgs WHERE product_id=?`; 
+    var sql=`SELECT picture_sm FROM iumper_imgs WHERE product_id=?`; 
     pool.query(sql,[lid],(err,result)=>{
     if(err) console.log(err);   
     output.imgs=result   

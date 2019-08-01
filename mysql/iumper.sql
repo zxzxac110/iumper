@@ -21,124 +21,125 @@ CREATE TABLE iumper_user(uid INT PRIMARY KEY AUTO_INCREMENT,
 );
 #收货基本信息
 CREATE TABLE iumper_address(aid INT PRIMARY KEY AUTO_INCREMENT,
-                           user_id INT,
-                           FOREIGN KEY (user_id) REFERENCES iumper_user(uid),
-                           receiver VARCHAR(24),
-                           province VARCHAR(24),
-                           city VARCHAR(24),
-                           county VARCHAR(24),
-			   address VARCHAR(50),
-			   phone VARCHAR(50),
-			   fixedphone VARCHAR(50),
-			   email VARCHAR (50)
+							user_id INT,
+							FOREIGN KEY (user_id) REFERENCES iumper_user(uid),
+							receiver VARCHAR(24),
+							province VARCHAR(24),
+							city VARCHAR(24),
+							county VARCHAR(24),
+							address	VARCHAR(50),
+							phone VARCHAR(50),
+							fixedphone VARCHAR(50),
+							email VARCHAR (50)
 );
 #商品类别
 CREATE TABLE iumper_type(tid int PRIMARY KEY AUTO_INCREMENT,
-                        typename VARCHAR(50)
+                         typename VARCHAR(50)
 );
 #商品详情
 CREATE TABLE iumper_product(pid INT PRIMARY KEY AUTO_INCREMENT,
                             type_uid INT,
-			    FOREIGN KEY (type_uid) REFERENCES iumper_type(tid),
-			    title VARCHAR(100),
-			    img VARCHAR(100),
-			    price DECIMAL(8,2),
-                            colour VARCHAR(50),
-			    edition VARCHAR(50),
-			    stock INT,
-			    Svolume INT,
-			    Enumber INT	
+							FOREIGN KEY (type_uid) REFERENCES iumper_type(tid),
+							brief VARCHAR(100),
+							title VARCHAR(100),
+							img VARCHAR(100),
+							price DECIMAL(8,2),
+							colour VARCHAR(50),
+							edition VARCHAR(50),
+							stock INT,
+							Svolume INT,
+							Enumber INT	
 );
 #购物车
 CREATE TABLE iumper_shopping_cart(cid INT PRIMARY KEY AUTO_INCREMENT,
-                                 user_id INT,
-				 FOREIGN KEY (user_id) REFERENCES iumper_user(uid),
-				 product_id INT,
-				 FOREIGN KEY (product_id) REFERENCES iumper_product(pid),
-				 count INT
+                                 	user_id INT,
+									FOREIGN KEY (user_id) REFERENCES iumper_user(uid),
+									product_id INT,
+									FOREIGN KEY (product_id) REFERENCES iumper_product(pid),
+									count INT
 );
 
 #用户订单
 CREATE TABLE iumper_oredr(oid INT PRIMARY KEY AUTO_INCREMENT,
-			   user_id INT,
-			   FOREIGN KEY (user_id) REFERENCES iumper_user(uid),
-			   address_id INT,
-			   FOREIGN KEY (address_id) REFERENCES iumper_address(aid),
-			   status INT,
-			   rder_time DATETIME,
-			   pay_time DATETIME,
-			   deliver_time DATETIME,
-			   receiver_time DATETIME
+						user_id INT,
+						FOREIGN KEY (user_id) REFERENCES iumper_user(uid),
+						address_id INT,
+						FOREIGN KEY (address_id) REFERENCES iumper_address(aid),
+						status INT,
+						rder_time DATETIME,
+						pay_time DATETIME,
+						deliver_time DATETIME,
+						receiver_time DATETIME
 );
 #订单详情
 CREATE TABLE iumper_order_detail(did INT PRIMARY KEY AUTO_INCREMENT,
                                  order_id INT,
-				 FOREIGN KEY (order_id) REFERENCES iumper_oredr(oid),
-                                 product_id INT,
-				 FOREIGN KEY (product_id) REFERENCES iumper_product(pid),
-				 count INT
+								FOREIGN KEY (order_id) REFERENCES iumper_oredr(oid),
+								product_id INT,
+								FOREIGN KEY (product_id) REFERENCES iumper_product(pid),
+								count INT
                                   
 );
 #8首页商品
 CREATE TABLE iumper_home_page(hid INT PRIMARY KEY AUTO_INCREMENT,
                               herf VARCHAR(100),
-			      img VARCHAR(100),
-			      title VARCHAR(100),
-			      Svolume INT,
+			      			  img VARCHAR(100),
+			      			  title VARCHAR(100),
+			      			  Svolume INT,
                               Enumber INT,
-			      price DECIMAL(8,2)
+			      			  price DECIMAL(8,2)
 );
 #商品图片
 CREATE TABLE iumper_imgs(ppid INT PRIMARY KEY AUTO_INCREMENT,
                          product_id INT,
-			 type_uid INT,
-			 FOREIGN KEY (product_id) REFERENCES iumper_product(pid),
-			 picture_sm VARCHAR(100),
-			 picture_md VARCHAR(100),
-			 picture_lg VARCHAR(100)
+						 type_uid INT,
+						 FOREIGN KEY (product_id) REFERENCES iumper_product(pid),
+						 picture_sm VARCHAR(100),
+						 picture_md VARCHAR(100),
+						 picture_lg VARCHAR(100)
 );
 #评价
 CREATE TABLE iumper_evaluate(eid INT PRIMARY KEY AUTO_INCREMENT,
-                             user_id INT,
-			     FOREIGN KEY (user_id) REFERENCES iumper_user(uid),
-			     product_id INT,
-			     FOREIGN KEY (product_id) REFERENCES iumper_product(pid),
-			     status INT,
-			     content VARCHAR(100),
+							 user_id INT,
+							 FOREIGN KEY (user_id) REFERENCES iumper_user(uid),
+							 product_id INT,
+							 FOREIGN KEY (product_id) REFERENCES iumper_product(pid),
+							 status INT,
+							 content VARCHAR(100),
                              picture VARCHAR(100)
 );
-#11首页商品
+#11左侧推荐商品
 CREATE TABLE iumper_leftshop(lid INT PRIMARY KEY AUTO_INCREMENT,
                               herf VARCHAR(100),
-			      img VARCHAR(100),
-			      title VARCHAR(100),
-			      price DECIMAL(8,2)
+							  img VARCHAR(100),
+							  title VARCHAR(100),
+							  price DECIMAL(8,2)
 );
 #3商品类别
 INSERT INTO iumper_type VALUES (100, '平板电脑'),
 (200, '笔记本电脑'),
 (300, '键盘配件');
 #4商品详情
-INSERT INTO iumper_product VALUES (1, 100, 'Jumper/中柏 EZpad 7 128G平板电脑二合一 win10平板电脑二合一','Public/images/1554879131.jpg', 1209.00, '极光银色', '128G', 778,464,0),
-(2, 100, 'Jumper/中柏 EZpad 7 32G平板电脑二合一 win10平板电脑二合一','Public/images/1554878158.jpg', 899.00, '极光银色', '32G', 566,76,0),
-(3, 100, 'Jumper/中柏EZpad Go 128G平板电脑二合一 中柏平板电脑二合一windows系统商务办公轻薄便携','Public/images/1552528166.jpg', 1949.00, '前黑后极光银', '128G', 888,97,0),
-(4, 100, 'Jumper/中柏EZpad Go 64G平板电脑二合一 win10平板电脑二合一windows系统轻薄便携学生','Public/images/1552528166.jpg', 1749.00, '前黑后极光银', '64G', 986,84,0),
-(5, 100, 'Jumper/中柏 EZpad 6s pro（增强版）','Public/images/1544607433.jpg', 1850.00, '极光银色', '128G', 200,464,0),
-(6, 100, 'Jumper/中柏EZpad mini5 win10平板电脑8英寸','Public/images/1538299867.jpg', 699.00, NULL, NULL, 996,236,0),
-(7, 100, 'jumper/中柏 EZpad M5平板电脑安卓','Public/images/1558665064.jpg', 889.00, NULL, NULL, 887,126,0),
-(8, 100, 'Jumper/中柏 EZpad 7 64G','Public/images/1531301732.jpg', 989.00, '前黑后铁灰色', '64G', 999,311,0),
-(9, 100, 'Jumper/中柏 EZpad 7S','Public/images/1516696071.jpg', 1399.00, '极光银色', '64G', 885,57,0),
-(10, 100, 'Jumper/中柏 EZpad M3','Public/images/1510816849.png', 619.00, '前黑后铁灰色', '32G', 619,105,0),
-(11, 100, 'Jumper/中柏 EZpad 6s Pro','Public/images/1559543059.jpg', 1549.00, '前黑后极光银', '128G', 806,370,0),
-(12, 100, 'Jumper/中柏 EZpad 6 pro','Public/images/1561518390.jpg', 1299.00, '极光银色', '64G', 497,76,1),
-(13, 200, 'Jumper/中柏 EZbook 2 128G笔记本电脑 超薄笔记本电脑轻薄便携学生','Public/images/1552551300.jpg', 1309.00, '极光银色', '128G', 788,166,0),
-(14, 200, 'Jumper/中柏ezbook S4笔记本电脑','Public/images/1539308952.jpg', 1499.00, '银色', '64G', 1000,61,1),
-(15, 200, 'Jumper/中柏 EZbook 3 plus','Public/images/1510813059.jpg', 2799.00, '极光银色', '8G', 68,36,0),
-(16, 200, 'Jumper/中柏 EZBOOK 2 4G','Public/images/1479958460.jpg', 1009.00, '极光银色', '64G', 975,220,1),
-(17, 300, 'Jumper/中柏EZpad Go平板电脑原装正品磁吸式键盘 中柏原装正品磁吸式键盘','Public/images/1552528517.jpg', 249.00, NULL, NULL, 799,119,0),
-(18, 300, 'Jumper/中柏 EZpad 7 原装键盘','Public/images/1517221042.jpg', 149.00, NULL, NULL, 999,145,0),
-(19, 300, 'Jumper/中柏 EZpad 7S原装磁吸键盘/保护套','Public/images/1516600945.jpg', 199.00, NULL, NULL, 800,127,0),
-(20, 300, '中柏EZpad 6 Pro/EZpad 6s Pro原装转轴硬键盘','Public/images/1510819297.jpg', 179.00, NULL, NULL, 59,501,0);
+INSERT INTO iumper_product VALUES (NULL, 100, 'Jumper/中柏 EZpad 7 128G平板电脑二合一','Jumper/中柏 EZpad 7 128G平板电脑二合一 win10平板电脑二合一','Public/images/1554879131.jpg', 1209.00, '极光银色', '128G', 778,464,0),
+(NULL, 100, 'Jumper/中柏 EZpad 7 32G平板电脑二合一 ','Jumper/中柏 EZpad 7 32G平板电脑二合一 win10平板电脑二合一','Public/images/1554878158.jpg', 899.00, '极光银色', '32G', 566,76,0),
+(NULL, 100, 'Jumper/中柏EZpad Go 128G平板电脑二合一','Jumper/中柏EZpad Go 128G平板电脑二合一 中柏平板电脑二合一windows系统商务办公轻薄便携','Public/images/1552528166.jpg', 1949.00, '前黑后极光银', '128G', 888,97,0),
+(NULL, 100, 'Jumper/中柏EZpad Go 64G平板电脑二合一 ','Jumper/中柏EZpad Go 64G平板电脑二合一 win10平板电脑二合一windows系统轻薄便携学生','Public/images/1552528166.jpg', 1749.00, '前黑后极光银', '64G', 986,84,0),
+(NULL, 100, 'Jumper/中柏 EZpad 6s pro（增强版）','Jumper/中柏 EZpad 6s pro（增强版）','Public/images/1544607433.jpg', 1850.00, '极光银色', '128G', 200,464,0),
+(NULL, 100, 'Jumper/中柏EZpad mini5 ','Jumper/中柏EZpad mini5 win10平板电脑8英寸','Public/images/1538299867.jpg', 699.00, NULL, NULL, 996,236,0),
+(NULL, 100, 'jumper/中柏 EZpad M5平板电脑安卓','jumper/中柏 EZpad M5平板电脑安卓','Public/images/1558665064.jpg', 889.00, NULL, NULL, 887,126,0),
+(NULL, 100,'Jumper/中柏 EZpad 7 64G', 'Jumper/中柏 EZpad 7 64G','Public/images/1531301732.jpg', 989.00, '前黑后铁灰色', '64G', 999,311,0),
+(NULL, 100,'Jumper/中柏 EZpad 7S', 'Jumper/中柏 EZpad 7S','Public/images/1516696071.jpg', 1399.00, '极光银色', '64G', 885,57,0),
+(10, 100,'Jumper/中柏 EZpad M3', 'Jumper/中柏 EZpad M3','Public/images/1510816849.png', 619.00, '前黑后铁灰色', '32G', 619,105,0),
+(NULL, 100,'Jumper/中柏 EZpad 6s Pro', 'Jumper/中柏 EZpad 6s Pro','Public/images/1559543059.jpg', 1549.00, '前黑后极光银', '128G', 806,370,0),
+(NULL, 100,'Jumper/中柏 EZpad 6 pro', 'Jumper/中柏 EZpad 6 pro','Public/images/1561518390.jpg', 1299.00, '极光银色', '64G', 497,76,1),
+(NULL, 200,'Jumper/中柏 EZbook 2 128G笔记本电脑', 'Jumper/中柏 EZbook 2 128G笔记本电脑 超薄笔记本电脑轻薄便携学生','Public/images/1552551300.jpg', 1309.00, '极光银色', '128G', 788,166,0),
+(NULL, 200, 'Jumper/中柏ezbook S4笔记本电脑','Jumper/中柏ezbook S4笔记本电脑','Public/images/1539308952.jpg', 1499.00, '银色', '64G', 1000,61,1),
+(NULL, 200, 'Jumper/中柏 EZbook 3 plus','Jumper/中柏 EZbook 3 plus','Public/images/1510813059.jpg', 2799.00, '极光银色', '8G', 68,36,0),
+(NULL, 200,'Jumper/中柏 EZBOOK 2 4G', 'Jumper/中柏 EZBOOK 2 4G','Public/images/1479958460.jpg', 1009.00, '极光银色', '64G', 975,220,1),
+(NULL, 300, 'Jumper/中柏EZpad Go平板电脑原装正品磁吸式键盘','Jumper/中柏EZpad Go平板电脑原装正品磁吸式键盘 中柏原装正品磁吸式键盘','Public/images/1552528517.jpg', 249.00, NULL, NULL, 799,119,0),
+(NULL, 300, 'Jumper/中柏 EZpad 7 原装键盘','Jumper/中柏 EZpad 7 原装键盘','Public/images/1517221042.jpg', 149.00, NULL, NULL, 999,145,0),
+(NULL, 300, 'Jumper/中柏 EZpad 7S原装磁吸键盘/保护套','Jumper/中柏 EZpad 7S原装磁吸键盘/保护套','Public/images/1516600945.jpg', 199.00, NULL, NULL, 800,127,0),
+(NULL, 300, '中柏EZpad 6 Pro/EZpad 6s Pro原装转轴硬键盘','中柏EZpad 6 Pro/EZpad 6s Pro原装转轴硬键盘','Public/images/1510819297.jpg', 179.00, NULL, NULL, 59,501,0);
 #9商品图片
 INSERT INTO iumper_imgs VALUES('null','1','100','Public/images/1554879131.jpg','',''),
 ('null','1','100','Public/images/1554879144.jpg','',''),
@@ -261,13 +262,4 @@ INSERT INTO iumper_leftshop VALUES('null','product_details.html?lid=20','Public/
 ('null','product_details.html?lid=11','Public/images/1559543059.jpg','Jumper/中柏 EZpad 6s Pro','1549.00'),
 ('null','product_details.html?lid=6','Public/images/1538299867.jpg','Jumper/中柏EZpad mini5','699.00'),
 ('null','product_details.html?lid=16','Public/images/1479958460.jpg','Jumper/中柏 EZBOOK 2 4G','1009.00');
-
-
-
-
-
-
-
-
-
 

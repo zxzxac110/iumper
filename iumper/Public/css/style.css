@@ -132,6 +132,8 @@ i{font-style:normal;}
 	float:left;			
 }
 .Search{
+	border:0;
+	outline:0;
 	background:url(../images/sech.png) no-repeat;
 	width:55px;height:33px;
 	float:left;		
@@ -638,20 +640,24 @@ text-align:right}
 }
 /*4*/
 .tpc-4{
-	height:1050px;
 	margin-top:15px;
 }
-.tpc-4>ul,.collect>ul{ 
-	/*所有tpc中的ul有弹性*/
-	flex-flow:row wrap;
-	justify-content: space-between; 
- }
-.tpc-4>ul>li,.collect>ul>li{
+.tpc-4>ul{width:1213px;
+	margin-left:-13px;
+	display:block;}
+.tpc-4>ul>li{
 	width:290px;
 	height:325px;
     margin-bottom:15px;
 	text-align: center;
-	background:#fff
+	background:#fff;
+	margin-left:13px;
+	float: left;
+}							
+.tpc-4>ul:after{
+	content:"";
+	display:block;
+	clear:both;
 }
 .tpc-4 ul li img,
 .collect ul li img{
@@ -1333,6 +1339,17 @@ a.pt1-aa{color:#0061ae}
 	text-align: center;
 }
 /*我的收藏*/
+.collect>ul{ 
+	flex-flow:row wrap;
+	justify-content: space-between; 
+ }
+.collect>ul>li{
+	width:290px;
+	height:325px;
+    margin-bottom:15px;
+	text-align: center;
+	background:#fff
+}
 .collect{margin-top:15px;}
 .collect ul{
 	margin-left:-13px;display: flex;

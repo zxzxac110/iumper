@@ -20,9 +20,9 @@
         <div class="tpc-2">
             <ul>
                 <li>分类：</li>
-                <li ><a href="product.html?lid=100">平板电脑</a></li>
-                <li ><a href="product.html?lid=200">笔记本电脑</a></li>
-                <li ><a href="product.html?lid=300">电脑配件</a></li>
+                <li ><a href="product.html?dz=100">平板电脑</a></li>
+                <li ><a href="product.html?dz=200">笔记本电脑</a></li>
+                <li ><a href="product.html?dz=300">电脑配件</a></li>
             </ul>
         </div>
         <div class="tpc-3">
@@ -41,90 +41,7 @@
         </div>
         <div class="tpc-4" id="tpc4-product">
             <ul>
-                <li >
-                    <a href="#">
-                    <img src="Public/images/1554879131.jpg" alt=""/><h3 class="font333">Jumper/中柏 EZpad 7 128G平板电脑二合一</h3>
-                        <p class="font999">销量：464 <span class="right">评价：0</span></p>
-                        <p class="font-f90">1209.00元</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="Public/images/1554878158.jpg" alt=""/><h3 class="font333">Jumper/中柏 EZpad 7 32G平板电脑二合一</h3>
-                        <p class="font999">销量：76<span class="right">评价：0</span></p>
-                        <p class="font-f90">899.00元</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="Public/images/1552528166.jpg" alt=""/><h3 class="font333">Jumper/中柏EZpad Go 128G平板电脑二合一</h3>
-                        <p class="font999">销量：97 <span class="right">评价：0</span></p>
-                        <p class="font-f90">1949.00元</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="Public/images/1552528166.jpg" alt=""/><h3 class="font333">Jumper/中柏EZpad Go 64G平板电脑二合一</h3>
-                        <p class="font999">销量：84 <span class="right">评价：0</span></p>
-                        <p class="font-f90">1749.00元</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="Public/images/1544607433.jpg" alt=""/><h3 class="font333">                Jumper/中柏 EZpad 6s pro（增强版）</h3>
-                        <p class="font999">销量：464 <span class="right">评价：0</span></p>
-                        <p class="font-f90">1209.00元</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="Public/images/1538299867.jpg" alt=""/><h3 class="font333">Jumper/中柏EZpad mini5</h3>
-                        <p class="font999">销量：236 <span class="right">评价：0</span></p>
-                        <p class="font-f90">699.00元</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="Public/images/1558665064.jpg" alt=""/><h3 class="font333">                jumper/中柏 EZpad M5平板电脑安卓</h3>
-                        <p class="font999">销量：126 <span class="right">评价：0</span></p>
-                        <p class="font-f90">899.00元</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="Public/images/1531301732.jpg" alt=""/><h3 class="font333">Jumper/中柏 EZpad 7 64G</h3>
-                        <p class="font999">销量：311 <span class="right">评价：0</span></p>
-                        <p class="font-f90">989.00元</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="Public/images/1516696071.jpg" alt=""/><h3 class="font333">Jumper/中柏 EZpad 7S</h3>
-                        <p class="font999">销量：57 <span class="right">评价：0</span></p>
-                        <p class="font-f90">1399.00元</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="Public/images/1510816849.png" alt=""/><h3 class="font333">            Jumper/中柏 EZpad M3</h3>
-                        <p class="font999">销量：105 <span class="right">评价：0</span></p>
-                        <p class="font-f90">619.00元</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="Public/images/1559543059.jpg" alt=""/><h3 class="font333">                Jumper/中柏 EZpad 6s Pro</h3>
-                        <p class="font999">销量：370 <span class="right">评价：0</span></p>
-                        <p class="font-f90">1549.00元</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="Public/images/1502868991.jpg" alt=""/><h3 class="font333">Jumper/中柏 EZpad 6 pro</h3>
-                        <p class="font999">销量：76 <span class="right">评价：1</span></p>
-                        <p class="font-f90">1369.00元</p>
-                    </a>
-                </li>
+                <!-- 商品列表引入 -->
             </ul>
         </div>
        </div>
@@ -135,21 +52,30 @@
     <script src="Public/myjs/footer.js"></script>
 <script>
 $(function(){
-    var lid=location.search.split("=")[1]
-    if(!(lid==100||lid==200||lid==300)){lid=100}
-        if(lid){
+    var dz=location.search.split("=")[1]
+        if(dz){
             $.ajax({
                 url:"http://127.0.0.1:8080/product/v1",
                 type:"get",
-                data:{lid},
+                data:{dz},
                 dataType:"json",
                 success:function(result){
-                   console.log(result)
-
-
+/*pid,title,img,price,svolume,Enumber*/  
+                   var html=""
+                   for(var pro of result){
+                       html+=`<li>
+                                <a href="product_details.html?lid=${pro.pid}">
+                                    <img src=${pro.img} alt=""/>
+                                    <h3 class="font333">${pro.brief}</h3>
+                                    <p class="font999">销量：${pro.svolume}<span class="right">评价：${pro.Enumber}</span></p>
+                                    <p class="font-f90">${(pro.price).toFixed(2)}元</p>
+                                </a>
+                              </li>`
+                            }
+                        $("#tpc4-product>ul").html(html)
 /*对应品牌选中样式class="tpc-2pg"*/
             var $tpc2pg=$(".tpc-2>ul>li>a")
-            $($tpc2pg[lid/100-1]).addClass("tpc-2pg")
+            $($tpc2pg[dz/100-1]).addClass("tpc-2pg")
 /*轮播图*/
             var $ulImg=$(".tpc-1>ul")
         var times=setInterval(slideshow,5500) //显示5s 过渡0.5秒
