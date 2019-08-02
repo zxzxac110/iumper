@@ -29,20 +29,28 @@
             <ul>
                 <li>排序：</li>
                 <li>
-                    <a href="#">销量<span></span></a>
+                    <a href="#" data-down="Svolume" data-up="Svolume">销量<span></span></a>
                 </li>
                 <li>
-                    <a href="#">价格<span></span></a></li>
+                    <a href="#" data-down="Price" data-up="Price">价格<span></span></a></li>
                 <li>
-                    <a href="#">上架时间<span></span></a></li>
+                    <a href="#" data-down="Time" data-up="Time">上架时间<span></span></a></li>
                 <li>
-                    <a href="#">好评<span></span></a></li>
+                    <a href="#" data-down="Enumber" data-up="Enumber" >好评<span></span></a></li>
             </ul>
         </div>
         <div class="tpc-4" id="tpc4-product">
             <ul>
                 <!-- 商品列表引入 -->
             </ul>
+            <div>
+                <ul id="product-pag">
+                    <li> < </li>
+                    <li>1</li>
+                    <li>2</li>
+                    <li> > </li>
+                </ul>
+            </div>
         </div>
        </div>
     </div>
@@ -50,52 +58,6 @@
     <script src="Public/js/jquery-3.2.1.js"></script>
     <script src="Public/myjs/header.js"></script>
     <script src="Public/myjs/footer.js"></script>
-<script>
-$(function(){
-    var dz=location.search.split("=")[1]
-        if(dz){
-            $.ajax({
-                url:"http://127.0.0.1:8080/product/v1",
-                type:"get",
-                data:{dz},
-                dataType:"json",
-                success:function(result){
-/*pid,title,img,price,svolume,Enumber*/  
-                   var html=""
-                   for(var pro of result){
-                       html+=`<li>
-                                <a href="product_details.html?lid=${pro.pid}">
-                                    <img src=${pro.img} alt=""/>
-                                    <h3 class="font333">${pro.brief}</h3>
-                                    <p class="font999">销量：${pro.svolume}<span class="right">评价：${pro.Enumber}</span></p>
-                                    <p class="font-f90">${(pro.price).toFixed(2)}元</p>
-                                </a>
-                              </li>`
-                            }
-                        $("#tpc4-product>ul").html(html)
-/*对应品牌选中样式class="tpc-2pg"*/
-            var $tpc2pg=$(".tpc-2>ul>li>a")
-            $($tpc2pg[dz/100-1]).addClass("tpc-2pg")
-/*轮播图*/
-            var $ulImg=$(".tpc-1>ul")
-        var times=setInterval(slideshow,5500) //显示5s 过渡0.5秒
-        function slideshow(){ 
-            $ulImg.css("opacity","0")        //透明
-                setTimeout(function(){
-                $("#tpcImg1").toggle()      //显示隐藏
-                $ulImg.css("opacity","1")
-            },500)
-        }
-        $ulImg.mouseenter(function(){
-                    clearInterval(times);   //关闭
-        });
-        $ulImg.mouseleave(function(){
-            times=setInterval(slideshow,1500);//开启
-        })
-                }
-            })
-        }
-})
-    </script>
+    <script src="Public/myjs/product.js"></script>
 </body>
 </html>
