@@ -4,10 +4,64 @@ $(function(){
         type:"get",
         dataType:"json",
         success:function(result){
-            var html=''
-            var arrimg=result.slice(0,5)
-    //添加所有内容
-            for(var elem of result){
+            var {list,show}=result;
+            console.log(list[0].pid)
+            var html1='<ul class="banner-nab">';
+            var html2='<ul class="banner-nab">';
+            var html3='<ul class="banner-nab">';
+            var i=0
+            for(var elem of list){
+                if(elem.type_uid==100){
+                    i++
+                    if(i%6==1){html1+=`</ul>
+                        <ul class="banner-nab">`}
+                    html1+=`<li><a href="product_details.html?lid=${elem.pid}">${elem.brief}</a></li>`  
+                }else if(elem.type_uid==200){
+                    html2+=`<li><a href="product_details.html?lid=${elem.pid}">${elem.brief}</a></li>`
+                }else if(elem.type_uid==300){
+                    html3+=`<li><a href="product_details.html?lid=${elem.pid}">${elem.brief}</a></li>`
+                } 
+            }
+            html1+='</ul>'
+            html2+='</ul>'
+            html3+='</ul>'
+            console.log(html1,html2,html3)
+            /*待插入 */
+/*              
+                    if(){a+=l}
+                    if(){b+=l}
+                    if(){c+=l}
+                    if(i%6==0){ul}
+                    a,b,c
+            /*
+            var html=`<div  class="banner-divflex">
+                        <ul class="banner-nab">`;
+            list.forEach(function(elem,i){
+                html+=`<li><a href="product_details.html?lid=${elem.pid}">${elem.brief}</a></li>`
+                    if(i==5){html+=`</ul>
+                                    <ul class="banner-nab">`}
+                    if(i==11){html+=`</ul>
+                                    </div>
+                                    <div  class="banner-divflex">
+                                        <ul class="banner-nab">
+                    `}               
+                    if(i==15)                
+            });
+            html+=
+            /*
+            for(var elem of list){
+                html+=
+                `<li><a href="product_details.html?lid=${elem.pid}">${elem.brief}</a></li>`
+            }
+            <div  class="banner-divflex">
+            <ul class="banner-nab">*/
+
+
+
+            var html="";
+            var arrimg=show.slice(0,5)
+    //轮播内容
+            for(var elem of show){
                 html+=`<li class="center-slideshow-1">
                                 <a href=${elem.herf}>					
                                     <img src=${elem.img} alt="" >
@@ -29,7 +83,8 @@ $(function(){
                     </li>`
             } 
             $("ul.center-slideshow").html(html)
-            var arr=[result[3],result[10],result[12]]
+    //添加其他图片
+            var arr=[show[3],show[10],show[12]]
             var html=''
             for(var elem of arr){
                 html+=`<li >

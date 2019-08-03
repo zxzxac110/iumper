@@ -23,17 +23,18 @@
         </div>
         <div class="pt2">
             <div class="pt2-left">
-                <h1><a href="#">会员中心</a></h1>
+                <h1><a href="#" data-toggle="pt2-RMember">会员中心</a></h1>
                 <ul class=pt2-left-maxul>
                     <li>
                         <ul>                            
                             <li>
-                            <h2><a href="#">会员信息</a></h2>                     </li> 
-                            <li><a href="#">个人信息</a>
+                                <h2><a href="#">会员信息</a></h2>
+                            </li> 
+                            <li><a href="#" data-toggle="pt2-personal">个人信息</a>
                             </li>
-                            <li><a href="#">账号安全</a>
+                            <li><a href="#" data-toggle="pt2-safety">账号安全</a>
                             </li>
-                            <li><a href="#">收获地址</a>
+                            <li><a href="#" data-toggle="pt2-shippingAddress" id="shdz">收获地址</a>
                             </li>
                         </ul>
                     </li>
@@ -42,27 +43,28 @@
                             <li>
                                 <h2><a href="#">我的交易</a></h2>      
                             </li>
-                            <li><a href="#">我的订单</a>
+                            <li><a href="#" data-toggle="pt2-myorder">我的订单</a>
                             </li>
-                            <li><a href="#">我的退换货</a>
+                            <li><a href="#" data-toggle="pt2-salesreturn">我的退换货</a>
                             </li>
-                            <li><a href="#">我的评价</a>
+                            <li><a href="#" data-toggle="pt2-evaluate">我的评价</a>
                             </li>
                         </ul> 
-                    </li>
+                    </li>       
                     <li>                        
                         <ul>
                             <li>
                                 <h2><a href="#">关注中心</a></h2>
                             </li>
-                            <li><a href="#">收藏的商品</a></li>
-                            <li><a href="#">浏览历史</a></li>
+                            <li><a href="#" data-toggle="pt2-collect">收藏的商品</a></li>
+                            <li><a href="#" data-toggle="pt2-history">浏览历史</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
             <div class="pt2-right">
             <!-- 会员中心 -->
+            <div id="pt2-RMember" >
                 <div class="pt2-RMember">
                     <div class="pt2-RMember-portrait">
                         <img class="pt2-RMember-portraitIMG" src="Public/images/tx.jpg" alt="">
@@ -127,137 +129,140 @@
                         </tr>
                     </table>
                 </div>
+            </div> 
             <!-- 个人信息 -->
-                <div class="pt1-grxx">
-                    <div class="pt1-personal">
-                        <div class="pt1-personal1">完善会员资料</div>
+            <div id="pt2-personal" class="pt2-grxx d-none">
+                <div class="pt2-personal">
+                    <div class="pt2-personal-1">完善会员资料</div>
+                </div>
+                <div>
+                    <div class="pt2-personal-t1">
+                        <div class="pt2-RMember-portrait">
+                            <img class="pt2-RMember-portraitIMG" src="Public/images/tx.jpg" alt="">
+                        </div>
+                        <div class="pt2-personal-txnr">
+                            <p>请选择新的照片文件。</p>  
+                            <p>支持JPGPNGGIF格式的图片，文件需小于0.5M</p>  
+                                <input type="file" name="hobby[]">
+                        </div>                      
                     </div>
                     <div>
-                        <div class="pt1-personal-t1">
-                            <div class="pt2-RMember-portrait">
-                                <img class="pt2-RMember-portraitIMG" src="Public/images/tx.jpg" alt="">
-                            </div>
-                            <div class="pt1-personal-txnr">
-                                <p>请选择新的照片文件。</p>  
-                                <p>支持JPGPNGGIF格式的图片，文件需小于0.5M</p>  
-                                    <input type="file" name="hobby[]">
-                            </div>                      
-                        </div>
-                        <div>
-                            <table class="pt1-persona-table">
-                                <tr>
-                                    <td class="pt1-persona-table-td1"><span>*</span>昵称：</td>
-                                    <td class="pt1-persona-table-td2">
-                                        <input type="text" class="pt1-persona-table-inputtext">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="pt1-persona-table-td1">性别：</td>
-                                    <td class="pt1-persona-table-td2">
-                                        <input type="radio" name="sex" value="0">女
-                                        <input type="radio" checked=checked name="sex" value="1">男
-                                        <input type="radio" name="sex" value="2">保密     
+                        <table class="pt2-persona-table">
+                            <tr>
+                                <td class="pt2-persona-table-td1"><span>*</span>昵称：</td>
+                                <td class="pt2-persona-table-td2">
+                                    <input type="text" class="pt2-persona-table-inputtext">
                                 </td>
-                                </tr>
-                                <tr>
-                                    <td class="pt1-persona-table-td1"><span>*</span>地区：</td>
-                                    <td class="pt1-persona-table-td2">
-                                            <select name="shengf">
-                                                <option value>请选择省份</option>
-                                                <option value="2">北京</option>
-                                                <option value="3">安徽</option>
-                                                <option value="4">福建</option>
-                                                <option value="5">甘肃</option>
-                                                <option value="6">广东</option>
-                                                <option value="7">广西</option>
-                                                <option value="8">贵州</option>
-                                                <option value="9">海南</option>
-                                                <option value="10">河北</option>
-                                                <option value="11">河南</option>
-                                                <option value="12">黑龙江</option>
-                                                <option value="13">湖北</option>
-                                                <option value="14">湖南</option>
-                                                <option value="15">吉林</option>
-                                                <option value="16">江苏</option>
-                                                <option value="17">江西</option>
-                                                <option value="18">辽宁</option>
-                                                <option value="19">内蒙古</option>
-                                                <option value="20">宁夏</option>
-                                                <option value="21">青海</option>
-                                                <option value="22">山东</option>
-                                                <option value="23">山西</option>
-                                                <option value="24">陕西</option>
-                                                <option value="25">上海</option>
-                                                <option value="26">四川</option>
-                                                <option value="27">天津</option>
-                                                <option value="28">西藏</option>
-                                                <option value="29">新疆</option>
-                                                <option value="30">云南</option>
-                                                <option value="31">浙江</option>
-                                                <option value="32">重庆</option>
-                                                <option value="33">香港</option>
-                                                <option value="34">澳门</option>
-                                                <option value="35">台湾</option>
-                                            </select>
-                                            <select name="chengs">
-                                                    <option value>请选择城市</option>
-                                            </select>
-                                            <select name="quxian">
-                                                    <option value>请选择区县</option>
-                                            </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="pt1-persona-table-td1"><span>*</span>详细地址：</td>
-                                    <td class="pt1-persona-table-td2">
-                                        <input type="text" class="pt1-persona-table-inputtext">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="pt1-persona-table-td1">QQ：</td>
-                                    <td class="pt1-persona-table-td2">
-                                        <input type="text" class="pt1-persona-table-inputtext">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2" class="pt1-persona-table-an">
-                                        <button>立即保存</button>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
+                            </tr>
+                            <tr>
+                                <td class="pt2-persona-table-td1">性别：</td>
+                                <td class="pt2-persona-table-td2">
+                                    <input type="radio" name="sex" value="0">女
+                                    <input type="radio" checked=checked name="sex" value="1">男
+                                    <input type="radio" name="sex" value="2">保密     
+                            </td>
+                            </tr>
+                            <tr>
+                                <td class="pt2-persona-table-td1"><span>*</span>地区：</td>
+                                <td class="pt2-persona-table-td2">
+                                        <select name="shengf">
+                                            <option value>请选择省份</option>
+                                            <option value="2">北京</option>
+                                            <option value="3">安徽</option>
+                                            <option value="4">福建</option>
+                                            <option value="5">甘肃</option>
+                                            <option value="6">广东</option>
+                                            <option value="7">广西</option>
+                                            <option value="8">贵州</option>
+                                            <option value="9">海南</option>
+                                            <option value="10">河北</option>
+                                            <option value="11">河南</option>
+                                            <option value="12">黑龙江</option>
+                                            <option value="13">湖北</option>
+                                            <option value="14">湖南</option>
+                                            <option value="15">吉林</option>
+                                            <option value="16">江苏</option>
+                                            <option value="17">江西</option>
+                                            <option value="18">辽宁</option>
+                                            <option value="19">内蒙古</option>
+                                            <option value="20">宁夏</option>
+                                            <option value="21">青海</option>
+                                            <option value="22">山东</option>
+                                            <option value="23">山西</option>
+                                            <option value="24">陕西</option>
+                                            <option value="25">上海</option>
+                                            <option value="26">四川</option>
+                                            <option value="27">天津</option>
+                                            <option value="28">西藏</option>
+                                            <option value="29">新疆</option>
+                                            <option value="30">云南</option>
+                                            <option value="31">浙江</option>
+                                            <option value="32">重庆</option>
+                                            <option value="33">香港</option>
+                                            <option value="34">澳门</option>
+                                            <option value="35">台湾</option>
+                                        </select>
+                                        <select name="chengs">
+                                                <option value>请选择城市</option>
+                                        </select>
+                                        <select name="quxian">
+                                                <option value>请选择区县</option>
+                                        </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="pt2-persona-table-td1"><span>*</span>详细地址：</td>
+                                <td class="pt2-persona-table-td2">
+                                    <input type="text" class="pt2-persona-table-inputtext">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="pt2-persona-table-td1">QQ：</td>
+                                <td class="pt2-persona-table-td2">
+                                    <input type="text" class="pt2-persona-table-inputtext">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="pt2-persona-table-an">
+                                    <button>立即保存</button>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
-                </div>    
-            <!-- 账号安全  验证手机和邮箱图标需要跟换-->
-                <div class="pt1-personal">
-                    <div class="pt1-personal1">安全设置</div>
                 </div>
-                <div class="pt1-safety">                    
-                    <div class="pt1-safety-t1">
-                        <div class="pt1-safety-t1-img1">
-                        </div>
-                        <h3 class="pt1-safety-t2">登录密码</h3>   
-                        <p class="pt1-safety-t3">互联网账号存在被盗风险，建议您定期更改密码以保护账户安全。</p>
-                        <a href="#" class="pt1-safety-t4">修改</a>
+            </div>    
+            <!-- 账号安全 -->
+                <div id="pt2-safety" class="d-none">
+                    <div class="pt2-personal">
+                        <div class="pt2-personal-1">安全设置</div>
                     </div>
-                    <div class="pt1-safety-t1">
-                        <div class="pt1-safety-t1-img1 pt1-safety-t1-img2">
+                    <div class="pt1-safety">                    
+                        <div class="pt1-safety-t1">
+                            <div class="pt1-safety-t1-img1">
+                            </div>
+                            <h3 class="pt1-safety-t2">登录密码</h3>   
+                            <p class="pt1-safety-t3">互联网账号存在被盗风险，建议您定期更改密码以保护账户安全。</p>
+                            <a href="#" class="pt1-safety-t4">修改</a>
                         </div>
-                        <h3 class="pt1-safety-t2">验证手机</h3>   
-                        <p class="pt1-safety-t3">您的手机还未验证</p>
-                        <a href="#" class="pt1-safety-t4">验证</a>   
-                    </div>
-                    <div class="pt1-safety-t1">
-                        <div class="pt1-safety-t1-img1">
+                        <div class="pt1-safety-t1">
+                            <div class="pt1-safety-t1-img1 pt1-safety-t1-img2">
+                            </div>
+                            <h3 class="pt1-safety-t2">验证手机</h3>   
+                            <p class="pt1-safety-t3">您的手机还未验证</p>
+                            <a href="#" class="pt1-safety-t4">验证</a>   
                         </div>
-                        <h3 class="pt1-safety-t2">验证邮箱</h3>   
-                        <p class="pt1-safety-t3">您验证的邮箱： 448149408@qq.com 若已丢失或停用，请立即更换，避免账户被盗</p>
-                        <a href="#" class="pt1-safety-t4">修改</a>   
+                        <div class="pt1-safety-t1">
+                            <div class="pt1-safety-t1-img1">
+                            </div>
+                            <h3 class="pt1-safety-t2">验证邮箱</h3>   
+                            <p class="pt1-safety-t3">您验证的邮箱： 448149408@qq.com 若已丢失或停用，请立即更换，避免账户被盗</p>
+                            <a href="#" class="pt1-safety-t4">修改</a>   
+                        </div>
                     </div>
                 </div>
             <!-- 收货地址-->
-                <div class="pt1-shipping-address">
-                    <div>
+                <div id="pt2-shippingAddress" class="pt1-shipping-address d-none">
+                    <div id="address">
                         <button class="pt1-shippingaddress-new">新增收货地址</button>
                         <div class="pt1-shippingaddress-site">
                             <ul>
@@ -281,17 +286,17 @@
                             </ul>
                         </div>
                     </div>
-                    <div>
-                            <table class="pt1-persona-table">
+                    <div id="new-address" class="d-none">
+                            <table class="pt2-persona-table">
                                     <tr>
-                                        <td class="pt1-persona-table-td1"><span>*</span>姓名：</td>
-                                        <td class="pt1-persona-table-td2">
-                                            <input type="text" class="pt1-persona-table-inputtext">
+                                        <td class="pt2-persona-table-td1"><span>*</span>姓名：</td>
+                                        <td class="pt2-persona-table-td2">
+                                            <input type="text" class="pt2-persona-table-inputtext">
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="pt1-persona-table-td1"><span>*</span>所在地区：</td>
-                                        <td class="pt1-persona-table-td2">
+                                        <td class="pt2-persona-table-td1"><span>*</span>所在地区：</td>
+                                        <td class="pt2-persona-table-td2">
                                             <select name="shengf">
                                                 <option value>请选择省份</option>
                                                 <option value="2">北京</option>
@@ -338,32 +343,32 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="pt1-persona-table-td1"><span>*</span>地址：</td>
-                                        <td class="pt1-persona-table-td2">
-                                            <input type="text" class="pt1-persona-table-inputtext"
+                                        <td class="pt2-persona-table-td1"><span>*</span>地址：</td>
+                                        <td class="pt2-persona-table-td2">
+                                            <input type="text" class="pt2-persona-table-inputtext"
                                             style="width:400px;height:80px;">
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="pt1-persona-table-td1"><span>*</span>手机：</td>
-                                        <td class="pt1-persona-table-td2">
-                                            <input type="text" class="pt1-persona-table-inputtext">
+                                        <td class="pt2-persona-table-td1"><span>*</span>手机：</td>
+                                        <td class="pt2-persona-table-td2">
+                                            <input type="text" class="pt2-persona-table-inputtext">
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="pt1-persona-table-td1">固定电话：</td>
-                                        <td class="pt1-persona-table-td2">
-                                            <input type="text" class="pt1-persona-table-inputtext">
+                                        <td class="pt2-persona-table-td1">固定电话：</td>
+                                        <td class="pt2-persona-table-td2">
+                                            <input type="text" class="pt2-persona-table-inputtext">
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="pt1-persona-table-td1">邮箱：</td>
-                                        <td class="pt1-persona-table-td2">
-                                            <input type="text" class="pt1-persona-table-inputtext">
+                                        <td class="pt2-persona-table-td1">邮箱：</td>
+                                        <td class="pt2-persona-table-td2">
+                                            <input type="text" class="pt2-persona-table-inputtext">
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2" class="pt1-persona-table-an">
+                                        <td colspan="2" class="pt2-persona-table-an">
                                             <button>保存</button>
                                         </td>
                                     </tr>
@@ -371,14 +376,14 @@
                     </div>
                 </div>
             <!-- 我的订单 -->
-                <div>                   
-                    <div class="pt-myorder"> 
+                <div id="pt2-myorder" class="d-none">                   
+                    <div class="pt2-myorder"> 
                         <div>
-                            <h3 class="pt-myorder-title">我的订单</h3>
+                            <h3 class="pt2-myorder-title">我的订单</h3>
                         </div>
-                        <div class="pt-myorder-2">
-                            <p><span class="pt-myorder-p2">订单状态</span>
-                                <select class="pt-myorder-select" name="ddzt" id="">
+                        <div class="pt2-myorder-2">
+                            <p><span class="pt2-myorder-p2">订单状态</span>
+                                <select class="pt2-myorder-select" name="ddzt" id="">
                                     <option selected="selected">所有订单</option>  
                                     <option value="0">待付款</option>  
                                     <option value="1">待发货</option>  
@@ -387,8 +392,8 @@
                                     <option value="4">已取消</option>  
                                 </select>
                             </p>
-                            <p><span class="pt-myorder-p2">订单号</span><input  class="pt-myorder-text2" type="text"></p>  
-                            <button class="pt-myorder-cx">查询</button>
+                            <p><span class="pt2-myorder-p2">订单号</span><input  class="pt2-myorder-text2" type="text"></p>  
+                            <button class="pt2-myorder-cx">查询</button>
                         </div>
                     </div>  
                     <hr>
@@ -421,24 +426,24 @@
                     </div>             
                 </div>
             <!-- 我的退换货 -->
-                <div class="pt1-salesreturn-bg">
-                    <div class="pt1-personal1">我的退换货</div>
-                    <div class="pt1-salesreturn"> 
+                <div id="pt2-salesreturn" class="pt2-salesreturn-bg d-none">
+                    <div class="pt2-personal-1">我的退换货</div>
+                    <div class="pt2-salesreturn"> 
                         <div></div>
-                        <div class="pt-myorder-2">
-                            <p><span class="pt-myorder-p2">订单状态</span>
-                                <select class="pt-myorder-select" name="ddzt" id="">
+                        <div class="pt2-myorder-2">
+                            <p><span class="pt2-myorder-p2">订单状态</span>
+                                <select class="pt2-myorder-select" name="ddzt" id="">
                                     <option selected="selected">所有订单</option>  
                                     <option value="0">待确认</option>  
                                     <option value="1">处理中</option>  
                                     <option value="2">已完成</option>  
                                 </select>
                             </p>
-                            <p><span class="pt-myorder-p2">订单号</span><input  class="pt-myorder-text2" type="text"></p>  
-                            <button class="pt-myorder-cx">查询</button>
+                            <p><span class="pt2-myorder-p2">订单号</span><input  class="pt2-myorder-text2" type="text"></p>  
+                            <button class="pt2-myorder-cx">查询</button>
                         </div>
                     </div>
-                    <table class="pt1-salesreturn-tablebg">					
+                    <table class="pt2-salesreturn-tablebg">					
                         <tr>
                             <th >商品</th>
                             <th >数量</th>
@@ -457,10 +462,10 @@
                         </tr>
                     </table>
                 </div>
-            <!-- 我的评价evaluate  -->
-                <div class="pt1-evaluate">
-                    <div class="pt1-personal1">我的评价</div>
-                    <table class="pt1-evaluate-table">
+            <!-- 我的评价evaluate  -->         
+                <div id="pt2-evaluate" class="pt2-evaluate d-none">
+                    <div class="pt2-personal-1">我的评价</div>
+                    <table class="pt2-evaluate-table">
                         <tr>
                             <th class="w-355">商品名称</th>
                             <th class="w-80">评论等级</th>
@@ -476,8 +481,8 @@
                     </table>
                 </div>
             <!-- 收藏的商品 -->
-                <div>
-                    <div class="pt1-personal1">收藏的商品</div>
+                <div id="pt2-collect" class="d-none">
+                    <div class="pt2-personal-1">收藏的商品</div>
                     <div class="collect">
                         <ul>
                             <li >
@@ -526,13 +531,13 @@
                     </div>
                 </div>
             <!-- 浏览历史 -->
-                <div class="pt1-browsinghistory">
-                    <div class="pt1-personal1">浏览历史</div>
+                <div id="pt2-history" class="pt2-browsinghistory d-none">
+                    <div class="pt2-personal-1">浏览历史</div>
                     <div>
                         <h1>今天<i>2019-01-01</i> 
                         <a href="#">删除</a>
                         </h1>
-                        <ul class="pt1-browsinghistory-ul"><!--浏览商品图片排版 -->
+                        <ul class="pt2-browsinghistory-ul"><!--浏览商品图片排版 -->
                             <li >
                                 <div>
                                     <a href="#">
@@ -593,7 +598,7 @@
                         <h1>昨天
                         <a href="#">删除</a>
                         </h1>
-                        <ul class="pt1-browsinghistory-ul"><!--浏览商品图片排版 -->
+                        <ul class="pt2-browsinghistory-ul"><!--浏览商品图片排版 -->
                             <li >
                                 <div>
                                     <a href="#">
@@ -611,7 +616,7 @@
                         <h1>前天<i>2019-01-01</i>
                         <a href="#">删除</a>
                         </h1>
-                        <ul class="pt1-browsinghistory-ul"><!--浏览商品图片排版 -->
+                        <ul class="pt2-browsinghistory-ul"><!--浏览商品图片排版 -->
                             <li >
                                 <div>
                                     <a href="#">
@@ -628,7 +633,7 @@
                        <h1>更早之前
                         <a href="#">删除</a>
                        </h1>
-                       <ul class="pt1-browsinghistory-ul"><!--浏览商品图片排版 -->
+                       <ul class="pt2-browsinghistory-ul"><!--浏览商品图片排版 -->
                         <li >
                             <div>
                                 <a href="#">
@@ -654,6 +659,22 @@
     <script src="Public/myjs/header.js"></script>
     <script src="Public/myjs/footer.js"></script> 
     <script>
+    /*l列表对应内容*/
+        $(".pt2>.pt2-left").on("click","h1>a,li>a",function(e){
+            e.preventDefault()
+            $(".pt2-right>div").addClass("d-none")
+            $(`#${$(this).attr("data-toggle")}`).removeClass("d-none")
+        })
+        /*收货地址2种情况*/
+        $(".pt1-shippingaddress-new").click(function(){
+            $("#address").addClass("d-none")
+            $("#new-address").removeClass("d-none")
+        })
+        $("#shdz").click(function(e){
+            e.preventDefault()
+            $("#new-address").addClass("d-none")
+            $("#address").removeClass("d-none")
+        })
 /*城市下拉列表*/
         var csarr=[
       [{"name":'东城区',"value":101},

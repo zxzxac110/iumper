@@ -14,27 +14,27 @@
        <!--center-->
         <div class="main">
           <div class="serve-1">
-              您所在的位置：<a href="#" class="font666">首页</a>&nbsp;>&nbsp;服务&nbsp;>&nbsp;<span>相关下载</span>
+              您所在的位置：<a href="index.html" class="font666">首页</a>&nbsp;>&nbsp;服务&nbsp;>&nbsp;<span>相关下载</span>
           </div>
           <div class="serve-2">
               <div class="serve-2-t1">
                   <h1>服务
-                  <ul>
-                      <li><a href="#">相关下载</a></li>
-                      <li><a href="#">服务承诺</a></li>
-                      <li><a href="#">退换货政策</a></li>
+                  <ul id="serveTab">
+                      <li><a href="#" data-toggle="downLoad" class="active">相关下载</a></li>
+                      <li><a href="#" data-toggle="commitment">服务承诺</a></li>
+                      <li><a href="#" data-toggle="policy">退换货政策</a></li>
                   </ul>
                   </h1>
               </div>
               <!-- 相关下载 -->
-              <div>
+              <div  id="downLoad">
                 <div class="serve-2-t2">
                     <img src="Public/images/1463044903.jpg" alt=""/>
                 </div>
                 <div class="serve-2-t3"></div>
               </div>
               <!--服务承诺 -->
-              <div>
+              <div class="d-none" id="commitment">
                 <div class="serve-2-t2">
                     <img src="Public/images/1463045053.jpg" alt=""/>
                 </div>
@@ -67,7 +67,7 @@
                 </div>
              </div>
              <!-- 退换货政策 -->
-             <div>
+             <div class="d-none" id="policy">
                 <div class="serve-2-t2">
                     <img src="Public/images/1463045053.jpg" alt=""/>
                 </div>
@@ -84,5 +84,6 @@
 <script src="Public/js/jquery-3.2.1.js"></script>
 <script src="Public/myjs/header.js"></script>
 <script src="Public/myjs/footer.js"></script>   
+<script src="Public/myjs/servr.js"></script>   
 </body>
 </html>
