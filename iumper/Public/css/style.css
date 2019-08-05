@@ -371,7 +371,7 @@ text-align:right}
 .center-5-2 ul li:hover h1{
 	color:#ff9200;
 }
-/*fixed 未完成*/
+/*fixed*/
  .fixed{
 	position:fixed;
 	box-sizing: content-box;/*默认外+内+边+设定*/
@@ -479,7 +479,7 @@ text-align:right}
 	background:url(../images/kf.jpg) no-repeat;
 	margin-top:15px;
 }
-/*dl功能未实现*/
+/*dl*/
 .bottom-2-2 dl{
 	width:135px;
 	height:28px;
@@ -495,8 +495,28 @@ text-align:right}
 }
 .bottom-2-2>div{
 	position: absolute;
-	right:0px;
-}				
+	right:0px;}	
+#dd{
+	background:#fff;
+	width:113px;
+    padding: 0px 10px;
+    position: absolute;
+    bottom: 28px;
+    text-align: left;
+}
+#dd>div{
+	height: 0px;
+    line-height: 25px;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;/*未显示内容省略*/
+    white-space: nowrap;/*不换行*/
+	transition: all 0.2s linear
+}
+#dd>div>a{color: #999}
+#dd>div>a:hover{color:#ff9200}
+#dd>div.h25px{height: 25px;padding: 5px 0px;}
+#dd.brober{border: 1px solid #e3e3e3;}			
 /*bottom-3*/
 .bottom-3{
 	width:1200px;height:45px;
@@ -705,7 +725,7 @@ text-align:right}
 	font-size:13px;
 	text-align: center;
 }
-#product-pag>li.actrve{
+#product-pag>li.active{
 	background: #4db6f9;
 	color:#fff
 }
@@ -855,19 +875,21 @@ a:hover {
 .Computer-quantity span{width:31px}
 .Computer-quantity .font999{vertical-align:bottom}
 .Computer-click{margin:35px 0 37px}
-.Computer-click .bg-primary{ 
-	background:#0061ae;
-	color: #ffffff;
-	font-weight: 600;
-	width:130px;
-	height:36px;
+.Computer-click button{
+	height: 36px;
+	color: #fff;
+	cursor:pointer;
+	border: 0;outline: 0;
+	font:800 18px "宋体";
+	border-radius: 4px;
 }
-.Computer-click .bg-warning{
+.Computer-click .bgblue{ 
+	background:#0061ae;
+	width:130px;
+}
+.Computer-click .bgyellow{
 	background:#ff9200;
-	color: #ffffff;
-	font-weight: 600;
 	width:160px;
-	height:36px;
 	margin-left:5px;
 }
 .Computer-collect{

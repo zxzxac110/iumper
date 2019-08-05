@@ -141,7 +141,7 @@ var $sImg=$("#ulsImg");
         $("#down3>div>div").addClass("d-none");
         $(`#${$d.attr("data-toggle")}`).removeClass("d-none")
      })                
-    }
+    }/** 购物车  用户id  img  title price 规格 数量 pid*/
   })
  }
 })

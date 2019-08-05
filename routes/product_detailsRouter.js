@@ -16,21 +16,21 @@ router.get('/v1',function(req,res){
   pool.query(sql,[lid],(err,result)=>{
   if(err) console.log(err); 
   output.product=result  
-  })
- /*图片 标题 价格 链接 20 1  11 6  */
-  var sql=`SELECT herf,img,title,price FROM iumper_leftshop`
-  pool.query(sql,[lid],(err,result)=>{
-    if(err) console.log(err);   
-    output.leftshop=result  
-    })  
-/*图片 */
-    var sql=`SELECT picture_sm FROM iumper_imgs WHERE product_id=?`; 
+/*图片 标题 价格 链接 20 1  11 6  */  
+    var sql=`SELECT herf,img,title,price FROM iumper_leftshop`
     pool.query(sql,[lid],(err,result)=>{
     if(err) console.log(err);   
-    output.imgs=result   
-    res.send(output);
+    output.leftshop=result
+/*图片 */    
+      var sql=`SELECT picture_sm FROM iumper_imgs WHERE product_id=?`; 
+      pool.query(sql,[lid],(err,result)=>{
+      if(err) console.log(err);   
+      output.imgs=result   
+      res.send(output);
+      }) 
     }) 
-  }else{
+  })
+   }else{
   res.send(output);
 }       
 });

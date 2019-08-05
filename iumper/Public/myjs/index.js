@@ -5,62 +5,35 @@ $(function(){
         dataType:"json",
         success:function(result){
             var {list,show}=result;
-            console.log(list[0].pid)
-            var html1='<ul class="banner-nab">';
-            var html2='<ul class="banner-nab">';
-            var html3='<ul class="banner-nab">';
-            var i=0
+            var html='';
+            var type100=0,type200=0,type300=0;
+            //插入页面类型数据的函数
+            function addhtml(type){
+                if(type==0){html+=`<div class="banner-divflex"><ul class="banner-nab">`;}
+            html+=`<li><a href="product_details.html?lid=${elem.pid}">${elem.brief}</a></li>` ;
+            if(type%6==5){html+=`</ul><ul class="banner-nab">`;
+                            }                        
+            }
             for(var elem of list){
                 if(elem.type_uid==100){
-                    i++
-                    if(i%6==1){html1+=`</ul>
-                        <ul class="banner-nab">`}
-                    html1+=`<li><a href="product_details.html?lid=${elem.pid}">${elem.brief}</a></li>`  
+                     addhtml(type100);
+                     type100++;
                 }else if(elem.type_uid==200){
-                    html2+=`<li><a href="product_details.html?lid=${elem.pid}">${elem.brief}</a></li>`
+                    if(type200==0){html+=`</ul></div>`}
+                     addhtml(type200);
+                     type200++;
                 }else if(elem.type_uid==300){
-                    html3+=`<li><a href="product_details.html?lid=${elem.pid}">${elem.brief}</a></li>`
+                    if(type300==0){html+=`</ul></div>`}
+                     addhtml(type300);
+                     type300++;
                 } 
             }
-            html1+='</ul>'
-            html2+='</ul>'
-            html3+='</ul>'
-            console.log(html1,html2,html3)
-            /*待插入 */
-/*              
-                    if(){a+=l}
-                    if(){b+=l}
-                    if(){c+=l}
-                    if(i%6==0){ul}
-                    a,b,c
-            /*
-            var html=`<div  class="banner-divflex">
-                        <ul class="banner-nab">`;
-            list.forEach(function(elem,i){
-                html+=`<li><a href="product_details.html?lid=${elem.pid}">${elem.brief}</a></li>`
-                    if(i==5){html+=`</ul>
-                                    <ul class="banner-nab">`}
-                    if(i==11){html+=`</ul>
-                                    </div>
-                                    <div  class="banner-divflex">
-                                        <ul class="banner-nab">
-                    `}               
-                    if(i==15)                
-            });
-            html+=
-            /*
-            for(var elem of list){
-                html+=
-                `<li><a href="product_details.html?lid=${elem.pid}">${elem.brief}</a></li>`
-            }
-            <div  class="banner-divflex">
-            <ul class="banner-nab">*/
-
-
-
-            var html="";
-            var arrimg=show.slice(0,5)
+            html+=`</ul></div>`
+            // 插入类型数据
+            $(".banner .banner-divflex").append(html)        
     //轮播内容
+             var html="";
+            var arrimg=show.slice(0,5)
             for(var elem of show){
                 html+=`<li class="center-slideshow-1">
                                 <a href=${elem.herf}>					
