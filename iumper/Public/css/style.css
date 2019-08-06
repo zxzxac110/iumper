@@ -722,6 +722,16 @@ text-align:right}
 	height:20px;
 	line-height: 20px;
 }
+.collect ul li{position: relative;}
+.collect>ul>li .delcar{
+	 width:40px;height:25px;
+	 background:rgba(70,70,70,0.5) url(../images/keep1.png) no-repeat center -23px;
+	 position: absolute;
+	 top:20px;right:15px;
+	 cursor: pointer;
+	 display: none;
+}
+.collect>ul>li:hover .delcar{display:block;}	
 .tpc-4>ul>li:hover,
 .collect>ul>li:hover{
 	box-shadow: 0px 15px 30px 0 rgba(0,0,0,0.1);				
