@@ -22,7 +22,6 @@ router.post('/v1/reg',function(req,res){
    pool.query('SELECT*FROM iumper_user WHERE uname=?',[$uname],function(err,result){
        if(err) throw err;
        if(result.length>0){res.send('已注册的账号名');return;}
-
        if ($PhoneEmail==="phone"){//2选1操作
         pool.query('INSERT INTO iumper_user VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)',[null,$uname,$upwd,$uname,1,"","","","","","",$uname,""],function(err,result){
              if(err) throw err;
@@ -46,7 +45,13 @@ router.post('/v1/login',function(req,res){
 };
 pool.query('SELECT*FROM iumper_user WHERE uname=? and password=?',[obj.uname,obj.upwd],function(err,result){
     if(err) throw err;
-    if(result.length>0){res.send('1')}else{res.send('用户名或密码错误！')}
+    if(result.length>0){
+      req.session.uid=result[0].uid;
+      console.log('登录接收')
+      console.log(req.session)
+      res.send('1')
+   }else{
+      res.send('用户名或密码错误！')}
 })
 });
 module.exports=router//导出路由器

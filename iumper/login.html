@@ -16,7 +16,7 @@
  		<div class="main"> 
 			<div class="top-login">
 				<div class="logo">
-					<a href="#">
+					<a href="index.html">
 						<img src="Public/images/logo.png">
 					</a>				
 				</div>
@@ -56,16 +56,16 @@
 			 <div class="right">
 					<a href>粤ICP备 83271806号</a>
 			 </div>
-		</div>	
+		</div>
   <script>
 	  function login(){
 		var xhr=new XMLHttpRequest();
 		xhr.onreadystatechange=function(){
 			if(xhr.readyState===4 && xhr.status===200){
 				var result=xhr.response;
-				if(result==='1'){alert("登录成功跳转页面");
-				window.location.href="http://127.0.0.1:8080/index.html";
-				console.log(0);
+				if(result==='1'){
+				alert("登录成功跳转页面");
+				location="personage.html"
 			   }else{alert(result)}
 			}
 		 }
