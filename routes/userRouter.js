@@ -4,7 +4,7 @@ var router=express(); //创建
 const pool=require('../pool.js') //引用
 //注册  //b比较一次验证码，aleat(验证码错误)。 比较校验alert("校验码错误")
 router.post('/v1/reg',function(req,res){ 
-   var obj=req.body;  //得到输入数据console.log(1112)
+   var obj=req.body; 
   var $uname=obj.uname;
       $upwd=obj.upwd;
       $upwds=obj.upwds;
@@ -49,7 +49,7 @@ pool.query('SELECT*FROM iumper_user WHERE uname=? and password=?',[obj.uname,obj
       req.session.uid=result[0].uid;
       console.log('登录接收')
       console.log(req.session)
-      res.send('1')
+      res.send({ code:"1" , msg:"登录失败" , uid:req.session.uid })
    }else{
       res.send('用户名或密码错误！')}
 })

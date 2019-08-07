@@ -57,7 +57,7 @@ $(function(){
                 <span class="font999">库 存：${stock}</span>
             </div>`
         }
-$("#Computer-2-right").prepend(htmlPOR)
+ $("#Computer-2-right").prepend(htmlPOR)
 /*左侧推荐商品引入*/ 
         var html=""   
               for(var lshop of leftshop){
@@ -72,24 +72,24 @@ $("#Computer-2-right").prepend(htmlPOR)
                  }
                  $("#Computer3-left-t2>ul").html(html)   
 /*商品详情图片*/
-var $sImg=$("#ulsImg");
+ var $sImg=$("#ulsImg");
         $mImg=$("#div-mImg>img");
         $divZoom=$("#div-zoom");
         $("#lgImg").css("background",`url(${$mImg.attr("src")})`)
-/*小图移入移出*/
+  /*小图移入移出*/
     $sImg.on("mouseenter","img",function(){
         $mImg.attr("src",$(this).attr("src"));/*md*/
         $("#lgImg").css("background",`url(${$(this).attr("src")})`)/*lg*/
     })
-/*中图移入移出*/
+  /*中图移入移出*/
     $("#protectiveFilm").mouseenter(function(){
         $divZoom.removeClass("d-none");
         $("#lgImg").removeClass("d-none");
     }).mouseleave(function(){
         $divZoom.addClass("d-none");
         $("#lgImg").addClass("d-none");
-    });
-/*大小图尺寸比420 210*/
+});
+  /*大小图尺寸比420 210*/
     $("#protectiveFilm").mousemove(function(e){
         var divZoomWidth=105;
         var x=e.offsetX;
@@ -101,7 +101,7 @@ var $sImg=$("#ulsImg");
         $divZoom.css({left,top})
         $("#lgImg").css("background-position",`${-left*38/21}px ${-top*38/21}px`)
     }) 
-/*数量加减*/
+  /*数量加减*/
     var $quantity=$(".Computer-2-right>.Computer-quantity")
     var $input=$quantity.children("input");
     $quantity.on("click","img",function(){
@@ -117,9 +117,9 @@ var $sImg=$("#ulsImg");
         }
         }
     })
-    /*输入数据验证*/
+   /*输入数据验证*/
     $input.change(function(){
-        if($input.val().search(/^\d{1,2}$/ig)==-1){$input.val(1)}
+        if($input.val().search(/^[1-p][0-9]?$/ig)==-1){$input.val(1)}
     })
 /*商品详情参数*/
     var $nav=$("#nav")
@@ -140,8 +140,37 @@ var $sImg=$("#ulsImg");
         $d.addClass("active");
         $("#down3>div>div").addClass("d-none");
         $(`#${$d.attr("data-toggle")}`).removeClass("d-none")
-     })                
-    }/** 购物车  用户id  img  title price 规格 数量 pid*/
+     })    
+/*加入购物车事件*/
+     $("button.bgyellow").click(function(){
+        console.log("你点击了购物按钮")
+        //此时  有一个Uid
+       // var title=title,
+      //  var price=price,
+        if(colour){var bben=edition+" "+colour}else{var bben=edition}//如果有颜色 那么版本=版本+颜色
+      //  var img=img.picture_sm
+        var uid=document.cookie.split("=")[1]
+        console.log(uid)
+        console.log(title,price,img.picture_sm,bben)
+       $.ajax({
+            url:"http://127.0.0.1:8080/details/v1",
+            type:"get",
+             data:{uid:uid,//登录凭证
+                   title,
+                   price,
+                   img:img.picture_sm,
+                   bben,
+                   pid:lid   //产品编号=地址栏编号
+                },
+            dataType:"json",
+            success:function(result){
+                console.log(result)
+                if(result.code>0){alert("添加成功")}else{alert("添加失败")}
+            }
+            })
+       });  
+//////////////////////// 
+    }/** 购物车  用户id  img  title price 规格   数量 pid*/
   })
  }
 })

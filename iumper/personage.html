@@ -446,7 +446,7 @@
                 <div id="pt2-collect" class="d-none">
                     <div class="pt2-personal-1">收藏的商品</div>
                     <div class="collect">
-                        <ul>
+                        <ul id="pt2-collect">
                             <li >
                                 <a href="#">
                                     <img src="Public/images/1554879131.jpg" alt=""/><h3 class="font333">Jumper/中柏 EZpad 7 128G平板电脑二合一</h3>
@@ -556,7 +556,7 @@
             $(".pt2-right>div").addClass("d-none")
             $(`#${$(this).attr("data-toggle")}`).removeClass("d-none")
         })
-        /*收货地址2种情况*/
+/*收货地址2种情况 显示 关闭*/
         $(".pt1-shippingaddress-new").click(function(){
             $("#address").addClass("d-none")
             $("#new-address").removeClass("d-none")
@@ -567,7 +567,7 @@
             $("#address").removeClass("d-none")
         })
 /*城市下拉列表*/
-        var csarr=[
+var csarr=[
       [{"name":'东城区',"value":101},
        {"name":'西城区',"value":102},
        {"name":'海淀区',"value":103},
@@ -581,7 +581,7 @@
        {"name":'唐山市',"value":304},
        {"name":'秦皇岛市',"value":304}]
 	  ]
-        var qxarr=[
+var qxarr=[
       [{"name":'东城区',"value":101},
        {"name":'西城区',"value":102},
        {"name":'海淀区',"value":103},
@@ -633,6 +633,11 @@
                 quxian.appendChild(frag);   
                }
             }   
+//收藏商品点击删除
+$("#pt2-collect").on("click","div.delcar",function(){
+    console.log("删除了一件商品")
+})
+ //           
         }
     })
 })    

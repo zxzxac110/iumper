@@ -3,7 +3,7 @@ DROP  DATABASE  IF  EXISTS  iumper;#丢弃
 #DROP DATABASE IF EXISTS iumper;  
 CREATE DATABASE iumper CHARSET=UTF8;
 USE iumper;
-#基本信息
+#1基本信息
 CREATE TABLE iumper_user(uid INT PRIMARY KEY AUTO_INCREMENT,
                          uname VARCHAR(36),
 			 password VARCHAR(36),
@@ -19,7 +19,7 @@ CREATE TABLE iumper_user(uid INT PRIMARY KEY AUTO_INCREMENT,
                          email VARCHAR(50)
 
 );
-#收货基本信息
+#2收货基本信息
 CREATE TABLE iumper_address(aid INT PRIMARY KEY AUTO_INCREMENT,
 							user_id INT,
 							FOREIGN KEY (user_id) REFERENCES iumper_user(uid),
@@ -32,11 +32,11 @@ CREATE TABLE iumper_address(aid INT PRIMARY KEY AUTO_INCREMENT,
 							fixedphone VARCHAR(50),
 							email VARCHAR (50)
 );
-#商品类别
+#3商品类别
 CREATE TABLE iumper_type(tid int PRIMARY KEY AUTO_INCREMENT,
                          typename VARCHAR(50)
 );
-#商品详情
+#4商品详情
 CREATE TABLE iumper_product(pid INT PRIMARY KEY AUTO_INCREMENT,
                             type_uid INT,
 							FOREIGN KEY (type_uid) REFERENCES iumper_type(tid),
@@ -50,16 +50,20 @@ CREATE TABLE iumper_product(pid INT PRIMARY KEY AUTO_INCREMENT,
 							Svolume INT,
 							Enumber INT	
 );
-#购物车
+#5购物车/** 购物车  pid 用户id  img  title price 规格 数量 */
 CREATE TABLE iumper_shopping_cart(cid INT PRIMARY KEY AUTO_INCREMENT,
-                                 	user_id INT,
-									FOREIGN KEY (user_id) REFERENCES iumper_user(uid),
-									product_id INT,
-									FOREIGN KEY (product_id) REFERENCES iumper_product(pid),
-									count INT
+                                 	uid INT, #用户ID
+					FOREIGN KEY (uid) REFERENCES iumper_user(uid),
+					pid INT, #商品id 用于跳转
+					FOREIGN KEY (pid) REFERENCES iumper_product(pid),
+					img VARCHAR(100),
+					title VARCHAR(100),
+					price DECIMAL(8,2),
+					edtiton VARCHAR(100),
+					count INT
 );
 
-#用户订单
+#6用户订单
 CREATE TABLE iumper_oredr(oid INT PRIMARY KEY AUTO_INCREMENT,
 						user_id INT,
 						FOREIGN KEY (user_id) REFERENCES iumper_user(uid),
@@ -71,7 +75,7 @@ CREATE TABLE iumper_oredr(oid INT PRIMARY KEY AUTO_INCREMENT,
 						deliver_time DATETIME,
 						receiver_time DATETIME
 );
-#订单详情
+#7订单详情
 CREATE TABLE iumper_order_detail(did INT PRIMARY KEY AUTO_INCREMENT,
                                  order_id INT,
 								FOREIGN KEY (order_id) REFERENCES iumper_oredr(oid),
@@ -89,7 +93,7 @@ CREATE TABLE iumper_home_page(hid INT PRIMARY KEY AUTO_INCREMENT,
                               Enumber INT,
 			      			  price DECIMAL(8,2)
 );
-#商品图片
+#9商品图片
 CREATE TABLE iumper_imgs(ppid INT PRIMARY KEY AUTO_INCREMENT,
                          product_id INT,
 						 type_uid INT,
@@ -98,7 +102,7 @@ CREATE TABLE iumper_imgs(ppid INT PRIMARY KEY AUTO_INCREMENT,
 						 picture_md VARCHAR(100),
 						 picture_lg VARCHAR(100)
 );
-#评价
+#10评价
 CREATE TABLE iumper_evaluate(eid INT PRIMARY KEY AUTO_INCREMENT,
 							 user_id INT,
 							 FOREIGN KEY (user_id) REFERENCES iumper_user(uid),
@@ -115,6 +119,17 @@ CREATE TABLE iumper_leftshop(lid INT PRIMARY KEY AUTO_INCREMENT,
 							  title VARCHAR(100),
 							  price DECIMAL(8,2)
 );
+#12收藏商品
+CREATE TABLE iumper_collect(id INT PRIMARY KEY AUTO_INCREMENT,
+                            uid INT, #用户ID
+			    FOREIGN KEY (uid) REFERENCES iumper_user(uid),
+			    pid INT, #商品id 用于跳转
+			    FOREIGN KEY (pid) REFERENCES iumper_product(pid),
+			    img VARCHAR(100),
+			    title VARCHAR(100),
+			    price DECIMAL(8,2)
+);
+
 #3商品类别
 INSERT INTO iumper_type VALUES (100, '平板电脑'),
 (200, '笔记本电脑'),

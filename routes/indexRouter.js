@@ -5,7 +5,7 @@ const pool=require('../pool.js') //引用
 var obj={
    list:[],
    show:[],
-   uname:[]
+//  uname:[]  保存数据？
 }
 router.get('/v1',function(req,res){
       /*轮播产品数据 */
@@ -21,17 +21,17 @@ router.get('/v1',function(req,res){
       if(err)throw err;
       obj.list=result;
       /*如果登陆 查找用户名 */
-         if(req.session.uid){
-            var sql=`SELECT uname FROM iumper_user WHERE uid=?`
-            pool.query(sql,[req.session.uid],(err,result)=>{
-               if(err)throw err;
-               obj.uname=result;
+//       if(req.session.uid){
+//            var sql=`SELECT uname FROM iumper_user WHERE uid=?`
+//           pool.query(sql,[req.session.uid],(err,result)=>{
+//              if(err)throw err;
+//              obj.uname=result;
                // console.log("主页返回数据")
                // console.log(obj);
-               res.send(obj)
+              res.send(obj)
                })
-         }else{res.send(obj)}
+//      }else{res.send(obj)}
       })   
-   })
+  // })
 });
 module.exports=router//导出路由器

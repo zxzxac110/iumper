@@ -226,7 +226,7 @@
              AdSutinput.onblur=function(){
                  var AdSutinput=this
                  /*正则判断不能为非数字*/
-                 if(AdSutinput.value.search(/^\d{1,2}$/i)==-1){
+                 if(AdSutinput.value.search(/^[1-9][0-9]?$/i)==-1){
                     AdSutinput.value="1"}
                 /*当前对应小计subtotal=当前对应单价price*当前数量*/ 
                    var price=AdSutinput.parentNode.previousElementSibling.firstElementChild

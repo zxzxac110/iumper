@@ -6,10 +6,10 @@ $(function(){
         success:function(result){
             console.log('index---------------')
             console.log(result)
-            var {list,show,uname}=result;
+            var {list,show/*,uname 登录保存？*/}=result;
             var html='';
             var type100=0,type200=0,type300=0;
-            if(uname[0].uname){
+         /*   if(uname[0].uname){
                 $("#loginok .cart-image>a").html(`购物车<b class="cartnumber">0</b>`)
                 $("#loginok>ul>li:eq(3)").replaceWith(`<li>
 							您好！ ${uname[0].uname}<span><a href="login.html" class="out">&nbsp&nbsp退出</a></span> 
@@ -19,7 +19,7 @@ $(function(){
                 $("#loginok>ul>li:eq(3)").replaceWith(`<li class="topuser-image">
 							<a href="login.html" >登录</a><span>|</span><a href="reg.html">注册</a>
 						                            </li>`)
-                    }
+                    }*/
             //插入左侧页面导航类型数据的函数
             function addhtml(type){
                 if(type==0){html+=`<div class="banner-divflex"><ul class="banner-nab">`;}
@@ -178,8 +178,6 @@ $(function(){
         }
     })
 })
-
-
     
 
 
