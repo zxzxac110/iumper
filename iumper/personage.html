@@ -542,6 +542,7 @@
     <script src="Public/myjs/header.js"></script>
     <script src="Public/myjs/footer.js"></script> 
     <script>
+ if(document.cookie){//有值才会进行操作。无值跳转登录界面
     /*l列表对应内容*/
  $(function(){
     $.ajax({
@@ -551,7 +552,14 @@
         dataType:"json",
         success:function(result){
             console.log(result);
-             $(".pt2>.pt2-left").on("click","h1>a,li>a",function(e){
+            console.log(location.search.split("?")[1]);
+//点击头部个人中心。会显示个人中心页面    
+        if(location.search.split("?")[1]=="mydd"){ 
+            console.log("我的订单")
+            $(".pt2-right>div").addClass("d-none")
+            $("#pt2-myorder").removeClass("d-none")
+            }
+             $(".pt2>.pt2-left").on("click","h1>a,li>a",function(e){//默认显示窗口
             e.preventDefault()
             $(".pt2-right>div").addClass("d-none")
             $(`#${$(this).attr("data-toggle")}`).removeClass("d-none")
@@ -640,7 +648,11 @@ $("#pt2-collect").on("click","div.delcar",function(){
  //           
         }
     })
-})    
+})
+  }else{
+        console.log("跳转登录界面");
+            location="login.html"
+    }    
     </script>
 </body>
 </html>

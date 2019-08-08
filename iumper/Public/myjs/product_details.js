@@ -142,8 +142,17 @@ $(function(){
         $(`#${$d.attr("data-toggle")}`).removeClass("d-none")
      })    
 /*加入购物车事件*/
+     $("button.bgblue").click(function(){
+        if(document.cookie){
+         console.log("你点击了购买按钮")
+        }else{
+             location="login.html"
+        }
+     })
      $("button.bgyellow").click(function(){
-        console.log("你点击了购物按钮")
+        console.log("你点击了购物车按钮")
+        console.log(document.cookie)
+        if(document.cookie){
         //此时  有一个Uid
        // var title=title,
       //  var price=price,
@@ -168,9 +177,12 @@ $(function(){
                 if(result.code>0){alert("添加成功")}else{alert("添加失败")}
             }
             })
+        }else{
+            location="login.html"
+        }
        });  
 //////////////////////// 
-    }/** 购物车  用户id  img  title price 规格   数量 pid*/
+    }/**/
   })
  }
 })

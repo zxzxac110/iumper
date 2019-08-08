@@ -64,7 +64,7 @@
 			if(xhr.readyState===4 && xhr.status===200){
 				var result=JSON.parse(xhr.response);
 				if(result.code==='1'){
-                document.cookie="uid="+result.uid
+                document.cookie="uid="+result.uid;				
 				alert("登录成功跳转页面");
 				location="personage.html"
 			   }else{alert(result)}

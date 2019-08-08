@@ -13,6 +13,7 @@ const productDetailsRouter=require('./routes/product_detailsRouter.js')
 const productRouter=require('./routes/productRouter.js')
 // const headerRouter=require('./routes/headerRouter.js')
 const personageRouter=require('./routes/personageRouter.js')
+const shoppingcartRouter=require('./routes/shoppingcartRouter.js')
 var app=express();
 app.listen(8080);
 //跨域
@@ -38,3 +39,4 @@ app.use('/details',productDetailsRouter);
 app.use('/product',productRouter);
 // app.use('/header',headerRouter);
 app.use('/personage',personageRouter);
+app.use('/shoppingcart',shoppingcartRouter);

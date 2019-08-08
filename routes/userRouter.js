@@ -43,13 +43,14 @@ router.post('/v1/login',function(req,res){
    if(!obj.upwd){res.send("请输入密码");
    return;
 };
-pool.query('SELECT*FROM iumper_user WHERE uname=? and password=?',[obj.uname,obj.upwd],function(err,result){
+pool.query('SELECT uid,nickname FROM iumper_user WHERE uname=? and password=?',[obj.uname,obj.upwd],function(err,result){
     if(err) throw err;
     if(result.length>0){
       req.session.uid=result[0].uid;
+   //   req.session.nickname=result[0].nickname; //姓名
       console.log('登录接收')
       console.log(req.session)
-      res.send({ code:"1" , msg:"登录失败" , uid:req.session.uid })
+      res.send({ code:"1",msg:"登录失败",uid:req.session.uid/*,nickname:req.session.nickname*/})
    }else{
       res.send('用户名或密码错误！')}
 })

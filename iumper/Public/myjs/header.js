@@ -11,14 +11,21 @@ $(function(){
         $("button.Search").click(function(){
          this.dz=$("input.top-text").prop("value")
           location=`product.html?dz=`+this.dz
-          // $.ajax({
-          //   url:"http://127.0.0.1:8080/heater/v1",
-          //   type:"post",
-          //   data:{},
-          //   success:function(result){
-          //       console.log(result)
-          // }})
        })
+       if(document.cookie){//得到uid
+        $("#loginok .cart-image>a").html(`购物车<b class="cartnumber">0</b>`)
+        $("#loginok>ul>li:eq(3)").replaceWith(`<li>
+							您好！ ${document.cookie}<span><a href="login.html" class="out">&nbsp&nbsp退出</a></span> 
+                        </li>`)
+      /*     $("#mydd>a").click(function(){点击个人信息事件。。
+             console.log($("#pt2-myorder"))
+           })*/
+        }else{//否则默认状态
+        $("#loginok .cart-image>a").html(`购物车`)
+        $("#loginok>ul>li:eq(3)").replaceWith(`<li class="topuser-image">
+							<a href="login.html" >登录</a><span>|</span><a href="reg.html">注册</a>
+						                            </li>`)
+       }
       }
     })
   });
