@@ -57,27 +57,7 @@
 					<a href>粤ICP备 83271806号</a>
 			 </div>
 		</div>
-  <script>
-	  function login(){
-		var xhr=new XMLHttpRequest();
-		xhr.onreadystatechange=function(){
-			if(xhr.readyState===4 && xhr.status===200){
-				var result=JSON.parse(xhr.response);
-				if(result.code==='1'){
-                document.cookie="uid="+result.uid;				
-				alert("登录成功跳转页面");
-				location="personage.html"
-			   }else{alert(result)}
-			}
-		 }
-		xhr.open("post","/user/v1/login",true)
-		xhr.setRequestHeader("content-Type","application/x-www-form-urlencoded")
-		var formdata="uname="+uname.value+"&upwd="+upwd.value;
-		xhr.send(formdata)
-	  }
-  </script>
+  	
 	</body>
+	<script src="Public/myjs/user.js"></script>
 </html>
-
-
-<!--340*42  -->

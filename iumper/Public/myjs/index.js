@@ -4,8 +4,6 @@ $(function(){
         type:"get",
         dataType:"json",
         success:function(result){
-            console.log('index---------------')
-            console.log(result)
             var {list,show}=result;
             var html='';
             var type100=0,type200=0,type300=0;
@@ -152,11 +150,9 @@ $(function(){
                 add()
             },6000)
             function shiftIn(){
-                //console.log("移入")
                 clearInterval(timer)
             }
             function shiftOut(){
-                //console.log("移出")
                     timer=setInterval(function(){add()
                 },6000)
             }

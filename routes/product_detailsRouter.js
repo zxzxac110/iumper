@@ -6,7 +6,6 @@ const pool=require('../pool.js') //引用
 router.get('/v1',function(req,res){
   //查询页面数据
   var lid=req.query.lid
-  console.log(req.query)
   var output={
     product:{},
     leftshop:{},
@@ -16,17 +15,17 @@ router.get('/v1',function(req,res){
 /*数据 */
   var sql=`SELECT title,price,colour,edition,stock FROM iumper_product WHERE pid=?`; 
   pool.query(sql,[lid],(err,result)=>{
-  if(err) console.log(err); 
+  if(err) throw err
   output.product=result  
 /*图片 标题 价格 链接 20 1  11 6  */  
     var sql=`SELECT herf,img,title,price FROM iumper_leftshop`
     pool.query(sql,[lid],(err,result)=>{
-    if(err) console.log(err);   
+    if(err) throw err   
     output.leftshop=result
 /*图片 */    
       var sql=`SELECT picture_sm FROM iumper_imgs WHERE product_id=?`; 
       pool.query(sql,[lid],(err,result)=>{
-      if(err) console.log(err);   
+      if(err) throw err   
       output.imgs=result   
       res.send(output);
       }) 

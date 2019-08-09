@@ -8,7 +8,6 @@ $(function(){
          data:{lid},
         dataType:"json",
         success:function(result){
-                console.log(result)
                 var {product,leftshop,imgs}=result;
                 var {title,price,colour,edition,stock}=product[0];           
 /*图片引入*/
@@ -143,24 +142,19 @@ $(function(){
      })    
 /*加入购物车事件*/
      $("button.bgblue").click(function(){
-        if(document.cookie){
-         console.log("你点击了购买按钮")
+        if(sessionStorage.getItem("uid")){
         }else{
              location="login.html"
         }
      })
      $("button.bgyellow").click(function(){
-        console.log("你点击了购物车按钮")
-        console.log(document.cookie)
-        if(document.cookie){
+        if(sessionStorage.getItem("uid")){
         //此时  有一个Uid
        // var title=title,
       //  var price=price,
         if(colour){var bben=edition+" "+colour}else{var bben=edition}//如果有颜色 那么版本=版本+颜色
       //  var img=img.picture_sm
-        var uid=document.cookie.split("=")[1]
-        console.log(uid)
-        console.log(title,price,img.picture_sm,bben)
+        var uid=sessionStorage.getItem("uid")
        $.ajax({
             url:"http://127.0.0.1:8080/details/v1",
             type:"get",
@@ -173,7 +167,6 @@ $(function(){
                 },
             dataType:"json",
             success:function(result){
-                console.log(result)
                 if(result.code>0){alert("添加成功")}else{alert("添加失败")}
             }
             })

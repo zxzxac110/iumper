@@ -37,22 +37,15 @@ router.post('/v1/reg',function(req,res){
 //登录
 router.post('/v1/login',function(req,res){
    var obj=req.body;
-   if(!obj.uname){res.send("请输入手机号/邮箱/用户名");
-   return;
-};
-   if(!obj.upwd){res.send("请输入密码");
-   return;
-};
 pool.query('SELECT uid,nickname FROM iumper_user WHERE uname=? and password=?',[obj.uname,obj.upwd],function(err,result){
     if(err) throw err;
     if(result.length>0){
       req.session.uid=result[0].uid;
-   //   req.session.nickname=result[0].nickname; //姓名
-      console.log('登录接收')
-      console.log(req.session)
-      res.send({ code:"1",msg:"登录失败",uid:req.session.uid/*,nickname:req.session.nickname*/})
+      req.session.nickname=result[0].nickname;
+      res.send({ code:"1",msg:"登录成功",uid:req.session.uid,nickname:req.session.nickname})
    }else{
-      res.send('用户名或密码错误！')}
+      res.send({ code:"-1",msg:"用户名或密码错误"})
+   }
 })
 });
 module.exports=router//导出路由器

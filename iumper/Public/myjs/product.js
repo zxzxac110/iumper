@@ -1,7 +1,6 @@
 $(function(){
     var dz=location.search.split("=")[1] //查询条件
       dz=decodeURI(dz)
-    console.log(decodeURI(dz))
     var limit="Time"                     //模糊查询条件
     var upDown="up"                      //排序
     var result                           //全局变量 到处使用

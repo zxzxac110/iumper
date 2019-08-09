@@ -7,6 +7,9 @@
     <title>中柏商城-中柏平板电脑、中柏笔记本电脑、中柏电脑官方网站</title>
     <link rel="stylesheet" type="text/css" href="Public/css/style.css">
 </head>
+<script>
+    if(sessionStorage.getItem("uid")){}else{location="login.html"}
+</script>
 <body>
 <header id="header"></header>
     <div class=main>
@@ -59,7 +62,7 @@
                             <input type="checkbox">
                         </td>
                         <td class="text-left shoppingcart-tfootdeldct">
-                            删除选中商品(需要加点击事件)
+                            删除选中商品
                         </td>
                         <td colspan="5" class="text-right">
                              <p class="shoppingcart-tfoot-total">已选 
@@ -78,218 +81,8 @@
 <script src="Public/myjs/myajax.js"></script>
 <script src="Public/myjs/header.js"></script>
 <script src="Public/myjs/footer.js"></script> 
-<script>
-    if(document.cookie){                  //有值才会进行操作。无值跳转登录界面
-    var uid=document.cookie.split("=")[1]
-    console.log(uid)
-    myajax({
-        url:"http://127.0.0.1:8080/shoppingcart/v1",
-        type:"get",
-        data:"uid="+uid,
-        dataType:"json"
-    }).then(
-        function(result){
-        //console.log(result)
-        var html="";
-        for(var elem of result){
-            html+=`<tr><td><input type="checkbox"></td>
-                    <td>
-                        <span>
-                            <a href="product_details.html?lid=${elem.pid}">
-                                    <img src=${elem.img} alt=""> 
-                            </a>
-                        </span>
-                        <span>
-                            <a href="product_details.html?lid=${elem.pid}">${elem.title}</a>
-                        </span>
-                    </td>
-                    <td>${elem.edtiton}</td>
-                    <td>
-                        <p>￥${(elem.price).toFixed(2)}</p>
-                        <p>
-                            <s>￥${(elem.price).toFixed(2)}</s> 
-                        </p>
-                    </td>
-                    <td>
-                        <div>
-                            <img data-taggle="sub" src="Public/images/jj1.png" >
-                        </div>
-                        <input type="text" value=${elem.count}>
-                        <div>
-                            <img data-taggle="add" src="Public/images/jj0S.png" class="imgadd">
-                        </div>
-                    </td>
-                    <td>￥${(elem.price*elem.count).toFixed(2)}</td>
-                    <td> 
-                        <a data-taggle="del">删除</a>  
-                        <span>/</span> 
-                        <a data-taggle="collect">加入我的收藏</a>
-                    </td></tr>    `
-        }
-        document.querySelector("#shoppingcart-table tbody").innerHTML=html
-        //表单
-       var table=document.querySelector(".shoppingcart-table")
-        //表单每件商品tr
-       var bodytr=document.querySelectorAll(".shoppingcart-table>tbody>tr");
-        //总价
-       var total=document.getElementById("total");
-        //商品数量
-       var sum=document.getElementById("sum");    
-        //全选框  
-       var cnball=document.querySelector(".shoppingcart-tfoot>td>input");
-        //每件商品勾选框   
-       var cnbs=document.querySelectorAll(".shoppingcart-table>tbody>tr>td>input:first-child");      
-//点击全选按钮事件
- cnball.onclick=function(){
-            var i=0,m=0.00;
-            for(var cnb of cnbs){
-                cnb.checked=cnball.checked;                       //状态赋值
-                if(cnball.checked==true){                         //判断自己是否被选中 
-                sum.innerHTML=++i;                                   //全选数量/
-                var subtotal=cnb.parentNode.parentNode.children[5];//每件商品的小计/
-                m+=parseFloat(subtotal.innerHTML.slice(1));
-                total.innerHTML="￥"+m.toFixed(2)                   //全选价格/
-                }else{
-                total.innerHTML="0.00";sum.innerHTML="0";
-                }
-            }
-        }      
-//删除选中了的商品事件
- var selectDelede=cnball.parentNode.nextElementSibling;
- selectDelede.onclick=function(){
-        if(confirm("确定要删除选中的记录吗？一旦删除将不能恢复！")){
-            var i=0
-            for (var cnb of cnbs){
-                if(cnb.checked==true){  
-                    //此行tr            
-                     var tr=cnb.parentNode.parentNode;
-                     //删除此行tr
-                     table.deleteRow(tr.rowIndex); 
-                     i++      
-                    }
-                }
-            if(i===0){
-                alert("未选中任意商品")
-            }else{
-                alert(`已删除${i}件商品`)
-            }   
-        }  
-    }                  
+<script src="Public/myjs/shoppingcart.js"></script> 
 
-    
-    table.children[1].onclick=function(e){
-          var xianz=e.target
-          if(xianz.nodeName=="INPUT"){
-              console.log("点击了文本框");
-              console.log(xianz.type)
-            }
-            if(xianz.nodeName=="IMG"){
-              console.log("点击了+-")
-            }
-       
-    }
-    
-    for(var i of bodytr){ 
-//点击单选事件cnb
-            var cnb=i.children[0].firstElementChild;
-        cnb.onclick=function(){
-            var cnb=this;
-            var subtotal=cnb.parentNode.parentNode.children[5];//当前小计                
-            var subtotalHTML=parseFloat(subtotal.innerHTML.slice(1));                
-            var totalHTML=parseFloat(total.innerHTML.slice(1));//当前总价
-            if(cnb.checked==false){
-                cnball.checked=false;
-                sum.innerHTML-- ;                           
-                var m=totalHTML-subtotalHTML;
-                total.innerHTML="￥"+m.toFixed(2)
-            }else{
-                sum.innerHTML++;
-                var m=totalHTML+subtotalHTML;
-                total.innerHTML="￥"+m.toFixed(2);
-            //获取没有被选中的数组    
-                var uncnb=document.querySelector(".shoppingcart-table>tbody>tr>td:first-child>input:not(:checked)");
-                     //当找不到时，全选
-            if(uncnb===null){
-                cnball.checked=true;
-            }
-        }
-    }
-//单件数量框焦点失去事件
-        var AdSutinput=i.children[4].children[1];
-        AdSutinput.onblur=function(){
-        var AdSutinput=this
-        //正则判断不能为非数字
-        if(AdSutinput.value.search(/^[1-9][0-9]?$/i)==-1){
-            AdSutinput.value="1"
-        }
-        //当前对应小计subtotal=当前对应单价price*当前数量 
-        var price=AdSutinput.parentNode.previousElementSibling.firstElementChild
-        var a=parseInt(price.innerHTML.slice(1)*AdSutinput.value);
-            subtotal=AdSutinput.parentNode.nextElementSibling
-        //以前对应小计/   
-        var subtotaled=parseInt(subtotal.innerHTML.slice(1));
-        //赋值给当前的小计   
-            subtotal.innerHTML="￥"+(a).toFixed(2);
-        //如果当前商品已经被选中.总计发生改变
-        if(AdSutinput.parentNode.parentNode.firstElementChild.firstElementChild.checked==true){
-            totaling=parseInt(total.innerHTML.slice(1))
-            //现在总计=以前总计+现在小计-以前总计
-            total.innerHTML="￥"+(totaling+a-subtotaled).toFixed(2)                            
-        }
-    }
-    //加减符号事件    
-        var AddSubtract=i.children[4].querySelectorAll("img");
-            function jiajian(code){
-                var AddSubtract=this
-                var adstd=AddSubtract.parentNode.parentNode
-                var subtotal=adstd.nextElementSibling
-                var price=adstd.previousElementSibling.firstElementChild
-                var add=adstd.children[1];
-                if(code===0&&add.value>1){
-                    add.value--;
-                }else if(code===1&&add.value<99){
-                    add.value++;
-                };
-    //当前小计具体数字
-        a=parseInt(price.innerHTML.slice(1)*add.value);
-        //以前小计具体数字
-        var subtotaled=parseInt(subtotal.innerHTML.slice(1));
-        subtotal.innerHTML="￥"+(a).toFixed(2);
-        if(this.parentNode.parentNode.parentNode.firstElementChild.firstElementChild.checked==true){
-            totaling=parseInt(total.innerHTML.slice(1))
-            //现在总计=以前总计+现在小计-以前总计
-            total.innerHTML="￥"+(totaling+a-subtotaled).toFixed(2)                            
-        }
-    } 
-        AddSubtract[0].onclick=function(){              //减
-            var array=jiajian.call(this,0)
-        }
-        AddSubtract[1].onclick=function(){               //加
-            var array=jiajian.call(this,1)
-        } 
-//删除事件
-        var delede=i.lastElementChild.firstElementChild;
-        delede.onclick=function(){
-            if(confirm("确定要删除选中的记录吗？一旦删除将不能恢复！")){
-                var delede=this;
-                var tr=delede.parentNode.parentNode;
-                table.deleteRow(tr.rowIndex);
-            }
-        }
-//收藏  
-        var collect=i.lastElementChild.lastElementChild;  
-        collect.onclick=function(){
-            alert("加入收藏成功")
-            //alert("您已收藏过该商品") 
-        }             
-    }   
-})
-////////
-}else{
-    console.log("跳转登录界面");
-    location="login.html"
-}
-    </script>
 </body>
 </html>
 

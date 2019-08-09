@@ -7,6 +7,9 @@
     <title>中柏商城-中柏平板电脑、中柏笔记本电脑、中柏电脑官方网站</title>
     <link rel="stylesheet" type="text/css" href="Public/css/style.css">
 </head>
+<script>
+    if(sessionStorage.getItem("uid")){}else{location="login.html"}
+</script>
 <body>
 <header id="header"></header>
     <div class=main>
@@ -542,8 +545,6 @@
     <script src="Public/myjs/header.js"></script>
     <script src="Public/myjs/footer.js"></script> 
     <script>
- if(document.cookie){//有值才会进行操作。无值跳转登录界面
-    /*l列表对应内容*/
  $(function(){
     $.ajax({
         url:"http://127.0.0.1:8080/personage/v1",
@@ -649,10 +650,6 @@ $("#pt2-collect").on("click","div.delcar",function(){
         }
     })
 })
-  }else{
-        console.log("跳转登录界面");
-            location="login.html"
-    }    
     </script>
 </body>
 </html>

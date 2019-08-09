@@ -2,7 +2,6 @@ const express=require('express');
 var router=express();
 const pool=require('../pool.js') 
 router.get('/v1',function(req,res){
-  //console.log(req.query)
   var dz=req.query.dz
   var limit=req.query.limit   //模糊查找类型
   var upDown=req.query.upDown //模糊查找顺序
@@ -37,12 +36,10 @@ router.get('/v1',function(req,res){
    var sql=`select pid,brief,img,price,svolume,Enumber FROM iumper_product WHERE ${where} ORDER BY ${limit} ${upDown}`;
    pool.query(sql,[],(err,result)=>{
     if(err) throw err; 
-    //console.log(result)
     obj.pageCount=Math.ceil(result.length/obj.count)
       sql+=` limit ?,?`
        pool.query(sql,[obj.count*obj.pno,obj.count],function(err,result){
-          obj.arr=result;                       //查询结果 
-          //console.log(obj.pno)
+          obj.arr=result;                       //查询结果
           res.send(obj);  
        })
     }) 
