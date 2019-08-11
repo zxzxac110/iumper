@@ -1,6 +1,6 @@
 $(function(){
     $.ajax({
-        url:"http://127.0.0.1:8080/index/v1",
+        url:"http://127.0.0.1:5050/index/v1",
         type:"get",
         dataType:"json",
         success:function(result){

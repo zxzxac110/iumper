@@ -6,7 +6,7 @@ $(function(){
     var result                           //全局变量 到处使用
         if(dz){
             $.ajax({
-                url:"http://127.0.0.1:8080/product/v1",
+                url:"http://127.0.0.1:5050/product/v1",
                 type:"get",
                 data:{dz},
                 dataType:"json",
@@ -64,7 +64,7 @@ $(".tpc-3>ul").on("click","a",function(e){
          upDown="down"
     }
         $.ajax({
-            url:"http://127.0.0.1:8080/product/v1",
+            url:"http://127.0.0.1:5050/product/v1",
             type:"get",
             data:{dz,limit,upDown},
             dataType:"json",
@@ -85,7 +85,7 @@ $(".tpc-3>ul").on("click","a",function(e){
             pno--;
         }
        $.ajax({
-        url:"http://127.0.0.1:8080/product/v1",
+        url:"http://127.0.0.1:5050/product/v1",
         type:"get",
         data:{dz,limit,upDown,pno},
         dataType:"json",

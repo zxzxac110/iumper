@@ -3,7 +3,7 @@ $(function(){
     if(!lid||lid>20){lid=1}
     if(lid){
     $.ajax({
-        url:"http://127.0.0.1:8080/details/v1",
+        url:"http://127.0.0.1:5050/details/v1",
         type:"get",
          data:{lid},
         dataType:"json",
@@ -156,7 +156,7 @@ $(function(){
       //  var img=img.picture_sm
         var uid=sessionStorage.getItem("uid")
        $.ajax({
-            url:"http://127.0.0.1:8080/details/v1",
+            url:"http://127.0.0.1:5050/details/v1",
             type:"get",
              data:{uid:uid,//登录凭证
                    title,

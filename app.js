@@ -15,7 +15,7 @@ const productRouter=require('./routes/productRouter.js')
 const personageRouter=require('./routes/personageRouter.js')
 const shoppingcartRouter=require('./routes/shoppingcartRouter.js')
 var app=express();
-app.listen(8080);
+app.listen(5050);
 //跨域
 app.use(cors({
      origin:"http://127.0.0.1:8080",

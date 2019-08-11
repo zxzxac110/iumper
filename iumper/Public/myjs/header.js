@@ -18,7 +18,7 @@ $(function(){
           $(function(){
             //请求页头.html片段
             $.ajax({
-              url:"http://127.0.0.1:8080/shoppingcart/v1",
+              url:"http://127.0.0.1:5050/shoppingcart/v1",
               type:"get",
               data:{uid:sessionStorage.getItem("uid")},
               success:function(result){    

@@ -1,6 +1,6 @@
 var uid=sessionStorage.getItem("uid")
 myajax({
-    url:"http://127.0.0.1:8080/shoppingcart/v1",
+    url:"http://127.0.0.1:5050/shoppingcart/v1",
     type:"get",
     data:"uid="+uid,
     dataType:"json"
@@ -104,7 +104,7 @@ selectDelede.onclick=function(){
         }else{
             alert(`已删除${i}件商品`)
              myajax({
-            url:"http://127.0.0.1:8080/shoppingcart/v1",
+            url:"http://127.0.0.1:5050/shoppingcart/v1",
             type:"get",
             data:"uid="+uid+"&cid="+cid,
             dataType:"json"
@@ -165,7 +165,7 @@ if(ope.dataset.taggle==="del"){
      if(confirm("确定要删除选中的记录吗？一旦删除将不能恢复！")){
          var cid=ope.parentNode.parentNode.dataset.cid
          myajax({
-            url:"http://127.0.0.1:8080/shoppingcart/v1",
+            url:"http://127.0.0.1:5050/shoppingcart/v1",
             type:"get",
             data:"uid="+uid+"&cid="+cid,
             dataType:"json"
