@@ -1,60 +1,63 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
-    <meta charset="UTF-8">
-    <title>中柏商城-中柏平板电脑、中柏笔记本电脑、中柏电脑官方网站</title>
-    <link rel="stylesheet" href="public/css/style.css"/>
+  <meta charset="UTF-8">
+  <title>中柏商城-中柏平板电脑、中柏笔记本电脑、中柏电脑官方网站</title>
+  <link rel="stylesheet" href="public/css/style.css" />
 </head>
+
 <body>
- <header id="header"></header>
-    <!-- 内容-->
-    <div class="main">
-       <div class="tpc">
-        <div class="tpc-1">
-            <ul>
-                <li><img id="tpcImg1" src="Public/images/1477987335.jpg" alt=""/></li>
-                <li><img id="tpcImg2" src="Public/images/1502865077.jpg" alt=""/></li>
-            </ul>           
-       <!--  -->
+  <header id="header"></header>
+  <!-- 内容-->
+  <div class="main">
+    <div class="tpc">
+      <div class="tpc-1">
+        <ul>
+          <li><img id="tpcImg1" src="Public/images/1477987335.jpg" alt="" /></li>
+          <li><img id="tpcImg2" src="Public/images/1502865077.jpg" alt="" /></li>
+        </ul>
+        <!--  -->
+      </div>
+      <div class="tpc-2">
+        <ul>
+          <li>分类：</li>
+          <li><a href="product.html?dz=100">平板电脑</a></li>
+          <li><a href="product.html?dz=200">笔记本电脑</a></li>
+          <li><a href="product.html?dz=300">电脑配件</a></li>
+        </ul>
+      </div>
+      <div class="tpc-3">
+        <ul>
+          <li>排序：</li>
+          <li>
+            <a href="#" data-down="Svolume" data-up="Svolume">销量<span></span></a>
+          </li>
+          <li>
+            <a href="#" data-down="Price" data-up="Price">价格<span></span></a></li>
+          <li>
+            <a href="#" data-down="Time" data-up="Time">上架时间<span></span></a></li>
+          <li>
+            <a href="#" data-down="Enumber" data-up="Enumber">好评<span></span></a></li>
+        </ul>
+      </div>
+      <div class="tpc-4" id="tpc4-product">
+        <ul>
+          <!-- 商品列表引入 -->
+        </ul>
+        <div>
+          <ul id="product-pag">
+            <!-- 分页 -->
+          </ul>
         </div>
-        <div class="tpc-2">
-            <ul>
-                <li>分类：</li>
-                <li ><a href="product.html?dz=100">平板电脑</a></li>
-                <li ><a href="product.html?dz=200">笔记本电脑</a></li>
-                <li ><a href="product.html?dz=300">电脑配件</a></li>
-            </ul>
-        </div>
-        <div class="tpc-3">
-            <ul>
-                <li>排序：</li>
-                <li>
-                    <a href="#" data-down="Svolume" data-up="Svolume">销量<span></span></a>
-                </li>
-                <li>
-                    <a href="#" data-down="Price" data-up="Price">价格<span></span></a></li>
-                <li>
-                    <a href="#" data-down="Time" data-up="Time">上架时间<span></span></a></li>
-                <li>
-                    <a href="#" data-down="Enumber" data-up="Enumber" >好评<span></span></a></li>
-            </ul>
-        </div>
-        <div class="tpc-4" id="tpc4-product">
-            <ul>
-                <!-- 商品列表引入 -->
-            </ul>
-            <div>
-                <ul id="product-pag">
-                <!-- 分页 -->
-                </ul>
-            </div>
-        </div>
-       </div>
+      </div>
     </div>
-    <footer id=footer></footer>
-    <script src="Public/js/jquery-3.2.1.js"></script>
-    <script src="Public/myjs/header.js"></script>
-    <script src="Public/myjs/footer.js"></script>
-    <script src="Public/myjs/product.js"></script>
+  </div>
+  <footer id=footer></footer>
+  <script src="Public/js/jquery-3.2.1.js"></script>
+  <script src="Public/myjs/header.js"></script>
+  <script src="Public/myjs/footer.js"></script>
+  <script src="Public/myjs/product.js"></script>
 </body>
+
 </html>
